@@ -1,0 +1,14 @@
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI0] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI1] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI2] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI3] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI4] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI5] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI6] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI7] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI8] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI9] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI10] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI11] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI12] -to *
+set_false_path -from [get_ports hps_io_hps_io_gpio_inst_HLGPI13] -to *
