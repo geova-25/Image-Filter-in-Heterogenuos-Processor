@@ -29,42 +29,6 @@ module interconexion_hps_hps_io_border(
  ,output wire [1 - 1 : 0 ] mem_odt
  ,output wire [1 - 1 : 0 ] mem_dm
  ,input wire [1 - 1 : 0 ] oct_rzqin
-// hps_io
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI0
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI1
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI2
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI3
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI4
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI5
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI6
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI7
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI8
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI9
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI10
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI11
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI12
- ,input wire [1 - 1 : 0 ] hps_io_gpio_inst_HLGPI13
-);
-
-
-cyclonev_hps_peripheral_gpio gpio_inst(
- .GPIO2_PORTA_I({
-    hps_io_gpio_inst_HLGPI13[0:0] // 26:26
-   ,hps_io_gpio_inst_HLGPI12[0:0] // 25:25
-   ,hps_io_gpio_inst_HLGPI11[0:0] // 24:24
-   ,hps_io_gpio_inst_HLGPI10[0:0] // 23:23
-   ,hps_io_gpio_inst_HLGPI9[0:0] // 22:22
-   ,hps_io_gpio_inst_HLGPI8[0:0] // 21:21
-   ,hps_io_gpio_inst_HLGPI7[0:0] // 20:20
-   ,hps_io_gpio_inst_HLGPI6[0:0] // 19:19
-   ,hps_io_gpio_inst_HLGPI5[0:0] // 18:18
-   ,hps_io_gpio_inst_HLGPI4[0:0] // 17:17
-   ,hps_io_gpio_inst_HLGPI3[0:0] // 16:16
-   ,hps_io_gpio_inst_HLGPI2[0:0] // 15:15
-   ,hps_io_gpio_inst_HLGPI1[0:0] // 14:14
-   ,hps_io_gpio_inst_HLGPI0[0:0] // 13:13
-   ,13'b0000000000000 // 12:0
-  })
 );
 
 

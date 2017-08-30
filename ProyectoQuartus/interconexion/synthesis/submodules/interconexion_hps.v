@@ -10,115 +10,101 @@ module interconexion_hps #(
 		parameter F2S_Width = 0,
 		parameter S2F_Width = 2
 	) (
-		output wire        h2f_rst_n,                //        h2f_reset.reset_n
-		input  wire        h2f_mpu_eventi,           //   h2f_mpu_events.eventi
-		output wire        h2f_mpu_evento,           //                 .evento
-		output wire [1:0]  h2f_mpu_standbywfe,       //                 .standbywfe
-		output wire [1:0]  h2f_mpu_standbywfi,       //                 .standbywfi
-		input  wire        h2f_axi_clk,              //    h2f_axi_clock.clk
-		output wire [11:0] h2f_AWID,                 //   h2f_axi_master.awid
-		output wire [29:0] h2f_AWADDR,               //                 .awaddr
-		output wire [3:0]  h2f_AWLEN,                //                 .awlen
-		output wire [2:0]  h2f_AWSIZE,               //                 .awsize
-		output wire [1:0]  h2f_AWBURST,              //                 .awburst
-		output wire [1:0]  h2f_AWLOCK,               //                 .awlock
-		output wire [3:0]  h2f_AWCACHE,              //                 .awcache
-		output wire [2:0]  h2f_AWPROT,               //                 .awprot
-		output wire        h2f_AWVALID,              //                 .awvalid
-		input  wire        h2f_AWREADY,              //                 .awready
-		output wire [11:0] h2f_WID,                  //                 .wid
-		output wire [63:0] h2f_WDATA,                //                 .wdata
-		output wire [7:0]  h2f_WSTRB,                //                 .wstrb
-		output wire        h2f_WLAST,                //                 .wlast
-		output wire        h2f_WVALID,               //                 .wvalid
-		input  wire        h2f_WREADY,               //                 .wready
-		input  wire [11:0] h2f_BID,                  //                 .bid
-		input  wire [1:0]  h2f_BRESP,                //                 .bresp
-		input  wire        h2f_BVALID,               //                 .bvalid
-		output wire        h2f_BREADY,               //                 .bready
-		output wire [11:0] h2f_ARID,                 //                 .arid
-		output wire [29:0] h2f_ARADDR,               //                 .araddr
-		output wire [3:0]  h2f_ARLEN,                //                 .arlen
-		output wire [2:0]  h2f_ARSIZE,               //                 .arsize
-		output wire [1:0]  h2f_ARBURST,              //                 .arburst
-		output wire [1:0]  h2f_ARLOCK,               //                 .arlock
-		output wire [3:0]  h2f_ARCACHE,              //                 .arcache
-		output wire [2:0]  h2f_ARPROT,               //                 .arprot
-		output wire        h2f_ARVALID,              //                 .arvalid
-		input  wire        h2f_ARREADY,              //                 .arready
-		input  wire [11:0] h2f_RID,                  //                 .rid
-		input  wire [63:0] h2f_RDATA,                //                 .rdata
-		input  wire [1:0]  h2f_RRESP,                //                 .rresp
-		input  wire        h2f_RLAST,                //                 .rlast
-		input  wire        h2f_RVALID,               //                 .rvalid
-		output wire        h2f_RREADY,               //                 .rready
-		input  wire [31:0] f2h_sdram0_ARADDR,        //  f2h_sdram0_data.araddr
-		input  wire [3:0]  f2h_sdram0_ARLEN,         //                 .arlen
-		input  wire [7:0]  f2h_sdram0_ARID,          //                 .arid
-		input  wire [2:0]  f2h_sdram0_ARSIZE,        //                 .arsize
-		input  wire [1:0]  f2h_sdram0_ARBURST,       //                 .arburst
-		input  wire [1:0]  f2h_sdram0_ARLOCK,        //                 .arlock
-		input  wire [2:0]  f2h_sdram0_ARPROT,        //                 .arprot
-		input  wire        f2h_sdram0_ARVALID,       //                 .arvalid
-		input  wire [3:0]  f2h_sdram0_ARCACHE,       //                 .arcache
-		input  wire [31:0] f2h_sdram0_AWADDR,        //                 .awaddr
-		input  wire [3:0]  f2h_sdram0_AWLEN,         //                 .awlen
-		input  wire [7:0]  f2h_sdram0_AWID,          //                 .awid
-		input  wire [2:0]  f2h_sdram0_AWSIZE,        //                 .awsize
-		input  wire [1:0]  f2h_sdram0_AWBURST,       //                 .awburst
-		input  wire [1:0]  f2h_sdram0_AWLOCK,        //                 .awlock
-		input  wire [2:0]  f2h_sdram0_AWPROT,        //                 .awprot
-		input  wire        f2h_sdram0_AWVALID,       //                 .awvalid
-		input  wire [3:0]  f2h_sdram0_AWCACHE,       //                 .awcache
-		output wire [1:0]  f2h_sdram0_BRESP,         //                 .bresp
-		output wire [7:0]  f2h_sdram0_BID,           //                 .bid
-		output wire        f2h_sdram0_BVALID,        //                 .bvalid
-		input  wire        f2h_sdram0_BREADY,        //                 .bready
-		output wire        f2h_sdram0_ARREADY,       //                 .arready
-		output wire        f2h_sdram0_AWREADY,       //                 .awready
-		input  wire        f2h_sdram0_RREADY,        //                 .rready
-		output wire [63:0] f2h_sdram0_RDATA,         //                 .rdata
-		output wire [1:0]  f2h_sdram0_RRESP,         //                 .rresp
-		output wire        f2h_sdram0_RLAST,         //                 .rlast
-		output wire [7:0]  f2h_sdram0_RID,           //                 .rid
-		output wire        f2h_sdram0_RVALID,        //                 .rvalid
-		input  wire        f2h_sdram0_WLAST,         //                 .wlast
-		input  wire        f2h_sdram0_WVALID,        //                 .wvalid
-		input  wire [63:0] f2h_sdram0_WDATA,         //                 .wdata
-		input  wire [7:0]  f2h_sdram0_WSTRB,         //                 .wstrb
-		output wire        f2h_sdram0_WREADY,        //                 .wready
-		input  wire [7:0]  f2h_sdram0_WID,           //                 .wid
-		input  wire        f2h_sdram0_clk,           // f2h_sdram0_clock.clk
-		output wire [12:0] mem_a,                    //           memory.mem_a
-		output wire [2:0]  mem_ba,                   //                 .mem_ba
-		output wire        mem_ck,                   //                 .mem_ck
-		output wire        mem_ck_n,                 //                 .mem_ck_n
-		output wire        mem_cke,                  //                 .mem_cke
-		output wire        mem_cs_n,                 //                 .mem_cs_n
-		output wire        mem_ras_n,                //                 .mem_ras_n
-		output wire        mem_cas_n,                //                 .mem_cas_n
-		output wire        mem_we_n,                 //                 .mem_we_n
-		output wire        mem_reset_n,              //                 .mem_reset_n
-		inout  wire [7:0]  mem_dq,                   //                 .mem_dq
-		inout  wire        mem_dqs,                  //                 .mem_dqs
-		inout  wire        mem_dqs_n,                //                 .mem_dqs_n
-		output wire        mem_odt,                  //                 .mem_odt
-		output wire        mem_dm,                   //                 .mem_dm
-		input  wire        oct_rzqin,                //                 .oct_rzqin
-		input  wire        hps_io_gpio_inst_HLGPI0,  //           hps_io.hps_io_gpio_inst_HLGPI0
-		input  wire        hps_io_gpio_inst_HLGPI1,  //                 .hps_io_gpio_inst_HLGPI1
-		input  wire        hps_io_gpio_inst_HLGPI2,  //                 .hps_io_gpio_inst_HLGPI2
-		input  wire        hps_io_gpio_inst_HLGPI3,  //                 .hps_io_gpio_inst_HLGPI3
-		input  wire        hps_io_gpio_inst_HLGPI4,  //                 .hps_io_gpio_inst_HLGPI4
-		input  wire        hps_io_gpio_inst_HLGPI5,  //                 .hps_io_gpio_inst_HLGPI5
-		input  wire        hps_io_gpio_inst_HLGPI6,  //                 .hps_io_gpio_inst_HLGPI6
-		input  wire        hps_io_gpio_inst_HLGPI7,  //                 .hps_io_gpio_inst_HLGPI7
-		input  wire        hps_io_gpio_inst_HLGPI8,  //                 .hps_io_gpio_inst_HLGPI8
-		input  wire        hps_io_gpio_inst_HLGPI9,  //                 .hps_io_gpio_inst_HLGPI9
-		input  wire        hps_io_gpio_inst_HLGPI10, //                 .hps_io_gpio_inst_HLGPI10
-		input  wire        hps_io_gpio_inst_HLGPI11, //                 .hps_io_gpio_inst_HLGPI11
-		input  wire        hps_io_gpio_inst_HLGPI12, //                 .hps_io_gpio_inst_HLGPI12
-		input  wire        hps_io_gpio_inst_HLGPI13  //                 .hps_io_gpio_inst_HLGPI13
+		output wire        h2f_rst_n,          //        h2f_reset.reset_n
+		input  wire        h2f_mpu_eventi,     //   h2f_mpu_events.eventi
+		output wire        h2f_mpu_evento,     //                 .evento
+		output wire [1:0]  h2f_mpu_standbywfe, //                 .standbywfe
+		output wire [1:0]  h2f_mpu_standbywfi, //                 .standbywfi
+		input  wire        h2f_axi_clk,        //    h2f_axi_clock.clk
+		output wire [11:0] h2f_AWID,           //   h2f_axi_master.awid
+		output wire [29:0] h2f_AWADDR,         //                 .awaddr
+		output wire [3:0]  h2f_AWLEN,          //                 .awlen
+		output wire [2:0]  h2f_AWSIZE,         //                 .awsize
+		output wire [1:0]  h2f_AWBURST,        //                 .awburst
+		output wire [1:0]  h2f_AWLOCK,         //                 .awlock
+		output wire [3:0]  h2f_AWCACHE,        //                 .awcache
+		output wire [2:0]  h2f_AWPROT,         //                 .awprot
+		output wire        h2f_AWVALID,        //                 .awvalid
+		input  wire        h2f_AWREADY,        //                 .awready
+		output wire [11:0] h2f_WID,            //                 .wid
+		output wire [63:0] h2f_WDATA,          //                 .wdata
+		output wire [7:0]  h2f_WSTRB,          //                 .wstrb
+		output wire        h2f_WLAST,          //                 .wlast
+		output wire        h2f_WVALID,         //                 .wvalid
+		input  wire        h2f_WREADY,         //                 .wready
+		input  wire [11:0] h2f_BID,            //                 .bid
+		input  wire [1:0]  h2f_BRESP,          //                 .bresp
+		input  wire        h2f_BVALID,         //                 .bvalid
+		output wire        h2f_BREADY,         //                 .bready
+		output wire [11:0] h2f_ARID,           //                 .arid
+		output wire [29:0] h2f_ARADDR,         //                 .araddr
+		output wire [3:0]  h2f_ARLEN,          //                 .arlen
+		output wire [2:0]  h2f_ARSIZE,         //                 .arsize
+		output wire [1:0]  h2f_ARBURST,        //                 .arburst
+		output wire [1:0]  h2f_ARLOCK,         //                 .arlock
+		output wire [3:0]  h2f_ARCACHE,        //                 .arcache
+		output wire [2:0]  h2f_ARPROT,         //                 .arprot
+		output wire        h2f_ARVALID,        //                 .arvalid
+		input  wire        h2f_ARREADY,        //                 .arready
+		input  wire [11:0] h2f_RID,            //                 .rid
+		input  wire [63:0] h2f_RDATA,          //                 .rdata
+		input  wire [1:0]  h2f_RRESP,          //                 .rresp
+		input  wire        h2f_RLAST,          //                 .rlast
+		input  wire        h2f_RVALID,         //                 .rvalid
+		output wire        h2f_RREADY,         //                 .rready
+		input  wire [31:0] f2h_sdram0_ARADDR,  //  f2h_sdram0_data.araddr
+		input  wire [3:0]  f2h_sdram0_ARLEN,   //                 .arlen
+		input  wire [7:0]  f2h_sdram0_ARID,    //                 .arid
+		input  wire [2:0]  f2h_sdram0_ARSIZE,  //                 .arsize
+		input  wire [1:0]  f2h_sdram0_ARBURST, //                 .arburst
+		input  wire [1:0]  f2h_sdram0_ARLOCK,  //                 .arlock
+		input  wire [2:0]  f2h_sdram0_ARPROT,  //                 .arprot
+		input  wire        f2h_sdram0_ARVALID, //                 .arvalid
+		input  wire [3:0]  f2h_sdram0_ARCACHE, //                 .arcache
+		input  wire [31:0] f2h_sdram0_AWADDR,  //                 .awaddr
+		input  wire [3:0]  f2h_sdram0_AWLEN,   //                 .awlen
+		input  wire [7:0]  f2h_sdram0_AWID,    //                 .awid
+		input  wire [2:0]  f2h_sdram0_AWSIZE,  //                 .awsize
+		input  wire [1:0]  f2h_sdram0_AWBURST, //                 .awburst
+		input  wire [1:0]  f2h_sdram0_AWLOCK,  //                 .awlock
+		input  wire [2:0]  f2h_sdram0_AWPROT,  //                 .awprot
+		input  wire        f2h_sdram0_AWVALID, //                 .awvalid
+		input  wire [3:0]  f2h_sdram0_AWCACHE, //                 .awcache
+		output wire [1:0]  f2h_sdram0_BRESP,   //                 .bresp
+		output wire [7:0]  f2h_sdram0_BID,     //                 .bid
+		output wire        f2h_sdram0_BVALID,  //                 .bvalid
+		input  wire        f2h_sdram0_BREADY,  //                 .bready
+		output wire        f2h_sdram0_ARREADY, //                 .arready
+		output wire        f2h_sdram0_AWREADY, //                 .awready
+		input  wire        f2h_sdram0_RREADY,  //                 .rready
+		output wire [63:0] f2h_sdram0_RDATA,   //                 .rdata
+		output wire [1:0]  f2h_sdram0_RRESP,   //                 .rresp
+		output wire        f2h_sdram0_RLAST,   //                 .rlast
+		output wire [7:0]  f2h_sdram0_RID,     //                 .rid
+		output wire        f2h_sdram0_RVALID,  //                 .rvalid
+		input  wire        f2h_sdram0_WLAST,   //                 .wlast
+		input  wire        f2h_sdram0_WVALID,  //                 .wvalid
+		input  wire [63:0] f2h_sdram0_WDATA,   //                 .wdata
+		input  wire [7:0]  f2h_sdram0_WSTRB,   //                 .wstrb
+		output wire        f2h_sdram0_WREADY,  //                 .wready
+		input  wire [7:0]  f2h_sdram0_WID,     //                 .wid
+		input  wire        f2h_sdram0_clk,     // f2h_sdram0_clock.clk
+		output wire [12:0] mem_a,              //           memory.mem_a
+		output wire [2:0]  mem_ba,             //                 .mem_ba
+		output wire        mem_ck,             //                 .mem_ck
+		output wire        mem_ck_n,           //                 .mem_ck_n
+		output wire        mem_cke,            //                 .mem_cke
+		output wire        mem_cs_n,           //                 .mem_cs_n
+		output wire        mem_ras_n,          //                 .mem_ras_n
+		output wire        mem_cas_n,          //                 .mem_cas_n
+		output wire        mem_we_n,           //                 .mem_we_n
+		output wire        mem_reset_n,        //                 .mem_reset_n
+		inout  wire [7:0]  mem_dq,             //                 .mem_dq
+		inout  wire        mem_dqs,            //                 .mem_dqs
+		inout  wire        mem_dqs_n,          //                 .mem_dqs_n
+		output wire        mem_odt,            //                 .mem_odt
+		output wire        mem_dm,             //                 .mem_dm
+		input  wire        oct_rzqin           //                 .oct_rzqin
 	);
 
 	generate
@@ -230,36 +216,22 @@ module interconexion_hps #(
 	);
 
 	interconexion_hps_hps_io hps_io (
-		.mem_a                    (mem_a),                    // memory.mem_a
-		.mem_ba                   (mem_ba),                   //       .mem_ba
-		.mem_ck                   (mem_ck),                   //       .mem_ck
-		.mem_ck_n                 (mem_ck_n),                 //       .mem_ck_n
-		.mem_cke                  (mem_cke),                  //       .mem_cke
-		.mem_cs_n                 (mem_cs_n),                 //       .mem_cs_n
-		.mem_ras_n                (mem_ras_n),                //       .mem_ras_n
-		.mem_cas_n                (mem_cas_n),                //       .mem_cas_n
-		.mem_we_n                 (mem_we_n),                 //       .mem_we_n
-		.mem_reset_n              (mem_reset_n),              //       .mem_reset_n
-		.mem_dq                   (mem_dq),                   //       .mem_dq
-		.mem_dqs                  (mem_dqs),                  //       .mem_dqs
-		.mem_dqs_n                (mem_dqs_n),                //       .mem_dqs_n
-		.mem_odt                  (mem_odt),                  //       .mem_odt
-		.mem_dm                   (mem_dm),                   //       .mem_dm
-		.oct_rzqin                (oct_rzqin),                //       .oct_rzqin
-		.hps_io_gpio_inst_HLGPI0  (hps_io_gpio_inst_HLGPI0),  // hps_io.hps_io_gpio_inst_HLGPI0
-		.hps_io_gpio_inst_HLGPI1  (hps_io_gpio_inst_HLGPI1),  //       .hps_io_gpio_inst_HLGPI1
-		.hps_io_gpio_inst_HLGPI2  (hps_io_gpio_inst_HLGPI2),  //       .hps_io_gpio_inst_HLGPI2
-		.hps_io_gpio_inst_HLGPI3  (hps_io_gpio_inst_HLGPI3),  //       .hps_io_gpio_inst_HLGPI3
-		.hps_io_gpio_inst_HLGPI4  (hps_io_gpio_inst_HLGPI4),  //       .hps_io_gpio_inst_HLGPI4
-		.hps_io_gpio_inst_HLGPI5  (hps_io_gpio_inst_HLGPI5),  //       .hps_io_gpio_inst_HLGPI5
-		.hps_io_gpio_inst_HLGPI6  (hps_io_gpio_inst_HLGPI6),  //       .hps_io_gpio_inst_HLGPI6
-		.hps_io_gpio_inst_HLGPI7  (hps_io_gpio_inst_HLGPI7),  //       .hps_io_gpio_inst_HLGPI7
-		.hps_io_gpio_inst_HLGPI8  (hps_io_gpio_inst_HLGPI8),  //       .hps_io_gpio_inst_HLGPI8
-		.hps_io_gpio_inst_HLGPI9  (hps_io_gpio_inst_HLGPI9),  //       .hps_io_gpio_inst_HLGPI9
-		.hps_io_gpio_inst_HLGPI10 (hps_io_gpio_inst_HLGPI10), //       .hps_io_gpio_inst_HLGPI10
-		.hps_io_gpio_inst_HLGPI11 (hps_io_gpio_inst_HLGPI11), //       .hps_io_gpio_inst_HLGPI11
-		.hps_io_gpio_inst_HLGPI12 (hps_io_gpio_inst_HLGPI12), //       .hps_io_gpio_inst_HLGPI12
-		.hps_io_gpio_inst_HLGPI13 (hps_io_gpio_inst_HLGPI13)  //       .hps_io_gpio_inst_HLGPI13
+		.mem_a       (mem_a),       // memory.mem_a
+		.mem_ba      (mem_ba),      //       .mem_ba
+		.mem_ck      (mem_ck),      //       .mem_ck
+		.mem_ck_n    (mem_ck_n),    //       .mem_ck_n
+		.mem_cke     (mem_cke),     //       .mem_cke
+		.mem_cs_n    (mem_cs_n),    //       .mem_cs_n
+		.mem_ras_n   (mem_ras_n),   //       .mem_ras_n
+		.mem_cas_n   (mem_cas_n),   //       .mem_cas_n
+		.mem_we_n    (mem_we_n),    //       .mem_we_n
+		.mem_reset_n (mem_reset_n), //       .mem_reset_n
+		.mem_dq      (mem_dq),      //       .mem_dq
+		.mem_dqs     (mem_dqs),     //       .mem_dqs
+		.mem_dqs_n   (mem_dqs_n),   //       .mem_dqs_n
+		.mem_odt     (mem_odt),     //       .mem_odt
+		.mem_dm      (mem_dm),      //       .mem_dm
+		.oct_rzqin   (oct_rzqin)    //       .oct_rzqin
 	);
 
 endmodule

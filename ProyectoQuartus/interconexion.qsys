@@ -101,7 +101,7 @@
    internal="hps.h2f_mpu_events"
    type="conduit"
    dir="end" />
- <interface name="hps_io" internal="hps.hps_io" type="conduit" dir="end" />
+ <interface name="hps_io" internal="hps.hps_io" />
  <interface name="memory" internal="hps.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
@@ -272,7 +272,7 @@
   <parameter name="HHP_HPS" value="true" />
   <parameter name="HHP_HPS_SIMULATION" value="false" />
   <parameter name="HHP_HPS_VERIFICATION" value="false" />
-  <parameter name="HLGPI_Enable" value="true" />
+  <parameter name="HLGPI_Enable" value="false" />
   <parameter name="HPS_PROTOCOL" value="DDR3" />
   <parameter name="I2C0_Mode" value="N/A" />
   <parameter name="I2C0_PinMuxing" value="Unused" />

@@ -1,12 +1,17 @@
-Analysis & Synthesis Status : Failed - Mon Aug 28 20:21:24 2017
+Analysis & Synthesis Status : Successful - Wed Aug 30 08:31:07 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : MultiCore
 Top-level Entity Name : interconexion
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total block memory bits : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-Total DLLs : N/A until Partition Merge
+Logic utilization (in ALMs) : N/A
+Total registers : 2171
+Total pins : 114
+Total virtual pins : 0
+Total block memory bits : 11,520
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 1

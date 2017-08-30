@@ -1,0 +1,233 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sdram_wire_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_ba[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_ba[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_cas_n",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_cs_n",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dqm[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dqm[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dqm[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dqm[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_ras_n",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_we_n",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wire_dq[31]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_reset_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
