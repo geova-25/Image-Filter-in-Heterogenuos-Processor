@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MultiCore
-Wed Aug 30 08:31:08 2017
+Wed Aug 30 08:47:29 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -342,14 +342,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Aug 30 08:31:07 2017       ;
+; Analysis & Synthesis Status     ; Successful - Wed Aug 30 08:47:28 2017       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; MultiCore                                   ;
 ; Top-level Entity Name           ; interconexion                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 2171                                        ;
-; Total pins                      ; 114                                         ;
+; Total pins                      ; 100                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 11,520                                      ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -592,7 +592,7 @@ agreement for further details.
 ;                                             ;               ;
 ; Dedicated logic registers                   ; 2091          ;
 ;                                             ;               ;
-; I/O pins                                    ; 114           ;
+; I/O pins                                    ; 100           ;
 ; I/O registers                               ; 80            ;
 ; Total MLAB memory bits                      ; 0             ;
 ; Total block memory bits                     ; 11520         ;
@@ -602,8 +602,8 @@ agreement for further details.
 ; Total DLLs                                  ; 1             ;
 ; Maximum fan-out node                        ; clk_clk~input ;
 ; Maximum fan-out                             ; 2057          ;
-; Total fan-out                               ; 20599         ;
-; Average fan-out                             ; 3.92          ;
+; Total fan-out                               ; 20571         ;
+; Average fan-out                             ; 3.94          ;
 +---------------------------------------------+---------------+
 
 
@@ -612,7 +612,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                            ; Entity Name                                       ; Library Name  ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
-; |interconexion                                                                                                                          ; 2483 (1)            ; 2091 (0)                  ; 11520             ; 0          ; 114  ; 0            ; |interconexion                                                                                                                                                                                                                                                                                                                                                                 ; interconexion                                     ; interconexion ;
+; |interconexion                                                                                                                          ; 2483 (1)            ; 2091 (0)                  ; 11520             ; 0          ; 100  ; 0            ; |interconexion                                                                                                                                                                                                                                                                                                                                                                 ; interconexion                                     ; interconexion ;
 ;    |altera_reset_controller:rst_controller_001|                                                                                         ; 0 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |interconexion|altera_reset_controller:rst_controller_001                                                                                                                                                                                                                                                                                                                      ; altera_reset_controller                           ; interconexion ;
 ;       |altera_reset_synchronizer:alt_rst_sync_uq1|                                                                                      ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |interconexion|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                                                                                                                                                                                                           ; altera_reset_synchronizer                         ; interconexion ;
 ;    |altera_reset_controller:rst_controller|                                                                                             ; 7 (6)               ; 16 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |interconexion|altera_reset_controller:rst_controller                                                                                                                                                                                                                                                                                                                          ; altera_reset_controller                           ; interconexion ;
@@ -799,6 +799,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+------------------------------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
 ; Vendor ; IP Core Name                       ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                    ; IP Include File    ;
 +--------+------------------------------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
+; N/A    ; Qsys                               ; 16.1    ; N/A          ; N/A          ; |interconexion                                                                                                                                                                                                                                                                     ; interconexion.qsys ;
 ; Altera ; Signal Tap                         ; N/A     ; N/A          ; Licensed     ; |interconexion|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                    ;
 ; Altera ; Signal Tap                         ; N/A     ; N/A          ; Licensed     ; |interconexion|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                    ;
 ; Altera ; Signal Tap                         ; N/A     ; N/A          ; Licensed     ; |interconexion|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                    ;
@@ -8062,7 +8063,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs                             ; 3     ;
 ; blackbox                                          ; 1     ;
 ;             nterconexion_hps_hps_io_border:border ; 1     ;
-; boundary_port                                     ; 168   ;
+; boundary_port                                     ; 154   ;
 ; stratixv_ram_block                                ; 144   ;
 ;                                                   ;       ;
 ; Max LUT depth                                     ; 7.00  ;
@@ -8086,7 +8087,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_dqs_enable_ctrl             ; 1                                                 ;
 ; arriav_ff                          ; 9                                                 ;
 ;     plain                          ; 9                                                 ;
-; arriav_hps_peripheral_gpio         ; 1                                                 ;
 ; arriav_hps_sdram_pll               ; 1                                                 ;
 ; arriav_io_config                   ; 10                                                ;
 ; arriav_io_ibuf                     ; 9                                                 ;
@@ -8100,7 +8100,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_mem_phy                     ; 1                                                 ;
 ; arriav_read_fifo_read_clock_select ; 8                                                 ;
 ; arriav_vfifo                       ; 1                                                 ;
-; boundary_port                      ; 51                                                ;
+; boundary_port                      ; 37                                                ;
 ; cyclonev_hmc                       ; 1                                                 ;
 ; cyclonev_termination               ; 1                                                 ;
 ; cyclonev_termination_logic         ; 1                                                 ;
@@ -8146,9 +8146,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------------------+--------------+
 ; Partition Name                         ; Elapsed Time ;
 +----------------------------------------+--------------+
-; Top                                    ; 00:00:11     ;
+; Top                                    ; 00:00:14     ;
 ; sld_hub:auto_hub                       ; 00:00:00     ;
-; interconexion_hps_hps_io_border:border ; 00:00:00     ;
+; interconexion_hps_hps_io_border:border ; 00:00:01     ;
 +----------------------------------------+--------------+
 
 
@@ -8158,7 +8158,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Aug 30 08:25:56 2017
+    Info: Processing started: Wed Aug 30 08:41:54 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MultiCore -c MultiCore
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -8342,11 +8342,11 @@ Warning (10037): Verilog HDL or VHDL warning at interconexion_sdram.v(328): cond
 Warning (10037): Verilog HDL or VHDL warning at interconexion_sdram.v(338): conditional expression evaluates to a constant File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_sdram.v Line: 338
 Warning (10037): Verilog HDL or VHDL warning at interconexion_sdram.v(682): conditional expression evaluates to a constant File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_sdram.v Line: 682
 Info (12127): Elaborating entity "interconexion" for the top level hierarchy
-Info (12128): Elaborating entity "interconexion_hps" for hierarchy "interconexion_hps:hps" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 247
-Info (12128): Elaborating entity "interconexion_hps_fpga_interfaces" for hierarchy "interconexion_hps:hps|interconexion_hps_fpga_interfaces:fpga_interfaces" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps.v Line: 230
-Info (12128): Elaborating entity "interconexion_hps_hps_io" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps.v Line: 263
-Info (12128): Elaborating entity "interconexion_hps_hps_io_border" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps_hps_io.v Line: 73
-Info (12128): Elaborating entity "hps_sdram" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps_hps_io_border.sv Line: 120
+Info (12128): Elaborating entity "interconexion_hps" for hierarchy "interconexion_hps:hps" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 219
+Info (12128): Elaborating entity "interconexion_hps_fpga_interfaces" for hierarchy "interconexion_hps:hps|interconexion_hps_fpga_interfaces:fpga_interfaces" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps.v Line: 216
+Info (12128): Elaborating entity "interconexion_hps_hps_io" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps.v Line: 235
+Info (12128): Elaborating entity "interconexion_hps_hps_io_border" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps_hps_io.v Line: 45
+Info (12128): Elaborating entity "hps_sdram" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_hps_hps_io_border.sv Line: 84
 Info (12128): Elaborating entity "hps_sdram_pll" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/hps_sdram.v Line: 105
 Warning (10036): Verilog HDL or VHDL warning at hps_sdram_pll.sv(168): object "pll_dr_clk" assigned a value but never read File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/hps_sdram_pll.sv Line: 168
 Warning (10034): Output port "pll_locked" at hps_sdram_pll.sv(91) has no driver File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/hps_sdram_pll.sv Line: 91
@@ -8395,7 +8395,7 @@ Warning (10230): Verilog HDL assignment warning at altera_mem_if_hard_memory_con
 Warning (10230): Verilog HDL assignment warning at altera_mem_if_hard_memory_controller_top_cyclonev.sv(1171): truncated value with size 320 to match size of target (1) File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv Line: 1171
 Info (12128): Elaborating entity "altera_mem_if_oct_cyclonev" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|altera_mem_if_oct_cyclonev:oct" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/hps_sdram.v Line: 802
 Info (12128): Elaborating entity "altera_mem_if_dll_cyclonev" for hierarchy "interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|altera_mem_if_dll_cyclonev:dll" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/hps_sdram.v Line: 814
-Info (12128): Elaborating entity "interconexion_jtag_uart_0" for hierarchy "interconexion_jtag_uart_0:jtag_uart_0" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 260
+Info (12128): Elaborating entity "interconexion_jtag_uart_0" for hierarchy "interconexion_jtag_uart_0:jtag_uart_0" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 232
 Info (12128): Elaborating entity "interconexion_jtag_uart_0_scfifo_w" for hierarchy "interconexion_jtag_uart_0:jtag_uart_0|interconexion_jtag_uart_0_scfifo_w:the_interconexion_jtag_uart_0_scfifo_w" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_jtag_uart_0.v Line: 420
 Info (12128): Elaborating entity "scfifo" for hierarchy "interconexion_jtag_uart_0:jtag_uart_0|interconexion_jtag_uart_0_scfifo_w:the_interconexion_jtag_uart_0_scfifo_w|scfifo:wfifo" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_jtag_uart_0.v Line: 139
 Info (12130): Elaborated megafunction instantiation "interconexion_jtag_uart_0:jtag_uart_0|interconexion_jtag_uart_0_scfifo_w:the_interconexion_jtag_uart_0_scfifo_w|scfifo:wfifo" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_jtag_uart_0.v Line: 139
@@ -8439,7 +8439,7 @@ Info (12128): Elaborating entity "altera_sld_agent_endpoint" for hierarchy "inte
 Info (12131): Elaborated megafunction instantiation "interconexion_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:interconexion_jtag_uart_0_alt_jtag_atlantic|altera_sld_agent_endpoint:inst", which is child of megafunction instantiation "interconexion_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:interconexion_jtag_uart_0_alt_jtag_atlantic" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/alt_jtag_atlantic.v Line: 240
 Info (12128): Elaborating entity "altera_fabric_endpoint" for hierarchy "interconexion_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:interconexion_jtag_uart_0_alt_jtag_atlantic|altera_sld_agent_endpoint:inst|altera_fabric_endpoint:ep" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/altera_sld_agent_endpoint.vhd Line: 254
 Info (12131): Elaborated megafunction instantiation "interconexion_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:interconexion_jtag_uart_0_alt_jtag_atlantic|altera_sld_agent_endpoint:inst|altera_fabric_endpoint:ep", which is child of megafunction instantiation "interconexion_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:interconexion_jtag_uart_0_alt_jtag_atlantic" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/altera_sld_agent_endpoint.vhd Line: 254
-Info (12128): Elaborating entity "interconexion_nios" for hierarchy "interconexion_nios:nios" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 289
+Info (12128): Elaborating entity "interconexion_nios" for hierarchy "interconexion_nios:nios" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 261
 Info (12128): Elaborating entity "interconexion_nios_cpu" for hierarchy "interconexion_nios:nios|interconexion_nios_cpu:cpu" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_nios.v Line: 65
 Info (12128): Elaborating entity "interconexion_nios_cpu_test_bench" for hierarchy "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_test_bench:the_interconexion_nios_cpu_test_bench" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_nios_cpu.v Line: 3545
 Info (12128): Elaborating entity "interconexion_nios_cpu_register_bank_a_module" for hierarchy "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_register_bank_a_module:interconexion_nios_cpu_register_bank_a" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_nios_cpu.v Line: 4061
@@ -8520,9 +8520,9 @@ Info (12128): Elaborating entity "sld_virtual_jtag_impl" for hierarchy "intercon
 Info (12131): Elaborated megafunction instantiation "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_nios2_oci:the_interconexion_nios_cpu_nios2_oci|interconexion_nios_cpu_debug_slave_wrapper:the_interconexion_nios_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:interconexion_nios_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst", which is child of megafunction instantiation "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_nios2_oci:the_interconexion_nios_cpu_nios2_oci|interconexion_nios_cpu_debug_slave_wrapper:the_interconexion_nios_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:interconexion_nios_cpu_debug_slave_phy" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v Line: 152
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_nios2_oci:the_interconexion_nios_cpu_nios2_oci|interconexion_nios_cpu_debug_slave_wrapper:the_interconexion_nios_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:interconexion_nios_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/sld_virtual_jtag_basic.v Line: 415
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "interconexion_nios:nios|interconexion_nios_cpu:cpu|interconexion_nios_cpu_nios2_oci:the_interconexion_nios_cpu_nios2_oci|interconexion_nios_cpu_debug_slave_wrapper:the_interconexion_nios_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:interconexion_nios_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: /home/sebastian95/intelFPGA_lite/16.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
-Info (12128): Elaborating entity "interconexion_sdram" for hierarchy "interconexion_sdram:sdram" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 312
+Info (12128): Elaborating entity "interconexion_sdram" for hierarchy "interconexion_sdram:sdram" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 284
 Info (12128): Elaborating entity "interconexion_sdram_input_efifo_module" for hierarchy "interconexion_sdram:sdram|interconexion_sdram_input_efifo_module:the_interconexion_sdram_input_efifo_module" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_sdram.v Line: 298
-Info (12128): Elaborating entity "interconexion_mm_interconnect_0" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 390
+Info (12128): Elaborating entity "interconexion_mm_interconnect_0" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 362
 Info (12128): Elaborating entity "altera_merlin_master_translator" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:nios_data_master_translator" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_mm_interconnect_0.v Line: 536
 Info (12128): Elaborating entity "altera_merlin_master_translator" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:nios_instruction_master_translator" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_mm_interconnect_0.v Line: 596
 Info (12128): Elaborating entity "altera_merlin_slave_translator" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:nios_debug_mem_slave_translator" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_mm_interconnect_0.v Line: 660
@@ -8577,13 +8577,13 @@ Warning (10036): Verilog HDL or VHDL warning at altera_merlin_width_adapter.sv(7
 Warning (10036): Verilog HDL or VHDL warning at altera_merlin_width_adapter.sv(743): object "aligned_byte_cnt" assigned a value but never read File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/altera_merlin_width_adapter.sv Line: 743
 Info (12128): Elaborating entity "interconexion_mm_interconnect_0_avalon_st_adapter" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0|interconexion_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_mm_interconnect_0.v Line: 2527
 Info (12128): Elaborating entity "interconexion_mm_interconnect_0_avalon_st_adapter_error_adapter_0" for hierarchy "interconexion_mm_interconnect_0:mm_interconnect_0|interconexion_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter|interconexion_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/interconexion_mm_interconnect_0_avalon_st_adapter.v Line: 200
-Info (12128): Elaborating entity "interconexion_irq_mapper" for hierarchy "interconexion_irq_mapper:irq_mapper" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 397
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 460
+Info (12128): Elaborating entity "interconexion_irq_mapper" for hierarchy "interconexion_irq_mapper:irq_mapper" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 369
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 432
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/altera_reset_controller.v Line: 208
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/submodules/altera_reset_controller.v Line: 220
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller_001" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 523
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller_001" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 495
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2017.08.30.08:26:34 Progress: Loading sld1bdf8663/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2017.08.30.08:42:39 Progress: Loading sld1bdf8663/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -8644,18 +8644,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_00n1 File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/db/altsyncram_00n1.tdf Line: 28
 Warning (12241): 33 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "memory_mem_dq[0]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[1]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[2]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[3]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[4]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[5]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[6]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dq[7]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 36
-    Warning (13010): Node "memory_mem_dqs~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 37
-    Warning (13010): Node "memory_mem_dqs_n~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 38
+    Warning (13010): Node "memory_mem_dq[0]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[1]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[2]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[3]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[4]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[5]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[6]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dq[7]~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 22
+    Warning (13010): Node "memory_mem_dqs~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 23
+    Warning (13010): Node "memory_mem_dqs_n~synth" File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sdram_wire_cke" is stuck at VCC File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 46
+    Warning (13410): Pin "sdram_wire_cke" is stuck at VCC File: /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/interconexion/synthesis/interconexion.v Line: 32
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 623 registers lost all their fanouts during netlist optimizations.
 Info (286031): Timing-Driven Synthesis is running on partition "interconexion_hps_hps_io_border:border"
@@ -8663,18 +8663,18 @@ Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub
 Info (144001): Generated suppressed messages file /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/output_files/MultiCore.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 31 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4131 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
+Info (21057): Implemented 4116 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 42 bidirectional pins
     Info (21061): Implemented 3608 logic cells
     Info (21064): Implemented 144 RAM segments
     Info (21066): Implemented 1 delay-locked loops
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 1263 megabytes
-    Info: Processing ended: Wed Aug 30 08:31:08 2017
-    Info: Elapsed time: 00:05:12
-    Info: Total CPU time (on all processors): 00:05:48
+    Info: Peak virtual memory: 1275 megabytes
+    Info: Processing ended: Wed Aug 30 08:47:29 2017
+    Info: Elapsed time: 00:05:35
+    Info: Total CPU time (on all processors): 00:06:14
 
 
 +------------------------------------------+

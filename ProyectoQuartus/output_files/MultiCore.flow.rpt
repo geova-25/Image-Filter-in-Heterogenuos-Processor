@@ -1,5 +1,5 @@
 Flow report for MultiCore
-Wed Aug 30 08:31:21 2017
+Wed Aug 30 08:47:47 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Flow Failed - Wed Aug 30 08:31:21 2017      ;
+; Flow Status                     ; Flow Failed - Wed Aug 30 08:47:47 2017      ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; MultiCore                                   ;
 ; Top-level Entity Name           ; interconexion                               ;
@@ -50,7 +50,7 @@ agreement for further details.
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 1,675 / 32,070 ( 5 % )                      ;
 ; Total registers                 ; 2171                                        ;
-; Total pins                      ; 114 / 457 ( 25 % )                          ;
+; Total pins                      ; 100 / 457 ( 22 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 11,520 / 4,065,280 ( < 1 % )                ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/30/2017 08:26:00 ;
+; Start date & time ; 08/30/2017 08:41:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MultiCore           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------------+---------------+---------------------------------+----------------+
 ; Assignment Name                     ; Value                                                                       ; Default Value ; Entity Name                     ; Section Id     ;
 +-------------------------------------+-----------------------------------------------------------------------------+---------------+---------------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 92587420400369.150410316004052                                              ; --            ; --                              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 92587420400369.150410411905042                                              ; --            ; --                              ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                 ; --            ; --                              ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                   ; <None>        ; --                              ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                                        ; --            ; --                              ; eda_simulation ;
@@ -123,7 +123,7 @@ agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                ; --            ; --                              ; --             ;
 ; SLD_FILE                            ; interconexion/synthesis/interconexion.regmap                                ; --            ; --                              ; --             ;
 ; SLD_FILE                            ; interconexion/synthesis/interconexion.debuginfo                             ; --            ; --                              ; --             ;
-; SLD_INFO                            ; QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1503972935             ; --            ; interconexion                   ; --             ;
+; SLD_INFO                            ; QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1504103610             ; --            ; interconexion                   ; --             ;
 ; SOPCINFO_FILE                       ; interconexion/synthesis/../../interconexion.sopcinfo                        ; --            ; --                              ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                          ; --            ; --                              ; --             ;
 ; TOP_LEVEL_ENTITY                    ; interconexion                                                               ; MultiCore     ; --                              ; --             ;
@@ -135,9 +135,9 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:01     ; 1.0                     ; 1263 MB             ; 00:01:38                           ;
-; Fitter               ; 00:00:12     ; 1.0                     ; 1131 MB             ; 00:00:10                           ;
-; Total                ; 00:01:13     ; --                      ; --                  ; 00:01:48                           ;
+; Analysis & Synthesis ; 00:01:15     ; 1.0                     ; 1275 MB             ; 00:01:55                           ;
+; Fitter               ; 00:00:15     ; 1.0                     ; 1134 MB             ; 00:00:11                           ;
+; Total                ; 00:01:30     ; --                      ; --                  ; 00:02:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

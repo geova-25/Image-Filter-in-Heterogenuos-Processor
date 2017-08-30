@@ -6,20 +6,6 @@ hps_h2f_mpu_events_standbywfe[0] <= interconexion_hps:hps.h2f_mpu_standbywfe
 hps_h2f_mpu_events_standbywfe[1] <= interconexion_hps:hps.h2f_mpu_standbywfe
 hps_h2f_mpu_events_standbywfi[0] <= interconexion_hps:hps.h2f_mpu_standbywfi
 hps_h2f_mpu_events_standbywfi[1] <= interconexion_hps:hps.h2f_mpu_standbywfi
-hps_io_hps_io_gpio_inst_HLGPI0 => hps_io_hps_io_gpio_inst_HLGPI0.IN1
-hps_io_hps_io_gpio_inst_HLGPI1 => hps_io_hps_io_gpio_inst_HLGPI1.IN1
-hps_io_hps_io_gpio_inst_HLGPI2 => hps_io_hps_io_gpio_inst_HLGPI2.IN1
-hps_io_hps_io_gpio_inst_HLGPI3 => hps_io_hps_io_gpio_inst_HLGPI3.IN1
-hps_io_hps_io_gpio_inst_HLGPI4 => hps_io_hps_io_gpio_inst_HLGPI4.IN1
-hps_io_hps_io_gpio_inst_HLGPI5 => hps_io_hps_io_gpio_inst_HLGPI5.IN1
-hps_io_hps_io_gpio_inst_HLGPI6 => hps_io_hps_io_gpio_inst_HLGPI6.IN1
-hps_io_hps_io_gpio_inst_HLGPI7 => hps_io_hps_io_gpio_inst_HLGPI7.IN1
-hps_io_hps_io_gpio_inst_HLGPI8 => hps_io_hps_io_gpio_inst_HLGPI8.IN1
-hps_io_hps_io_gpio_inst_HLGPI9 => hps_io_hps_io_gpio_inst_HLGPI9.IN1
-hps_io_hps_io_gpio_inst_HLGPI10 => hps_io_hps_io_gpio_inst_HLGPI10.IN1
-hps_io_hps_io_gpio_inst_HLGPI11 => hps_io_hps_io_gpio_inst_HLGPI11.IN1
-hps_io_hps_io_gpio_inst_HLGPI12 => hps_io_hps_io_gpio_inst_HLGPI12.IN1
-hps_io_hps_io_gpio_inst_HLGPI13 => hps_io_hps_io_gpio_inst_HLGPI13.IN1
 memory_mem_a[0] <= interconexion_hps:hps.mem_a
 memory_mem_a[1] <= interconexion_hps:hps.mem_a
 memory_mem_a[2] <= interconexion_hps:hps.mem_a
@@ -762,20 +748,6 @@ mem_dqs_n <> interconexion_hps_hps_io:hps_io.mem_dqs_n
 mem_odt <= interconexion_hps_hps_io:hps_io.mem_odt
 mem_dm <= interconexion_hps_hps_io:hps_io.mem_dm
 oct_rzqin => oct_rzqin.IN1
-hps_io_gpio_inst_HLGPI0 => hps_io_gpio_inst_HLGPI0.IN1
-hps_io_gpio_inst_HLGPI1 => hps_io_gpio_inst_HLGPI1.IN1
-hps_io_gpio_inst_HLGPI2 => hps_io_gpio_inst_HLGPI2.IN1
-hps_io_gpio_inst_HLGPI3 => hps_io_gpio_inst_HLGPI3.IN1
-hps_io_gpio_inst_HLGPI4 => hps_io_gpio_inst_HLGPI4.IN1
-hps_io_gpio_inst_HLGPI5 => hps_io_gpio_inst_HLGPI5.IN1
-hps_io_gpio_inst_HLGPI6 => hps_io_gpio_inst_HLGPI6.IN1
-hps_io_gpio_inst_HLGPI7 => hps_io_gpio_inst_HLGPI7.IN1
-hps_io_gpio_inst_HLGPI8 => hps_io_gpio_inst_HLGPI8.IN1
-hps_io_gpio_inst_HLGPI9 => hps_io_gpio_inst_HLGPI9.IN1
-hps_io_gpio_inst_HLGPI10 => hps_io_gpio_inst_HLGPI10.IN1
-hps_io_gpio_inst_HLGPI11 => hps_io_gpio_inst_HLGPI11.IN1
-hps_io_gpio_inst_HLGPI12 => hps_io_gpio_inst_HLGPI12.IN1
-hps_io_gpio_inst_HLGPI13 => hps_io_gpio_inst_HLGPI13.IN1
 
 
 |interconexion|interconexion_hps:hps|interconexion_hps_fpga_interfaces:fpga_interfaces
@@ -1431,20 +1403,6 @@ mem_dqs_n <> interconexion_hps_hps_io_border:border.mem_dqs_n
 mem_odt <= interconexion_hps_hps_io_border:border.mem_odt
 mem_dm <= interconexion_hps_hps_io_border:border.mem_dm
 oct_rzqin => oct_rzqin.IN1
-hps_io_gpio_inst_HLGPI0 => hps_io_gpio_inst_HLGPI0.IN1
-hps_io_gpio_inst_HLGPI1 => hps_io_gpio_inst_HLGPI1.IN1
-hps_io_gpio_inst_HLGPI2 => hps_io_gpio_inst_HLGPI2.IN1
-hps_io_gpio_inst_HLGPI3 => hps_io_gpio_inst_HLGPI3.IN1
-hps_io_gpio_inst_HLGPI4 => hps_io_gpio_inst_HLGPI4.IN1
-hps_io_gpio_inst_HLGPI5 => hps_io_gpio_inst_HLGPI5.IN1
-hps_io_gpio_inst_HLGPI6 => hps_io_gpio_inst_HLGPI6.IN1
-hps_io_gpio_inst_HLGPI7 => hps_io_gpio_inst_HLGPI7.IN1
-hps_io_gpio_inst_HLGPI8 => hps_io_gpio_inst_HLGPI8.IN1
-hps_io_gpio_inst_HLGPI9 => hps_io_gpio_inst_HLGPI9.IN1
-hps_io_gpio_inst_HLGPI10 => hps_io_gpio_inst_HLGPI10.IN1
-hps_io_gpio_inst_HLGPI11 => hps_io_gpio_inst_HLGPI11.IN1
-hps_io_gpio_inst_HLGPI12 => hps_io_gpio_inst_HLGPI12.IN1
-hps_io_gpio_inst_HLGPI13 => hps_io_gpio_inst_HLGPI13.IN1
 
 
 |interconexion|interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border
@@ -1485,20 +1443,6 @@ mem_dqs_n[0] <> hps_sdram:hps_sdram_inst.mem_dqs_n
 mem_odt[0] <= hps_sdram:hps_sdram_inst.mem_odt
 mem_dm[0] <= hps_sdram:hps_sdram_inst.mem_dm
 oct_rzqin[0] => oct_rzqin[0].IN1
-hps_io_gpio_inst_HLGPI0[0] => gpio_inst.I_GPIO2_PORTA_I13
-hps_io_gpio_inst_HLGPI1[0] => gpio_inst.I_GPIO2_PORTA_I14
-hps_io_gpio_inst_HLGPI2[0] => gpio_inst.I_GPIO2_PORTA_I15
-hps_io_gpio_inst_HLGPI3[0] => gpio_inst.I_GPIO2_PORTA_I16
-hps_io_gpio_inst_HLGPI4[0] => gpio_inst.I_GPIO2_PORTA_I17
-hps_io_gpio_inst_HLGPI5[0] => gpio_inst.I_GPIO2_PORTA_I18
-hps_io_gpio_inst_HLGPI6[0] => gpio_inst.I_GPIO2_PORTA_I19
-hps_io_gpio_inst_HLGPI7[0] => gpio_inst.I_GPIO2_PORTA_I20
-hps_io_gpio_inst_HLGPI8[0] => gpio_inst.I_GPIO2_PORTA_I21
-hps_io_gpio_inst_HLGPI9[0] => gpio_inst.I_GPIO2_PORTA_I22
-hps_io_gpio_inst_HLGPI10[0] => gpio_inst.I_GPIO2_PORTA_I23
-hps_io_gpio_inst_HLGPI11[0] => gpio_inst.I_GPIO2_PORTA_I24
-hps_io_gpio_inst_HLGPI12[0] => gpio_inst.I_GPIO2_PORTA_I25
-hps_io_gpio_inst_HLGPI13[0] => gpio_inst.I_GPIO2_PORTA_I26
 
 
 |interconexion|interconexion_hps:hps|interconexion_hps_hps_io:hps_io|interconexion_hps_hps_io_border:border|hps_sdram:hps_sdram_inst
