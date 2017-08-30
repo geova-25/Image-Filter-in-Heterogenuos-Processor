@@ -44,10 +44,10 @@
 
 module interconexion_mm_interconnect_0_router_006_default_decode
   #(
-     parameter DEFAULT_CHANNEL = -1,
-               DEFAULT_WR_CHANNEL = 0,
-               DEFAULT_RD_CHANNEL = 1,
-               DEFAULT_DESTID = 0 
+     parameter DEFAULT_CHANNEL = 0,
+               DEFAULT_WR_CHANNEL = -1,
+               DEFAULT_RD_CHANNEL = -1,
+               DEFAULT_DESTID = 1 
    )
   (output [100 - 99 : 0] default_destination_id,
    output [4-1 : 0] default_wr_channel,
@@ -158,8 +158,7 @@ module interconexion_mm_interconnect_0_router_006
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [4-1 : 0] default_rd_channel;
-    wire [4-1 : 0] default_wr_channel;
+    wire [4-1 : 0] default_src_channel;
 
 
 
@@ -175,14 +174,14 @@ module interconexion_mm_interconnect_0_router_006
 
     interconexion_mm_interconnect_0_router_006_default_decode the_default_decode(
       .default_destination_id (),
-      .default_wr_channel   (default_wr_channel),
-      .default_rd_channel   (default_rd_channel),
-      .default_src_channel  ()
+      .default_wr_channel   (),
+      .default_rd_channel   (),
+      .default_src_channel  (default_src_channel)
     );
 
     always @* begin
         src_data    = sink_data;
-        src_channel = write_transaction ? default_wr_channel : default_rd_channel;
+        src_channel = default_src_channel;
 
         // --------------------------------------------------
         // DestinationID Decoder
@@ -192,12 +191,16 @@ module interconexion_mm_interconnect_0_router_006
 
 
 
+        if (destid == 1 ) begin
+            src_channel = 4'b001;
+        end
+
         if (destid == 0  && write_transaction) begin
-            src_channel = 4'b01;
+            src_channel = 4'b010;
         end
 
         if (destid == 0  && read_transaction) begin
-            src_channel = 4'b10;
+            src_channel = 4'b100;
         end
 
 
