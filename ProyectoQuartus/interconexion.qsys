@@ -112,13 +112,20 @@
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="hps_h2f_gp" internal="hps.h2f_gp" />
+ <interface
+   name="hps_h2f_mpu_events"
+   internal="hps.h2f_mpu_events"
+   type="conduit"
+   dir="end" />
  <interface name="hps_io" internal="hps.hps_io" />
+ <interface name="memory" internal="hps.memory" type="conduit" dir="end" />
  <interface
    name="pio_0_external_connection"
    internal="pio_0.external_connection"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <module name="clk_0" kind="clock_source" version="16.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
