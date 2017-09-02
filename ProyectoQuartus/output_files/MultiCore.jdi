@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="630a4930e64bb106700a"/>
+    <hash md5_digest_80b="8e788467102f58ff4990"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="MultiCore.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="" name="">
       <assignment_values>
-        <assignment_value text="QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1504116623"/>
+        <assignment_value text="QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1504317216"/>
       </assignment_values>
       <parameters/>
     </sld_info>

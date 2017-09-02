@@ -8,6 +8,7 @@
    <inputclock preferredWidth="166" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Project,Library,Library/Basic Functions,Library/Basic Functions/On Chip Memory" />
  <window width="1881" height="1084" x="39" y="-4" />
 </preferences>

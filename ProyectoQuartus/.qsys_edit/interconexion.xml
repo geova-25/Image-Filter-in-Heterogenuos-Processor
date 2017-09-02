@@ -832,7 +832,7 @@
 										<fullscreen-action>false</fullscreen-action>
 										<node nodeId="1372710005721" orientation="HORIZONTAL" divider="0.2028023598820059">
 											<node nodeId="1375985011088" orientation="VERTICAL" divider="0.504054054054054">
-												<leaf id="0" nodeId="1375985003630">
+												<leaf id="1" nodeId="1375985003630">
 													<placeholders>
 														<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
 														<placeholder>dock.single.IP\ Catalog</placeholder>
@@ -858,7 +858,7 @@
 														</entry>
 													</placeholder-map>
 												</leaf>
-												<leaf id="1" nodeId="1375985011087">
+												<leaf id="0" nodeId="1375985011087">
 													<placeholders>
 														<placeholder>dock.single.Hierarchy</placeholder>
 													</placeholders>
@@ -885,7 +885,7 @@
 											<node nodeId="1372710005725" orientation="VERTICAL" divider="0.6034214618973561">
 												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.7643594365689544">
 													<node nodeId="1372710005733" orientation="VERTICAL" divider="0.75">
-														<node nodeId="1503967971829" orientation="VERTICAL" divider="0.4190064794816414">
+														<node nodeId="1503967971829" orientation="VERTICAL" divider="0.4852255054432348">
 															<leaf id="-1" nodeId="1372710005735">
 																<placeholders>
 																	<placeholder>dock.single.Connections</placeholder>
@@ -945,7 +945,7 @@
 																	</entry>
 																</placeholder-map>
 															</leaf>
-															<node nodeId="1503971229890" orientation="VERTICAL" divider="0.6964824120603015">
+															<node nodeId="1503971229890" orientation="VERTICAL" divider="0.5816485225505443">
 																<leaf id="2" nodeId="1503967971817">
 																	<placeholders>
 																		<placeholder>dock.single.System\ Contents</placeholder>
@@ -1036,16 +1036,6 @@
 							</adjacent>
 							<children ignore="false">
 								<child>
-									<layout factory="predefined" placeholder="dock.single.IP\ Catalog">
-										<replacement id="dockablesingle IP Catalog"/>
-										<delegate id="delegate_ccontrol backup factory id">
-											<id>IP Catalog</id>
-											<area/>
-										</delegate>
-									</layout>
-									<children ignore="false"/>
-								</child>
-								<child>
 									<layout factory="delegate_StackDockStationFactory">
 										<selected>0</selected>
 										<placeholders>
@@ -1103,6 +1093,16 @@
 											<children ignore="false"/>
 										</child>
 									</children>
+								</child>
+								<child>
+									<layout factory="predefined" placeholder="dock.single.IP\ Catalog">
+										<replacement id="dockablesingle IP Catalog"/>
+										<delegate id="delegate_ccontrol backup factory id">
+											<id>IP Catalog</id>
+											<area/>
+										</delegate>
+									</layout>
+									<children ignore="false"/>
 								</child>
 								<child>
 									<layout factory="predefined" placeholder="dock.single.System\ Contents">
@@ -1251,17 +1251,13 @@
 								<property factory="SplitDockPlaceholderProperty">
 									<placeholder>dock.single.Address\ Map</placeholder>
 									<backup-path>
-										<node location="RIGHT" size="0.775811209439528" id="1372710005721"/>
-										<node location="TOP" size="0.7231726283048211" id="1372710005725"/>
-										<node location="LEFT" size="0.6762114537444934" id="1372710005727"/>
+										<node location="RIGHT" size="0.7971976401179941" id="1372710005721"/>
+										<node location="TOP" size="0.6034214618973561" id="1372710005725"/>
+										<node location="LEFT" size="0.7643594365689544" id="1372710005727"/>
 										<node location="TOP" size="0.75" id="1372710005733"/>
-										<node location="TOP" size="0.4190064794816414" id="1503967971829"/>
+										<node location="TOP" size="0.4852255054432348" id="1503967971829"/>
 										<leaf id="1372710005735"/>
 									</backup-path>
-								</property>
-								<property factory="StackDockPropertyFactory">
-									<index>0</index>
-									<placeholder>dock.single.Address\ Map</placeholder>
 								</property>
 							</location>
 							<layout>

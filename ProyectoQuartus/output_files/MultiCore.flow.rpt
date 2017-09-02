@@ -1,5 +1,5 @@
 Flow report for MultiCore
-Wed Aug 30 12:42:24 2017
+Fri Sep  1 20:13:03 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Aug 30 12:42:24 2017       ;
+; Flow Status                     ; Successful - Fri Sep  1 20:13:03 2017       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; MultiCore                                   ;
 ; Top-level Entity Name           ; interconexion                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,803 / 32,070 ( 6 % )                      ;
-; Total registers                 ; 2528                                        ;
+; Logic utilization (in ALMs)     ; 1,775 / 32,070 ( 6 % )                      ;
+; Total registers                 ; 2506                                        ;
 ; Total pins                      ; 108 / 457 ( 24 % )                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 11,520 / 4,065,280 ( < 1 % )                ;
+; Total block memory bits         ; 44,288 / 4,065,280 ( 1 % )                  ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/30/2017 12:35:03 ;
+; Start date & time ; 09/01/2017 19:58:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MultiCore           ;
 +-------------------+---------------------+
@@ -79,23 +79,23 @@ agreement for further details.
 +---------------------------------------+-----------------------------------------------------------------------------+---------------+---------------------------------+----------------+
 ; Assignment Name                       ; Value                                                                       ; Default Value ; Entity Name                     ; Section Id     ;
 +---------------------------------------+-----------------------------------------------------------------------------+---------------+---------------------------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 189302540743885.150411809924618                                             ; --            ; --                              ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 92587420400369.150431752205389                                              ; --            ; --                              ; --             ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                          ; Off           ; --                              ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                                                                 ; --            ; --                              ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)                                                   ; <None>        ; --                              ; --             ;
 ; EDA_TIME_SCALE                        ; 1 ps                                                                        ; --            ; --                              ; eda_simulation ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/system.pre.h                   ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; interconexion_hps_hps_io_border ; --             ;
-; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_auto.pre.h           ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; interconexion_hps_hps_io_border ; --             ;
+; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; HPS_ISW_FILE                          ; interconexion/synthesis/submodules/hps.pre.xml                              ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; HPS_PARTITION                         ; On                                                                          ; --            ; interconexion_hps_hps_io_border ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                                                          ; --            ; --                              ; --             ;
@@ -103,18 +103,18 @@ agreement for further details.
 ; MISC_FILE                             ; interconexion/synthesis/../interconexion.cmp                                ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/interconexion_hps_hps.svd                           ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/../../interconexion.qsys                            ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/system.pre.h                   ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; --                              ; --             ;
-; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_auto.pre.h           ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; --                              ; --             ;
+; MISC_FILE                             ; interconexion/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; --                              ; --             ;
 ; MISC_FILE                             ; interconexion/synthesis/submodules/hps.pre.xml                              ; --            ; --                              ; --             ;
 ; PARTITION_COLOR                       ; -- (Not supported for targeted family)                                      ; --            ; interconexion                   ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL   ; -- (Not supported for targeted family)                                      ; --            ; interconexion                   ; Top            ;
@@ -124,7 +124,7 @@ agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY              ; output_files                                                                ; --            ; --                              ; --             ;
 ; SLD_FILE                              ; interconexion/synthesis/interconexion.regmap                                ; --            ; --                              ; --             ;
 ; SLD_FILE                              ; interconexion/synthesis/interconexion.debuginfo                             ; --            ; --                              ; --             ;
-; SLD_INFO                              ; QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1504116623             ; --            ; interconexion                   ; --             ;
+; SLD_INFO                              ; QSYS_NAME interconexion HAS_SOPCINFO 1 GENERATION_ID 1504317216             ; --            ; interconexion                   ; --             ;
 ; SOPCINFO_FILE                         ; interconexion/synthesis/../../interconexion.sopcinfo                        ; --            ; --                              ; --             ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                          ; --            ; --                              ; --             ;
 ; TOP_LEVEL_ENTITY                      ; interconexion                                                               ; MultiCore     ; --                              ; --             ;
@@ -137,26 +137,26 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:46     ; 1.0                     ; 1307 MB             ; 00:01:16                           ;
-; Fitter                    ; 00:02:04     ; 1.1                     ; 3117 MB             ; 00:03:20                           ;
-; Assembler                 ; 00:00:14     ; 1.0                     ; 1034 MB             ; 00:00:12                           ;
-; TimeQuest Timing Analyzer ; 00:00:37     ; 1.2                     ; 1796 MB             ; 00:00:41                           ;
-; EDA Netlist Writer        ; 00:00:06     ; 1.0                     ; 1252 MB             ; 00:00:06                           ;
-; Total                     ; 00:03:47     ; --                      ; --                  ; 00:05:35                           ;
+; Analysis & Synthesis      ; 00:01:50     ; 1.0                     ; 1308 MB             ; 00:02:04                           ;
+; Fitter                    ; 00:05:59     ; 1.0                     ; 3112 MB             ; 00:04:58                           ;
+; Assembler                 ; 00:00:20     ; 1.0                     ; 1028 MB             ; 00:00:15                           ;
+; TimeQuest Timing Analyzer ; 00:00:48     ; 1.2                     ; 1796 MB             ; 00:00:52                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 1246 MB             ; 00:00:07                           ;
+; Total                     ; 00:09:05     ; --                      ; --                  ; 00:08:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                             ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; giovanni-CE      ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
-; Fitter                    ; giovanni-CE      ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
-; Assembler                 ; giovanni-CE      ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; giovanni-CE      ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; giovanni-CE      ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
-+---------------------------+------------------+----------------+------------+----------------+
++------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                      ;
++---------------------------+---------------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname          ; OS Name        ; OS Version ; Processor type ;
++---------------------------+---------------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; sebastian95-Inspiron-3537 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; sebastian95-Inspiron-3537 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; sebastian95-Inspiron-3537 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; sebastian95-Inspiron-3537 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; sebastian95-Inspiron-3537 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
++---------------------------+---------------------------+----------------+------------+----------------+
 
 
 ------------

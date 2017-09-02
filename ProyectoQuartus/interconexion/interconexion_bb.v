@@ -1,8 +1,10 @@
 
 module interconexion (
 	clk_clk,
-	pio_0_external_connection_export,
-	reset_reset_n,
+	hps_h2f_mpu_events_eventi,
+	hps_h2f_mpu_events_evento,
+	hps_h2f_mpu_events_standbywfe,
+	hps_h2f_mpu_events_standbywfi,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -19,6 +21,8 @@ module interconexion (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
+	pio_0_external_connection_export,
+	reset_reset_n,
 	sdram_wire_addr,
 	sdram_wire_ba,
 	sdram_wire_cas_n,
@@ -27,15 +31,13 @@ module interconexion (
 	sdram_wire_dq,
 	sdram_wire_dqm,
 	sdram_wire_ras_n,
-	sdram_wire_we_n,
-	hps_h2f_mpu_events_eventi,
-	hps_h2f_mpu_events_evento,
-	hps_h2f_mpu_events_standbywfe,
-	hps_h2f_mpu_events_standbywfi);	
+	sdram_wire_we_n);	
 
 	input		clk_clk;
-	output	[7:0]	pio_0_external_connection_export;
-	input		reset_reset_n;
+	input		hps_h2f_mpu_events_eventi;
+	output		hps_h2f_mpu_events_evento;
+	output	[1:0]	hps_h2f_mpu_events_standbywfe;
+	output	[1:0]	hps_h2f_mpu_events_standbywfi;
 	output	[12:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -52,6 +54,8 @@ module interconexion (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
+	output	[7:0]	pio_0_external_connection_export;
+	input		reset_reset_n;
 	output	[11:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
 	output		sdram_wire_cas_n;
@@ -61,8 +65,4 @@ module interconexion (
 	output	[3:0]	sdram_wire_dqm;
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
-	input		hps_h2f_mpu_events_eventi;
-	output		hps_h2f_mpu_events_evento;
-	output	[1:0]	hps_h2f_mpu_events_standbywfe;
-	output	[1:0]	hps_h2f_mpu_events_standbywfi;
 endmodule

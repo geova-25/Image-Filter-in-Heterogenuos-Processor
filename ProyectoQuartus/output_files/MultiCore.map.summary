@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Aug 30 12:39:12 2017
+Analysis & Synthesis Status : Successful - Fri Sep  1 20:04:45 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : MultiCore
 Top-level Entity Name : interconexion
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2379
+Total registers : 2371
 Total pins : 108
 Total virtual pins : 0
-Total block memory bits : 11,520
+Total block memory bits : 44,288
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
