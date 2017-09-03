@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios' in SOPC Builder design 'multicore'
 # SOPC Builder design path: ../../multicore.sopcinfo
 #
-# Generated: Sat Sep 02 20:38:23 CST 2017
+# Generated: Sun Sep 03 16:24:37 CST 2017
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,7 +47,7 @@
 # by allowing GDB to cache memory contents on the host.
 
 # sdram
-memory 0x4000000 0x8000000 cache
+memory 0x0 0x4000000 cache
 
 # onchip
-memory 0x8001000 0x8002000 cache
+memory 0x4002000 0x4003000 cache

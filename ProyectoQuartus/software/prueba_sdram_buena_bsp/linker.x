@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'multicore'
  * SOPC Builder design path: ../../multicore.sopcinfo
  *
- * Generated: Sat Sep 02 20:38:23 CST 2017
+ * Generated: Sun Sep 03 16:24:37 CST 2017
  */
 
 /*
@@ -50,14 +50,14 @@
 
 MEMORY
 {
-    sdram : ORIGIN = 0x4000000, LENGTH = 67108864
-    reset : ORIGIN = 0x8001000, LENGTH = 32
-    onchip : ORIGIN = 0x8001020, LENGTH = 4064
+    sdram : ORIGIN = 0x0, LENGTH = 67108864
+    reset : ORIGIN = 0x4002000, LENGTH = 32
+    onchip : ORIGIN = 0x4002020, LENGTH = 4064
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_sdram = 0x4000000;
-__alt_mem_onchip = 0x8001000;
+__alt_mem_sdram = 0x0;
+__alt_mem_onchip = 0x4002000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -93,7 +93,7 @@ SECTIONS
      *
      */
 
-    .exceptions : AT ( 0x4000000 )
+    .exceptions : AT ( 0x0 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -407,7 +407,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x8000000;
+__alt_data_end = 0x4000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -423,4 +423,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x8000000 );
+PROVIDE( __alt_heap_limit    = 0x4000000 );

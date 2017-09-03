@@ -39,7 +39,7 @@ module multicore (
 	wire  [31:0] nios_data_master_readdata;                                   // mm_interconnect_0:nios_data_master_readdata -> nios:d_readdata
 	wire         nios_data_master_waitrequest;                                // mm_interconnect_0:nios_data_master_waitrequest -> nios:d_waitrequest
 	wire         nios_data_master_debugaccess;                                // nios:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios_data_master_debugaccess
-	wire  [27:0] nios_data_master_address;                                    // nios:d_address -> mm_interconnect_0:nios_data_master_address
+	wire  [26:0] nios_data_master_address;                                    // nios:d_address -> mm_interconnect_0:nios_data_master_address
 	wire   [3:0] nios_data_master_byteenable;                                 // nios:d_byteenable -> mm_interconnect_0:nios_data_master_byteenable
 	wire         nios_data_master_read;                                       // nios:d_read -> mm_interconnect_0:nios_data_master_read
 	wire         nios_data_master_write;                                      // nios:d_write -> mm_interconnect_0:nios_data_master_write
@@ -82,7 +82,7 @@ module multicore (
 	wire         hps_h2f_axi_master_rvalid;                                   // mm_interconnect_0:hps_h2f_axi_master_rvalid -> hps:h2f_RVALID
 	wire  [31:0] nios_instruction_master_readdata;                            // mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
 	wire         nios_instruction_master_waitrequest;                         // mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
-	wire  [27:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
+	wire  [26:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
 	wire         nios_instruction_master_read;                                // nios:i_read -> mm_interconnect_0:nios_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;    // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata

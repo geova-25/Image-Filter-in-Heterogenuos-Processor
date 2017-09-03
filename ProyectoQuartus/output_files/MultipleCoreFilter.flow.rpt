@@ -1,5 +1,5 @@
 Flow report for MultipleCoreFilter
-Sat Sep  2 22:36:37 2017
+Sun Sep  3 16:22:03 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Sep  2 22:36:37 2017       ;
+; Flow Status                     ; Successful - Sun Sep  3 16:22:03 2017       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; MultipleCoreFilter                          ;
 ; Top-level Entity Name           ; multicore                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,696 / 32,070 ( 5 % )                      ;
-; Total registers                 ; 2287                                        ;
+; Logic utilization (in ALMs)     ; 1,898 / 32,070 ( 6 % )                      ;
+; Total registers                 ; 2487                                        ;
 ; Total pins                      ; 86 / 457 ( 19 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 44,160 / 4,065,280 ( 1 % )                  ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2017 22:25:54 ;
+; Start date & time ; 09/03/2017 16:08:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MultipleCoreFilter  ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +---------------------------------------+-------------------------------------------------------------------------+--------------------+-----------------------------+----------------+
 ; Assignment Name                       ; Value                                                                   ; Default Value      ; Entity Name                 ; Section Id     ;
 +---------------------------------------+-------------------------------------------------------------------------+--------------------+-----------------------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 92587420400369.150441275017918                                          ; --                 ; --                          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 92587420400369.150447650904421                                          ; --                 ; --                          ; --             ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                      ; Off                ; --                          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                                                             ; --                 ; --                          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)                                               ; <None>             ; --                          ; --             ;
@@ -124,7 +124,7 @@ agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY              ; output_files                                                            ; --                 ; --                          ; --             ;
 ; SLD_FILE                              ; multicore/synthesis/multicore.regmap                                    ; --                 ; --                          ; --             ;
 ; SLD_FILE                              ; multicore/synthesis/multicore.debuginfo                                 ; --                 ; --                          ; --             ;
-; SLD_INFO                              ; QSYS_NAME multicore HAS_SOPCINFO 1 GENERATION_ID 1504411974             ; --                 ; multicore                   ; --             ;
+; SLD_INFO                              ; QSYS_NAME multicore HAS_SOPCINFO 1 GENERATION_ID 1504476345             ; --                 ; multicore                   ; --             ;
 ; SOPCINFO_FILE                         ; multicore/synthesis/../../multicore.sopcinfo                            ; --                 ; --                          ; --             ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                      ; --                 ; --                          ; --             ;
 ; TOP_LEVEL_ENTITY                      ; multicore                                                               ; MultipleCoreFilter ; --                          ; --             ;
@@ -137,12 +137,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:20     ; 1.0                     ; 1298 MB             ; 00:02:03                           ;
-; Fitter                    ; 00:03:22     ; 1.1                     ; 3145 MB             ; 00:03:50                           ;
-; Assembler                 ; 00:00:19     ; 1.0                     ; 1029 MB             ; 00:00:15                           ;
-; TimeQuest Timing Analyzer ; 00:00:45     ; 1.2                     ; 1807 MB             ; 00:00:50                           ;
-; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 1340 MB             ; 00:00:08                           ;
-; Total                     ; 00:05:54     ; --                      ; --                  ; 00:07:06                           ;
+; Analysis & Synthesis      ; 00:01:22     ; 1.0                     ; 1325 MB             ; 00:01:47                           ;
+; Fitter                    ; 00:05:41     ; 1.0                     ; 3181 MB             ; 00:05:08                           ;
+; Assembler                 ; 00:00:21     ; 1.0                     ; 1031 MB             ; 00:00:16                           ;
+; TimeQuest Timing Analyzer ; 00:00:53     ; 1.2                     ; 1813 MB             ; 00:00:55                           ;
+; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 1350 MB             ; 00:00:09                           ;
+; Total                     ; 00:08:27     ; --                      ; --                  ; 00:08:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
