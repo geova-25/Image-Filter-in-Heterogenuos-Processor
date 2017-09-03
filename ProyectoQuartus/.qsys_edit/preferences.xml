@@ -3,12 +3,11 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces" showResetDomains="0" showClockDomains="0">
   <columns>
-   <connections preferredWidth="143" />
+   <connections preferredWidth="191" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="166" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification,Project,Library/Interface Protocols,Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Interface Protocols/Serial,Library,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance" />
+ <library expandedCategories="Library,Project" />
  <window width="1366" height="741" x="0" y="27" />
 </preferences>

@@ -1,0 +1,714 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/simulation/modelsim
+valtera_avalon_sc_fifo
+Z1 !s110 1504390704
+!i10b 1
+!s100 4mK@em][G=j]om3zJIhOc0
+ImJ80il^<hJSnTYFaGoQ[E3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1504388953
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_sc_fifo.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_sc_fifo.v
+Z3 L0 21
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1504390704.000000
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i113 1
+Z6 o-vlog01compat -work multicore
+Z7 !s92 -vlog01compat -work multicore +incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules
+Z8 tCvgOpt 0
+valtera_reset_controller
+R1
+!i10b 1
+!s100 z[H_hRO9gO=:^2E3_jWH03
+Ig=:oh_3f=YkA<B10QW@8F1
+R2
+R0
+Z9 w1504388947
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_controller.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_controller.v
+L0 42
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_controller.v|
+!i113 1
+R6
+R7
+R8
+valtera_reset_synchronizer
+R1
+!i10b 1
+!s100 oWLYmSO[EOX[G0PgQhZ2=0
+I9BZd1H]TLS3J8kWWg8hol0
+R2
+R0
+R9
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_synchronizer.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_synchronizer.v
+L0 24
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_reset_synchronizer.v|
+!i113 1
+R6
+R7
+R8
+vmulticore
+R1
+!i10b 1
+!s100 >IXDnab5fio6TDoaDX6e^3
+I4YFdAP5nZ:zRITC7^jNWi1
+R2
+R0
+w1504388944
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/multicore.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/multicore.v
+L0 6
+R4
+r1
+!s85 0
+31
+!s108 1504390703.000000
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/multicore.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/multicore.v|
+!i113 1
+R6
+!s92 -vlog01compat -work multicore +incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis
+R8
+vmulticore_mm_interconnect_0
+R1
+!i10b 1
+!s100 MY9Udm>S]7E;;jIW?KOEW0
+I`UleVXDOWGT`39FG@m1?k0
+R2
+R0
+R9
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_mm_interconnect_0_avalon_st_adapter
+R1
+!i10b 1
+!s100 ?FL2H4Vj@56a5:SJJ`j6e2
+I7EbcLc=NCD@N2GNE9N1@J1
+R2
+R0
+Z10 w1504388954
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_mm_interconnect_0_avalon_st_adapter_004
+R1
+!i10b 1
+!s100 ^z6;<Def?F@D3Dm<;V33a3
+IUQ9PABLV`:b3caP9zC<Za1
+R2
+R0
+R10
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter_004.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter_004.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter_004.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_mm_interconnect_0_avalon_st_adapter_004.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_nios
+R1
+!i10b 1
+!s100 BU_?Q?k<NO0WZXNF_6Y;03
+Ign3<4]2>E:ce18INnoD3;3
+R2
+R0
+Z11 w1504388945
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu
+R1
+!i10b 1
+!s100 >2OI4fH;Q^KNV4cJDdF5S1
+ID3O<h8Qag_E^cfkfSl<Fe0
+R2
+R0
+Z12 w1504388951
+Z13 8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios_cpu.v
+Z14 F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios_cpu.v
+L0 2834
+R4
+r1
+!s85 0
+31
+R5
+Z15 !s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios_cpu.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_nios_cpu.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_avalon_reg
+R1
+!i10b 1
+!s100 ]zT=dF4flOkPN>zmgZ@Zf0
+IZJM`6317UDL8kOSD?B0:^1
+R2
+R0
+R12
+R13
+R14
+L0 2023
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci
+R1
+!i10b 1
+!s100 O]a@B[FCanLfHkWXWKCjd1
+I3D;mL63>6j0h@CS:7fWDB1
+R2
+R0
+R12
+R13
+R14
+L0 2362
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_break
+R1
+!i10b 1
+!s100 _2JEh1Kak4=kk][?40QU70
+IO3chT;039az_C]dQ51Xkz1
+R2
+R0
+R12
+R13
+R14
+L0 295
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_compute_input_tm_cnt
+R1
+!i10b 1
+!s100 =jC4J<GBmFU9K^WM@hB601
+Ij52n9`69^IFcQ`SBaN0a]3
+R2
+R0
+R12
+R13
+R14
+L0 1265
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_dbrk
+R1
+!i10b 1
+!s100 zOJTNhDUdE429ZSzz8klP1
+I:>=cQL=i3^F5`E?n9gAE_1
+R2
+R0
+R12
+R13
+R14
+L0 795
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_debug
+R1
+!i10b 1
+!s100 _CK0n8D[6WZ;kgO4HJJ9E1
+I4;TLj6[0>Z343FM87:=d52
+R2
+R0
+R12
+R13
+R14
+L0 153
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_dtrace
+R1
+!i10b 1
+!s100 8:S`5X2M;eZ@eGh55Jg9G2
+I>6Mn@DUb4HATEHM?YiYZm1
+R2
+R0
+R12
+R13
+R14
+L0 1183
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_fifo
+R1
+!i10b 1
+!s100 N=dcfQkc9o7nB^dPEZio43
+IZY]fUmPHgT2[d^2@1Q8eC0
+R2
+R0
+R12
+R13
+R14
+L0 1427
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_fifo_cnt_inc
+R1
+!i10b 1
+!s100 ^z<PY7O23W5:h6P^83d851
+IO1M]co=HK:VWZf[W?I19f1
+R2
+R0
+R12
+R13
+R14
+L0 1380
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_fifo_wrptr_inc
+R1
+!i10b 1
+!s100 ;_SP:F<Z?;P^ea;RkRzV=2
+IKZefZD<PFPLzHmzoh5<FH2
+R2
+R0
+R12
+R13
+R14
+L0 1337
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_im
+R1
+!i10b 1
+!s100 KzSX`c@0<DUal[O93]2Ag1
+I]VS8JGGa]1Z6fVK8Sc1F12
+R2
+R0
+R12
+R13
+R14
+L0 1936
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_itrace
+R1
+!i10b 1
+!s100 7icdPfkcF:i4ee;=CFK;`2
+IR:NnfC@;AgE;JP5Qh6b<E0
+R2
+R0
+R12
+R13
+R14
+L0 982
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_pib
+R1
+!i10b 1
+!s100 =K2fU;YQR0a?K]]PO?]MW2
+I@fJTflLedCY2UC0Q1<5S`0
+R2
+R0
+R12
+R13
+R14
+L0 1913
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_td_mode
+R1
+!i10b 1
+!s100 Z>;B4WWRWHFRP;XQ;NRmF2
+I8XlaZS5HkoCDB6a:z3oTI1
+R2
+R0
+R12
+R13
+R14
+L0 1115
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_oci_xbrk
+R1
+!i10b 1
+!s100 hWNjZY2SQ6GgLzVakZJ]l3
+IRN:YeDQR7B4UOWU]>3=RT3
+R2
+R0
+R12
+R13
+R14
+L0 588
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_ocimem
+R1
+!i10b 1
+!s100 >UZbZ7^j8Vd;O4`XiiYgL0
+IFVXz@O4:SEV8VdP:7FYQ@0
+R2
+R0
+R12
+R13
+R14
+L0 2181
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_nios2_performance_monitors
+R1
+!i10b 1
+!s100 JeIG9T7HE2^4UHU7mXoco1
+INRZo9o?SC4i>5J20>4[OO3
+R2
+R0
+R12
+R13
+R14
+L0 2006
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_ociram_sp_ram_module
+R1
+!i10b 1
+!s100 <kzJMN^>?Ue28MVQX_X[W2
+I?2hFQbV`odJS^K@e8o8jm3
+R2
+R0
+R12
+R13
+R14
+L0 2116
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_register_bank_a_module
+R1
+!i10b 1
+!s100 N<>C^4RJ8l6lBSTX2eL@70
+I[_E=3^2JF<zBT0_=U?2X72
+R2
+R0
+R12
+R13
+R14
+R3
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_nios_cpu_register_bank_b_module
+R1
+!i10b 1
+!s100 ZJl1oc76IO<<8[h1`81[M3
+I3f4z_UQ4lMUfh2YQQ>0fZ3
+R2
+R0
+R12
+R13
+R14
+L0 87
+R4
+r1
+!s85 0
+31
+R5
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vmulticore_onchip
+R1
+!i10b 1
+!s100 M`C;D4_eE2iR3Tl7e?fYm1
+I;_@c6Cl2QcGbOX_o?_MOd2
+R2
+R0
+R11
+8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_onchip.v
+F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_onchip.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_onchip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_onchip.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_sdram
+R1
+!i10b 1
+!s100 4=BoiB]=VV7P>bXiJbQfM2
+IE`izhFU@l>Ke1hi>d]V?`2
+R2
+R0
+Z17 w1504388946
+Z18 8/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_sdram.v
+Z19 F/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_sdram.v
+L0 159
+R4
+r1
+!s85 0
+31
+R5
+Z20 !s107 /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_sdram.v|
+Z21 !s90 -reportprogress|300|-vlog01compat|-work|multicore|+incdir+/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules|/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/multicore_sdram.v|
+!i113 1
+R6
+R7
+R8
+vmulticore_sdram_input_efifo_module
+R1
+!i10b 1
+!s100 B;0gUE9R;M9HM4U1MoRf41
+IX]N;bO31SWfO@3F9eJTL=1
+R2
+R0
+R17
+R18
+R19
+R3
+R4
+r1
+!s85 0
+31
+R5
+R20
+R21
+!i113 1
+R6
+R7
+R8

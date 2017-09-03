@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="alt_sld_fab" kind="alt_sld_fab" version="1.0" fabric="QSYS">
  <!-- Format version 16.1 196 (Future versions may contain additional information.) -->
- <!-- 2017.09.02.13:05:20 -->
+ <!-- 2017.09.02.20:32:25 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
@@ -56,7 +56,7 @@
 the requested settings for a module instance. -->
   <parameter name="DESIGN_HASH">
    <type>java.lang.String</type>
-   <value>3954ac80b7cbb92a4b2c</value>
+   <value>6fe9ce37de6bce97a525</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -104,7 +104,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="EP_INFOS">
    <type>java.lang.String</type>
-   <value>{hpath {multicore_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:multicore_jtag_uart_0_alt_jtag_atlantic|altera_sld_agent_endpoint:inst|altera_fabric_endpoint:ep} } {hpath {multicore_nios2_gen2_0:nios2_gen2_0|multicore_nios2_gen2_0_cpu:cpu|multicore_nios2_gen2_0_cpu_nios2_oci:the_multicore_nios2_gen2_0_cpu_nios2_oci|multicore_nios2_gen2_0_cpu_debug_slave_wrapper:the_multicore_nios2_gen2_0_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:multicore_nios2_gen2_0_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst} } </value>
+   <value>{hpath {multicore_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:multicore_jtag_uart_0_alt_jtag_atlantic|altera_sld_agent_endpoint:inst|altera_fabric_endpoint:ep} } {hpath {multicore_nios:nios|multicore_nios_cpu:cpu|multicore_nios_cpu_nios2_oci:the_multicore_nios_cpu_nios2_oci|multicore_nios_cpu_debug_slave_wrapper:the_multicore_nios_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:multicore_nios_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst} } </value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2181,7 +2181,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="DESIGN_HASH">
    <type>java.lang.String</type>
-   <value>3954ac80b7cbb92a4b2c</value>
+   <value>6fe9ce37de6bce97a525</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
