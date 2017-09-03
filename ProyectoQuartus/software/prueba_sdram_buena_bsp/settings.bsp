@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 2, 2017 8:38:22 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1504406302084</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 2, 2017 10:58:15 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1504414695944</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/software/prueba_sdram_buena_bsp</BspGeneratedLocation>
-        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../multicore.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios</Cpu>

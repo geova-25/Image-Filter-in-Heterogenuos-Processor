@@ -84,7 +84,8 @@
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
-  int* sdram_base =  SDRAM_BASE;
+ // int* sdram_base =  SDRAM_BASE;
+  int* sdram_base =  0x407FFFF;
   int* led_base = LEDS_BASE;
   *sdram_base = 5;
   /* Event loop never exits. */

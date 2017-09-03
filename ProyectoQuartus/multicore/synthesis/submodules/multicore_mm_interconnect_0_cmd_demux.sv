@@ -28,7 +28,7 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         multicore_mm_interconnect_0_cmd_demux
-//   ST_DATA_W:           104
+//   ST_DATA_W:           127
 //   ST_CHANNEL_W:        5
 //   NUM_OUTPUTS:         5
 //   VALID_WIDTH:         1
@@ -46,7 +46,7 @@ module multicore_mm_interconnect_0_cmd_demux
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [104-1    : 0]   sink_data, // ST_DATA_W=104
+    input  [127-1    : 0]   sink_data, // ST_DATA_W=127
     input  [5-1 : 0]   sink_channel, // ST_CHANNEL_W=5
     input                         sink_startofpacket,
     input                         sink_endofpacket,
@@ -56,35 +56,35 @@ module multicore_mm_interconnect_0_cmd_demux
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [104-1    : 0] src0_data, // ST_DATA_W=104
+    output reg [127-1    : 0] src0_data, // ST_DATA_W=127
     output reg [5-1 : 0] src0_channel, // ST_CHANNEL_W=5
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
 
     output reg                      src1_valid,
-    output reg [104-1    : 0] src1_data, // ST_DATA_W=104
+    output reg [127-1    : 0] src1_data, // ST_DATA_W=127
     output reg [5-1 : 0] src1_channel, // ST_CHANNEL_W=5
     output reg                      src1_startofpacket,
     output reg                      src1_endofpacket,
     input                           src1_ready,
 
     output reg                      src2_valid,
-    output reg [104-1    : 0] src2_data, // ST_DATA_W=104
+    output reg [127-1    : 0] src2_data, // ST_DATA_W=127
     output reg [5-1 : 0] src2_channel, // ST_CHANNEL_W=5
     output reg                      src2_startofpacket,
     output reg                      src2_endofpacket,
     input                           src2_ready,
 
     output reg                      src3_valid,
-    output reg [104-1    : 0] src3_data, // ST_DATA_W=104
+    output reg [127-1    : 0] src3_data, // ST_DATA_W=127
     output reg [5-1 : 0] src3_channel, // ST_CHANNEL_W=5
     output reg                      src3_startofpacket,
     output reg                      src3_endofpacket,
     input                           src3_ready,
 
     output reg                      src4_valid,
-    output reg [104-1    : 0] src4_data, // ST_DATA_W=104
+    output reg [127-1    : 0] src4_data, // ST_DATA_W=127
     output reg [5-1 : 0] src4_channel, // ST_CHANNEL_W=5
     output reg                      src4_startofpacket,
     output reg                      src4_endofpacket,
