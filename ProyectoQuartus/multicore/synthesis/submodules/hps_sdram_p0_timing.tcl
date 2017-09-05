@@ -33,28 +33,28 @@ package require ::quartus::ddr_timing_model
 ###################
 
 # Interface Clock Period
-set t(CK) 3.333
+set t(CK) 2.5
 
 # Reference Clock Period
-set t(refCK) 8.0
+set t(refCK) 40.0
 
 # Minimum Clock Period
-set t(min_CK) 2.5
+set t(min_CK) 1.25
 
 ##########################
 # Memory timing parameters
 ##########################
 
 # A/C Setup/Hold
-set t(IS) 0.35
-set t(IH) 0.35
+set t(IS) 0.32
+set t(IH) 0.22
 
 # Data Setup/Hold
-set t(DS) 0.225
-set t(DH) 0.225
+set t(DS) 0.16
+set t(DH) 0.145
 
 # DQS clock edge to DQ data edge (in same group)
-set t(DQSQ) [expr { 120 / 1000.0 }]
+set t(DQSQ) [expr { 100 / 1000.0 }]
 set t(QH) 0.38
 set t(QH) [expr (0.5*$t(CK)-(0.5-$t(QH))*$t(min_CK))/$t(CK)]
 
@@ -62,22 +62,22 @@ set t(QH) [expr (0.5*$t(CK)-(0.5-$t(QH))*$t(min_CK))/$t(CK)]
 set t(QH_time) [ expr $t(QH) * $t(CK) ]
 
 # DQS to CK input timing
-set t(DSS) 0.2
-set t(DSH) 0.2
-set t(DQSS) 0.25
+set t(DSS) 0.18
+set t(DSH) 0.18
+set t(DQSS) 0.27
 set t(DSS) [expr $t(DSS)*$t(min_CK)/$t(CK)]
 set t(DSH) [expr $t(DSH)*$t(min_CK)/$t(CK)]
 set t(DQSS) [expr 0.5 - $t(DQSS)*$t(min_CK)/$t(CK)]
 
 # DQS Width
-set t(QSH) 0.38
+set t(QSH) 0.4
 
 # Write Levelling parameters
 set t(WLS) [ expr 0.13 * $t(min_CK) ]
 set t(WLH) [ expr 0.13 * $t(min_CK) ]
 
 # DQS to CK timing on reads
-set t(DQSCK) [expr { 400 / 1000.0 }]
+set t(DQSCK) [expr { 225 / 1000.0 }]
 
 # FPGA Duty Cycle Distortion
 set t(DCD) 0.0

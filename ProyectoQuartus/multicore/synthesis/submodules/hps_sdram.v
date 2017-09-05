@@ -10,20 +10,20 @@ module hps_sdram (
 		input  wire        pll_ref_clk,    //  pll_ref_clk.clk
 		input  wire        global_reset_n, // global_reset.reset_n
 		input  wire        soft_reset_n,   //   soft_reset.reset_n
-		output wire [12:0] mem_a,          //       memory.mem_a
+		output wire [14:0] mem_a,          //       memory.mem_a
 		output wire [2:0]  mem_ba,         //             .mem_ba
 		output wire [0:0]  mem_ck,         //             .mem_ck
 		output wire [0:0]  mem_ck_n,       //             .mem_ck_n
 		output wire [0:0]  mem_cke,        //             .mem_cke
 		output wire [0:0]  mem_cs_n,       //             .mem_cs_n
-		output wire [0:0]  mem_dm,         //             .mem_dm
+		output wire [4:0]  mem_dm,         //             .mem_dm
 		output wire [0:0]  mem_ras_n,      //             .mem_ras_n
 		output wire [0:0]  mem_cas_n,      //             .mem_cas_n
 		output wire [0:0]  mem_we_n,       //             .mem_we_n
 		output wire        mem_reset_n,    //             .mem_reset_n
-		inout  wire [7:0]  mem_dq,         //             .mem_dq
-		inout  wire [0:0]  mem_dqs,        //             .mem_dqs
-		inout  wire [0:0]  mem_dqs_n,      //             .mem_dqs_n
+		inout  wire [39:0] mem_dq,         //             .mem_dq
+		inout  wire [4:0]  mem_dqs,        //             .mem_dqs
+		inout  wire [4:0]  mem_dqs_n,      //             .mem_dqs_n
 		output wire [0:0]  mem_odt,        //             .mem_odt
 		input  wire        oct_rzqin       //          oct.rzqin
 	);
@@ -230,23 +230,23 @@ module hps_sdram (
 	);
 
 	altera_mem_if_hhp_qseq_synth_top #(
-		.MEM_IF_DM_WIDTH  (1),
-		.MEM_IF_DQS_WIDTH (1),
+		.MEM_IF_DM_WIDTH  (5),
+		.MEM_IF_DQS_WIDTH (5),
 		.MEM_IF_CS_WIDTH  (1),
-		.MEM_IF_DQ_WIDTH  (8)
+		.MEM_IF_DQ_WIDTH  (40)
 	) seq (
 	);
 
 	altera_mem_if_hard_memory_controller_top_cyclonev #(
-		.MEM_IF_DQS_WIDTH                        (1),
+		.MEM_IF_DQS_WIDTH                        (5),
 		.MEM_IF_CS_WIDTH                         (1),
 		.MEM_IF_CHIP_BITS                        (1),
 		.MEM_IF_CLK_PAIR_COUNT                   (1),
 		.CSR_ADDR_WIDTH                          (10),
 		.CSR_DATA_WIDTH                          (8),
 		.CSR_BE_WIDTH                            (1),
-		.AVL_ADDR_WIDTH                          (22),
-		.AVL_DATA_WIDTH                          (16),
+		.AVL_ADDR_WIDTH                          (27),
+		.AVL_DATA_WIDTH                          (80),
 		.AVL_SIZE_WIDTH                          (3),
 		.AVL_DATA_WIDTH_PORT_0                   (1),
 		.AVL_ADDR_WIDTH_PORT_0                   (1),
@@ -301,7 +301,7 @@ module hps_sdram (
 		.ENUM_AUTO_PCH_ENABLE_5                  ("DISABLED"),
 		.ENUM_CAL_REQ                            ("DISABLED"),
 		.ENUM_CFG_BURST_LENGTH                   ("BL_8"),
-		.ENUM_CFG_INTERFACE_WIDTH                ("DWIDTH_8"),
+		.ENUM_CFG_INTERFACE_WIDTH                ("DWIDTH_40"),
 		.ENUM_CFG_SELF_RFSH_EXIT_CYCLES          ("SELF_RFSH_EXIT_CYCLES_512"),
 		.ENUM_CFG_STARVE_LIMIT                   ("STARVE_LIMIT_10"),
 		.ENUM_CFG_TYPE                           ("DDR3"),
@@ -347,7 +347,7 @@ module hps_sdram (
 		.ENUM_CTL_ECC_RMW_ENABLED                ("CTL_ECC_RMW_DISABLED"),
 		.ENUM_CTL_REGDIMM_ENABLED                ("REGDIMM_DISABLED"),
 		.ENUM_CTL_USR_REFRESH                    ("CTL_USR_REFRESH_DISABLED"),
-		.ENUM_CTRL_WIDTH                         ("DATA_WIDTH_16_BIT"),
+		.ENUM_CTRL_WIDTH                         ("DATA_WIDTH_64_BIT"),
 		.ENUM_DELAY_BONDING                      ("BONDING_LATENCY_0"),
 		.ENUM_DFX_BYPASS_ENABLE                  ("DFX_BYPASS_DISABLED"),
 		.ENUM_DISABLE_MERGING                    ("MERGING_ENABLED"),
@@ -377,28 +377,28 @@ module hps_sdram (
 		.ENUM_MEM_IF_AL                          ("AL_0"),
 		.ENUM_MEM_IF_BANKADDR_WIDTH              ("ADDR_WIDTH_3"),
 		.ENUM_MEM_IF_BURSTLENGTH                 ("MEM_IF_BURSTLENGTH_8"),
-		.ENUM_MEM_IF_COLADDR_WIDTH               ("ADDR_WIDTH_8"),
+		.ENUM_MEM_IF_COLADDR_WIDTH               ("ADDR_WIDTH_10"),
 		.ENUM_MEM_IF_CS_PER_RANK                 ("MEM_IF_CS_PER_RANK_1"),
 		.ENUM_MEM_IF_CS_WIDTH                    ("MEM_IF_CS_WIDTH_1"),
 		.ENUM_MEM_IF_DQ_PER_CHIP                 ("MEM_IF_DQ_PER_CHIP_8"),
-		.ENUM_MEM_IF_DQS_WIDTH                   ("DQS_WIDTH_1"),
-		.ENUM_MEM_IF_DWIDTH                      ("MEM_IF_DWIDTH_8"),
+		.ENUM_MEM_IF_DQS_WIDTH                   ("DQS_WIDTH_5"),
+		.ENUM_MEM_IF_DWIDTH                      ("MEM_IF_DWIDTH_40"),
 		.ENUM_MEM_IF_MEMTYPE                     ("DDR3_SDRAM"),
-		.ENUM_MEM_IF_ROWADDR_WIDTH               ("ADDR_WIDTH_12"),
-		.ENUM_MEM_IF_SPEEDBIN                    ("DDR3_800_5_5_5"),
+		.ENUM_MEM_IF_ROWADDR_WIDTH               ("ADDR_WIDTH_15"),
+		.ENUM_MEM_IF_SPEEDBIN                    ("DDR3_1600_8_8_8"),
 		.ENUM_MEM_IF_TCCD                        ("TCCD_4"),
 		.ENUM_MEM_IF_TCL                         ("TCL_7"),
 		.ENUM_MEM_IF_TCWL                        ("TCWL_6"),
 		.ENUM_MEM_IF_TFAW                        ("TFAW_12"),
 		.ENUM_MEM_IF_TMRD                        ("TMRD_4"),
-		.ENUM_MEM_IF_TRAS                        ("TRAS_13"),
-		.ENUM_MEM_IF_TRC                         ("TRC_17"),
-		.ENUM_MEM_IF_TRCD                        ("TRCD_5"),
-		.ENUM_MEM_IF_TRP                         ("TRP_5"),
-		.ENUM_MEM_IF_TRRD                        ("TRRD_3"),
-		.ENUM_MEM_IF_TRTP                        ("TRTP_3"),
-		.ENUM_MEM_IF_TWR                         ("TWR_5"),
-		.ENUM_MEM_IF_TWTR                        ("TWTR_2"),
+		.ENUM_MEM_IF_TRAS                        ("TRAS_14"),
+		.ENUM_MEM_IF_TRC                         ("TRC_20"),
+		.ENUM_MEM_IF_TRCD                        ("TRCD_6"),
+		.ENUM_MEM_IF_TRP                         ("TRP_6"),
+		.ENUM_MEM_IF_TRRD                        ("TRRD_4"),
+		.ENUM_MEM_IF_TRTP                        ("TRTP_4"),
+		.ENUM_MEM_IF_TWR                         ("TWR_6"),
+		.ENUM_MEM_IF_TWTR                        ("TWTR_4"),
 		.ENUM_MMR_CFG_MEM_BL                     ("MP_BL_8"),
 		.ENUM_OUTPUT_REGD                        ("DISABLED"),
 		.ENUM_PDN_EXIT_CYCLES                    ("SLOW_EXIT"),
@@ -554,7 +554,7 @@ module hps_sdram (
 		.ENUM_WR_PORT_INFO_3                     ("USE_NO"),
 		.ENUM_WR_PORT_INFO_4                     ("USE_NO"),
 		.ENUM_WR_PORT_INFO_5                     ("USE_NO"),
-		.ENUM_WRITE_ODT_CHIP                     ("ODT_DISABLED"),
+		.ENUM_WRITE_ODT_CHIP                     ("WRITE_CHIP0_ODT0_CHIP1"),
 		.INTG_MEM_AUTO_PD_CYCLES                 (0),
 		.INTG_CYC_TO_RLD_JARS_0                  (1),
 		.INTG_CYC_TO_RLD_JARS_1                  (1),
@@ -589,8 +589,8 @@ module hps_sdram (
 		.INTG_EXTRA_CTL_CLK_WR_TO_RD_DIFF_CHIP   (3),
 		.INTG_EXTRA_CTL_CLK_WR_TO_WR             (0),
 		.INTG_EXTRA_CTL_CLK_WR_TO_WR_DIFF_CHIP   (0),
-		.INTG_MEM_IF_TREFI                       (2101),
-		.INTG_MEM_IF_TRFC                        (23),
+		.INTG_MEM_IF_TREFI                       (3120),
+		.INTG_MEM_IF_TRFC                        (104),
 		.INTG_RCFG_SUM_WT_PRIORITY_0             (0),
 		.INTG_RCFG_SUM_WT_PRIORITY_1             (0),
 		.INTG_RCFG_SUM_WT_PRIORITY_2             (0),
@@ -612,14 +612,14 @@ module hps_sdram (
 		.ENUM_ENABLE_BURST_INTERRUPT             ("DISABLED"),
 		.ENUM_ENABLE_BURST_TERMINATE             ("DISABLED"),
 		.AFI_RATE_RATIO                          (1),
-		.AFI_ADDR_WIDTH                          (13),
+		.AFI_ADDR_WIDTH                          (15),
 		.AFI_BANKADDR_WIDTH                      (3),
 		.AFI_CONTROL_WIDTH                       (1),
 		.AFI_CS_WIDTH                            (1),
-		.AFI_DM_WIDTH                            (2),
-		.AFI_DQ_WIDTH                            (16),
+		.AFI_DM_WIDTH                            (10),
+		.AFI_DQ_WIDTH                            (80),
 		.AFI_ODT_WIDTH                           (1),
-		.AFI_WRITE_DQS_WIDTH                     (1),
+		.AFI_WRITE_DQS_WIDTH                     (5),
 		.AFI_RLAT_WIDTH                          (6),
 		.AFI_WLAT_WIDTH                          (6),
 		.HARD_PHY                                (1)
@@ -806,7 +806,7 @@ module hps_sdram (
 		.DLL_OFFSET_CTRL_WIDTH      (6),
 		.DELAY_BUFFER_MODE          ("HIGH"),
 		.DELAY_CHAIN_LENGTH         (8),
-		.DLL_INPUT_FREQUENCY_PS_STR ("3333 ps")
+		.DLL_INPUT_FREQUENCY_PS_STR ("2500 ps")
 	) dll (
 		.clk            (p0_dll_clk_clk),                //         clk.clk
 		.dll_pll_locked (p0_dll_sharing_dll_pll_locked), // dll_sharing.dll_pll_locked

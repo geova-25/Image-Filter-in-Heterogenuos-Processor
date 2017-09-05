@@ -7,12 +7,12 @@ set ::GLOBAL_hps_sdram_p0_io_standard "SSTL-15"
 set ::GLOBAL_hps_sdram_p0_io_interface_type "HPAD"
 set ::GLOBAL_hps_sdram_p0_io_standard_differential "1.5-V SSTL"
 set ::GLOBAL_hps_sdram_p0_io_standard_cmos "1.5V"
-set ::GLOBAL_hps_sdram_p0_number_of_dqs_groups 1
+set ::GLOBAL_hps_sdram_p0_number_of_dqs_groups 5
 set ::GLOBAL_hps_sdram_p0_dqs_group_size 8
 set ::GLOBAL_hps_sdram_p0_number_of_ck_pins 1
-set ::GLOBAL_hps_sdram_p0_number_of_dm_pins 1
+set ::GLOBAL_hps_sdram_p0_number_of_dm_pins 5
 set ::GLOBAL_hps_sdram_p0_dqs_delay_chain_length 0
-set ::GLOBAL_hps_sdram_p0_uniphy_temp_ver_code 1978022944
+set ::GLOBAL_hps_sdram_p0_uniphy_temp_ver_code 552167601
 # PLL Parameters
 
 #USER W A R N I N G !
@@ -23,29 +23,29 @@ set ::GLOBAL_hps_sdram_p0_uniphy_temp_ver_code 1978022944
 #USER apply those changes to the PLL parameters in this file
 
 set ::GLOBAL_hps_sdram_p0_num_pll_clock 4
-set ::GLOBAL_hps_sdram_p0_pll_mult(0) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(0) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(0) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(0) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(0) 0.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_AFI_CLK) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(PLL_AFI_CLK) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_AFI_CLK) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(PLL_AFI_CLK) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(PLL_AFI_CLK) 0.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(1) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(1) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(1) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(1) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(1) 0.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_MEM_CLK) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(PLL_MEM_CLK) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_MEM_CLK) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(PLL_MEM_CLK) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(PLL_MEM_CLK) 0.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(2) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(2) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(2) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(2) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(2) 270.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_WRITE_CLK) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(PLL_WRITE_CLK) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_WRITE_CLK) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(PLL_WRITE_CLK) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(PLL_WRITE_CLK) 270.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(3) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(3) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(3) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(3) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(3) 270.0
-set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_ADDR_CMD_CLK) 24
-set ::GLOBAL_hps_sdram_p0_pll_div(PLL_ADDR_CMD_CLK) 10
+set ::GLOBAL_hps_sdram_p0_pll_mult(PLL_ADDR_CMD_CLK) 32
+set ::GLOBAL_hps_sdram_p0_pll_div(PLL_ADDR_CMD_CLK) 2
 set ::GLOBAL_hps_sdram_p0_pll_phase(PLL_ADDR_CMD_CLK) 270.0
 
 set ::GLOBAL_hps_sdram_p0_leveling_capture_phase 90.0
@@ -77,7 +77,7 @@ set IP(eol_reduction_factor_write) 2.35
 # Can be either dynamic or static
 set IP(write_deskew_mode) "dynamic"
 set IP(read_deskew_mode) "dynamic"
-set IP(discrete_device) 1
+set IP(discrete_device) 0
 set IP(num_ranks) 1
 set IP(num_shadow_registers) 1
 set IP(tracking_enabled) 0

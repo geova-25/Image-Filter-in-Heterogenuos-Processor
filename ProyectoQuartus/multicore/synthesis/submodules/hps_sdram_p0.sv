@@ -164,17 +164,17 @@ parameter OCT_TERM_CONTROL_WIDTH   = 16;
 
 // PHY-Memory Interface
 // Memory device specific parameters, they are set according to the memory spec.
-parameter MEM_IF_ADDR_WIDTH			= 13;
+parameter MEM_IF_ADDR_WIDTH			= 15;
 parameter MEM_IF_BANKADDR_WIDTH     = 3;
 parameter MEM_IF_CK_WIDTH			= 1;
 parameter MEM_IF_CLK_EN_WIDTH		= 1;
 parameter MEM_IF_CS_WIDTH			= 1;
-parameter MEM_IF_DM_WIDTH         	= 1;
+parameter MEM_IF_DM_WIDTH         	= 5;
 parameter MEM_IF_CONTROL_WIDTH    	= 1; 
-parameter MEM_IF_DQ_WIDTH         	= 8;
-parameter MEM_IF_DQS_WIDTH         	= 1;
-parameter MEM_IF_READ_DQS_WIDTH    	= 1;
-parameter MEM_IF_WRITE_DQS_WIDTH   	= 1;
+parameter MEM_IF_DQ_WIDTH         	= 40;
+parameter MEM_IF_DQS_WIDTH         	= 5;
+parameter MEM_IF_READ_DQS_WIDTH    	= 5;
+parameter MEM_IF_WRITE_DQS_WIDTH   	= 5;
 parameter MEM_IF_ODT_WIDTH         	= 1;
 
 
@@ -191,7 +191,7 @@ parameter READ_VALID_FIFO_SIZE             = 16;
 parameter READ_FIFO_SIZE                   = 8;
 
 parameter MR1_ODS								= 0;
-parameter MR1_RTT								= 0;
+parameter MR1_RTT								= 3;
 parameter MR2_RTT_WR							= 0;
 
 
@@ -202,10 +202,10 @@ parameter CALIB_REG_WIDTH = 8;
 
 
 parameter TB_PROTOCOL       = "DDR3";
-parameter TB_MEM_CLK_FREQ   = "300.0";
+parameter TB_MEM_CLK_FREQ   = "400.0";
 parameter TB_RATE           = "FULL";
-parameter TB_MEM_DQ_WIDTH   = "8";
-parameter TB_MEM_DQS_WIDTH  = "1";
+parameter TB_MEM_DQ_WIDTH   = "40";
+parameter TB_MEM_DQS_WIDTH  = "5";
 parameter TB_PLL_DLL_MASTER = "true";
 
 parameter FAST_SIM_CALIBRATION = "false";

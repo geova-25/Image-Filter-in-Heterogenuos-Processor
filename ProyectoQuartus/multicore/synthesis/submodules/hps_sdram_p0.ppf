@@ -357,11 +357,19 @@
       <pin name="afi_cal_fail" direction="output" scope="internal" />
       <pin name="scc_data[0..0]" direction="input" scope="internal" />
       <pin name="scc_data[0]" direction="input" scope="internal" />
-      <pin name="scc_dqs_ena[0..0]" direction="input" scope="internal" />
+      <pin name="scc_dqs_ena[4..0]" direction="input" scope="internal" />
       <pin name="scc_dqs_ena[0]" direction="input" scope="internal" />
-      <pin name="scc_dqs_io_ena[0..0]" direction="input" scope="internal" />
+      <pin name="scc_dqs_ena[1]" direction="input" scope="internal" />
+      <pin name="scc_dqs_ena[2]" direction="input" scope="internal" />
+      <pin name="scc_dqs_ena[3]" direction="input" scope="internal" />
+      <pin name="scc_dqs_ena[4]" direction="input" scope="internal" />
+      <pin name="scc_dqs_io_ena[4..0]" direction="input" scope="internal" />
       <pin name="scc_dqs_io_ena[0]" direction="input" scope="internal" />
-      <pin name="scc_dq_ena[7..0]" direction="input" scope="internal" />
+      <pin name="scc_dqs_io_ena[1]" direction="input" scope="internal" />
+      <pin name="scc_dqs_io_ena[2]" direction="input" scope="internal" />
+      <pin name="scc_dqs_io_ena[3]" direction="input" scope="internal" />
+      <pin name="scc_dqs_io_ena[4]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[39..0]" direction="input" scope="internal" />
       <pin name="scc_dq_ena[0]" direction="input" scope="internal" />
       <pin name="scc_dq_ena[1]" direction="input" scope="internal" />
       <pin name="scc_dq_ena[2]" direction="input" scope="internal" />
@@ -370,10 +378,50 @@
       <pin name="scc_dq_ena[5]" direction="input" scope="internal" />
       <pin name="scc_dq_ena[6]" direction="input" scope="internal" />
       <pin name="scc_dq_ena[7]" direction="input" scope="internal" />
-      <pin name="scc_dm_ena[0..0]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[8]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[9]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[10]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[11]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[12]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[13]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[14]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[15]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[16]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[17]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[18]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[19]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[20]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[21]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[22]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[23]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[24]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[25]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[26]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[27]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[28]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[29]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[30]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[31]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[32]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[33]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[34]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[35]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[36]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[37]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[38]" direction="input" scope="internal" />
+      <pin name="scc_dq_ena[39]" direction="input" scope="internal" />
+      <pin name="scc_dm_ena[4..0]" direction="input" scope="internal" />
       <pin name="scc_dm_ena[0]" direction="input" scope="internal" />
-      <pin name="capture_strobe_tracking[0..0]" direction="output" scope="internal" />
+      <pin name="scc_dm_ena[1]" direction="input" scope="internal" />
+      <pin name="scc_dm_ena[2]" direction="input" scope="internal" />
+      <pin name="scc_dm_ena[3]" direction="input" scope="internal" />
+      <pin name="scc_dm_ena[4]" direction="input" scope="internal" />
+      <pin name="capture_strobe_tracking[4..0]" direction="output" scope="internal" />
       <pin name="capture_strobe_tracking[0]" direction="output" scope="internal" />
+      <pin name="capture_strobe_tracking[1]" direction="output" scope="internal" />
+      <pin name="capture_strobe_tracking[2]" direction="output" scope="internal" />
+      <pin name="capture_strobe_tracking[3]" direction="output" scope="internal" />
+      <pin name="capture_strobe_tracking[4]" direction="output" scope="internal" />
       <pin name="scc_upd[0..0]" direction="input" scope="internal" />
       <pin name="scc_upd[0]" direction="input" scope="internal" />
       <pin name="cfg_addlat[7..0]" direction="input" scope="internal" />
@@ -1347,7 +1395,7 @@
       <pin name="parallelterminationcontrol[13]" direction="input" scope="internal" />
       <pin name="parallelterminationcontrol[14]" direction="input" scope="internal" />
       <pin name="parallelterminationcontrol[15]" direction="input" scope="internal" />
-      <pin name="mem_a[12..0]" direction="output" scope="external" />
+      <pin name="mem_a[14..0]" direction="output" scope="external" />
       <pin name="mem_a[0]" direction="output" scope="external" />
       <pin name="mem_a[1]" direction="output" scope="external" />
       <pin name="mem_a[2]" direction="output" scope="external" />
@@ -1361,6 +1409,8 @@
       <pin name="mem_a[10]" direction="output" scope="external" />
       <pin name="mem_a[11]" direction="output" scope="external" />
       <pin name="mem_a[12]" direction="output" scope="external" />
+      <pin name="mem_a[13]" direction="output" scope="external" />
+      <pin name="mem_a[14]" direction="output" scope="external" />
       <pin name="mem_ba[2..0]" direction="output" scope="external" />
       <pin name="mem_ba[0]" direction="output" scope="external" />
       <pin name="mem_ba[1]" direction="output" scope="external" />
@@ -1373,8 +1423,12 @@
       <pin name="mem_cke[0]" direction="output" scope="external" />
       <pin name="mem_cs_n[0..0]" direction="output" scope="external" />
       <pin name="mem_cs_n[0]" direction="output" scope="external" />
-      <pin name="mem_dm[0..0]" direction="output" scope="external" />
+      <pin name="mem_dm[4..0]" direction="output" scope="external" />
       <pin name="mem_dm[0]" direction="output" scope="external" />
+      <pin name="mem_dm[1]" direction="output" scope="external" />
+      <pin name="mem_dm[2]" direction="output" scope="external" />
+      <pin name="mem_dm[3]" direction="output" scope="external" />
+      <pin name="mem_dm[4]" direction="output" scope="external" />
       <pin name="mem_ras_n[0..0]" direction="output" scope="external" />
       <pin name="mem_ras_n[0]" direction="output" scope="external" />
       <pin name="mem_cas_n[0..0]" direction="output" scope="external" />
@@ -1382,7 +1436,7 @@
       <pin name="mem_we_n[0..0]" direction="output" scope="external" />
       <pin name="mem_we_n[0]" direction="output" scope="external" />
       <pin name="mem_reset_n" direction="output" scope="external" />
-      <pin name="mem_dq[7..0]" direction="bidir" scope="external" />
+      <pin name="mem_dq[39..0]" direction="bidir" scope="external" />
       <pin name="mem_dq[0]" direction="bidir" scope="external" />
       <pin name="mem_dq[1]" direction="bidir" scope="external" />
       <pin name="mem_dq[2]" direction="bidir" scope="external" />
@@ -1391,10 +1445,50 @@
       <pin name="mem_dq[5]" direction="bidir" scope="external" />
       <pin name="mem_dq[6]" direction="bidir" scope="external" />
       <pin name="mem_dq[7]" direction="bidir" scope="external" />
-      <pin name="mem_dqs[0..0]" direction="bidir" scope="external" />
+      <pin name="mem_dq[8]" direction="bidir" scope="external" />
+      <pin name="mem_dq[9]" direction="bidir" scope="external" />
+      <pin name="mem_dq[10]" direction="bidir" scope="external" />
+      <pin name="mem_dq[11]" direction="bidir" scope="external" />
+      <pin name="mem_dq[12]" direction="bidir" scope="external" />
+      <pin name="mem_dq[13]" direction="bidir" scope="external" />
+      <pin name="mem_dq[14]" direction="bidir" scope="external" />
+      <pin name="mem_dq[15]" direction="bidir" scope="external" />
+      <pin name="mem_dq[16]" direction="bidir" scope="external" />
+      <pin name="mem_dq[17]" direction="bidir" scope="external" />
+      <pin name="mem_dq[18]" direction="bidir" scope="external" />
+      <pin name="mem_dq[19]" direction="bidir" scope="external" />
+      <pin name="mem_dq[20]" direction="bidir" scope="external" />
+      <pin name="mem_dq[21]" direction="bidir" scope="external" />
+      <pin name="mem_dq[22]" direction="bidir" scope="external" />
+      <pin name="mem_dq[23]" direction="bidir" scope="external" />
+      <pin name="mem_dq[24]" direction="bidir" scope="external" />
+      <pin name="mem_dq[25]" direction="bidir" scope="external" />
+      <pin name="mem_dq[26]" direction="bidir" scope="external" />
+      <pin name="mem_dq[27]" direction="bidir" scope="external" />
+      <pin name="mem_dq[28]" direction="bidir" scope="external" />
+      <pin name="mem_dq[29]" direction="bidir" scope="external" />
+      <pin name="mem_dq[30]" direction="bidir" scope="external" />
+      <pin name="mem_dq[31]" direction="bidir" scope="external" />
+      <pin name="mem_dq[32]" direction="bidir" scope="external" />
+      <pin name="mem_dq[33]" direction="bidir" scope="external" />
+      <pin name="mem_dq[34]" direction="bidir" scope="external" />
+      <pin name="mem_dq[35]" direction="bidir" scope="external" />
+      <pin name="mem_dq[36]" direction="bidir" scope="external" />
+      <pin name="mem_dq[37]" direction="bidir" scope="external" />
+      <pin name="mem_dq[38]" direction="bidir" scope="external" />
+      <pin name="mem_dq[39]" direction="bidir" scope="external" />
+      <pin name="mem_dqs[4..0]" direction="bidir" scope="external" />
       <pin name="mem_dqs[0]" direction="bidir" scope="external" />
-      <pin name="mem_dqs_n[0..0]" direction="bidir" scope="external" />
+      <pin name="mem_dqs[1]" direction="bidir" scope="external" />
+      <pin name="mem_dqs[2]" direction="bidir" scope="external" />
+      <pin name="mem_dqs[3]" direction="bidir" scope="external" />
+      <pin name="mem_dqs[4]" direction="bidir" scope="external" />
+      <pin name="mem_dqs_n[4..0]" direction="bidir" scope="external" />
       <pin name="mem_dqs_n[0]" direction="bidir" scope="external" />
+      <pin name="mem_dqs_n[1]" direction="bidir" scope="external" />
+      <pin name="mem_dqs_n[2]" direction="bidir" scope="external" />
+      <pin name="mem_dqs_n[3]" direction="bidir" scope="external" />
+      <pin name="mem_dqs_n[4]" direction="bidir" scope="external" />
       <pin name="mem_odt[0..0]" direction="output" scope="external" />
       <pin name="mem_odt[0]" direction="output" scope="external" />
       <pin name="io_intaficalfail" direction="output" scope="internal" />

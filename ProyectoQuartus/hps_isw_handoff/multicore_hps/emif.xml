@@ -1,25 +1,25 @@
 <emif>
     <sequencer>
-        <define name="AC_ROM_MR1_MIRR" value="0000000000000"/>
+        <define name="AC_ROM_MR1_MIRR" value="0000000100100"/>
         <define name="AC_ROM_MR1_OCD_ENABLE" value=""/>
         <define name="AC_ROM_MR2_MIRR" value="0000000010000"/>
         <define name="AC_ROM_MR3_MIRR" value="0000000000000"/>
         <define name="AC_ROM_MR0_CALIB" value=""/>
-        <define name="AC_ROM_MR0_DLL_RESET_MIRR" value="0001011001000"/>
-        <define name="AC_ROM_MR0_DLL_RESET" value="0001100110000"/>
-        <define name="AC_ROM_MR0_MIRR" value="0001001001001"/>
-        <define name="AC_ROM_MR0" value="0001000110001"/>
-        <define name="AC_ROM_MR1" value="0000000000000"/>
+        <define name="AC_ROM_MR0_DLL_RESET_MIRR" value="0010011001000"/>
+        <define name="AC_ROM_MR0_DLL_RESET" value="0010100110000"/>
+        <define name="AC_ROM_MR0_MIRR" value="0010001001001"/>
+        <define name="AC_ROM_MR0" value="0010000110001"/>
+        <define name="AC_ROM_MR1" value="0000001000100"/>
         <define name="AC_ROM_MR2" value="0000000001000"/>
         <define name="AC_ROM_MR3" value="0000000000000"/>
         <define name="AC_ROM_USER_ADD_0" value="0_0000_0000_0000"/>
         <define name="AC_ROM_USER_ADD_1" value="0_0000_0000_1000"/>
-        <define name="AFI_CLK_FREQ" value="301"/>
+        <define name="AFI_CLK_FREQ" value="401"/>
         <define name="AFI_RATE_RATIO" value="1"/>
         <define name="AP_MODE" value="0"/>
         <define name="ARRIAVGZ" value="0"/>
         <define name="ARRIAV" value="0"/>
-        <define name="AVL_CLK_FREQ" value="61"/>
+        <define name="AVL_CLK_FREQ" value="67"/>
         <define name="BFM_MODE" value="0"/>
         <define name="BURST2" value="0"/>
         <define name="CALIBRATE_BIT_SLIPS" value="0"/>
@@ -58,7 +58,7 @@
         <define name="HR_DDIO_OUT_HAS_THREE_REGS" value="0"/>
         <define name="IO_DELAY_PER_DCHAIN_TAP" value="25"/>
         <define name="IO_DELAY_PER_DQS_EN_DCHAIN_TAP" value="25"/>
-        <define name="IO_DELAY_PER_OPA_TAP" value="416"/>
+        <define name="IO_DELAY_PER_OPA_TAP" value="312"/>
         <define name="IO_DLL_CHAIN_LENGTH" value="8"/>
         <define name="IO_DM_OUT_RESERVE" value="0"/>
         <define name="IO_DQDQS_OUT_PHASE_MAX" value="0"/>
@@ -94,17 +94,17 @@
         <define name="RLDRAMX" value="0"/>
         <define name="RUNTIME_CAL_REPORT" value="0"/>
         <define name="RW_MGR_MEM_ADDRESS_MIRRORING" value="0"/>
-        <define name="RW_MGR_MEM_ADDRESS_WIDTH" value="13"/>
+        <define name="RW_MGR_MEM_ADDRESS_WIDTH" value="15"/>
         <define name="RW_MGR_MEM_BANK_WIDTH" value="3"/>
         <define name="RW_MGR_MEM_CHIP_SELECT_WIDTH" value="1"/>
         <define name="RW_MGR_MEM_CLK_EN_WIDTH" value="1"/>
         <define name="RW_MGR_MEM_CONTROL_WIDTH" value="1"/>
-        <define name="RW_MGR_MEM_DATA_MASK_WIDTH" value="1"/>
-        <define name="RW_MGR_MEM_DATA_WIDTH" value="8"/>
+        <define name="RW_MGR_MEM_DATA_MASK_WIDTH" value="5"/>
+        <define name="RW_MGR_MEM_DATA_WIDTH" value="40"/>
         <define name="RW_MGR_MEM_DQ_PER_READ_DQS" value="8"/>
         <define name="RW_MGR_MEM_DQ_PER_WRITE_DQS" value="8"/>
-        <define name="RW_MGR_MEM_IF_READ_DQS_WIDTH" value="1"/>
-        <define name="RW_MGR_MEM_IF_WRITE_DQS_WIDTH" value="1"/>
+        <define name="RW_MGR_MEM_IF_READ_DQS_WIDTH" value="5"/>
+        <define name="RW_MGR_MEM_IF_WRITE_DQS_WIDTH" value="5"/>
         <define name="RW_MGR_MEM_NUMBER_OF_CS_PER_DIMM" value="1"/>
         <define name="RW_MGR_MEM_NUMBER_OF_RANKS" value="1"/>
         <define name="RW_MGR_MEM_ODT_WIDTH" value="1"/>
@@ -112,7 +112,7 @@
         <define name="RW_MGR_MEM_VIRTUAL_GROUPS_PER_WRITE_DQS" value="1"/>
         <define name="RW_MGR_MR0_BL" value="1"/>
         <define name="RW_MGR_MR0_CAS_LATENCY" value="3"/>
-        <define name="RW_MGR_TRUE_MEM_DATA_MASK_WIDTH" value="1"/>
+        <define name="RW_MGR_TRUE_MEM_DATA_MASK_WIDTH" value="5"/>
         <define name="RW_MGR_WRITE_TO_DEBUG_READ" value="1.0"/>
         <define name="SET_FIX_READ_LATENCY_ENABLE" value="0"/>
         <define name="SKEW_CALIBRATION" value="0"/>
@@ -123,22 +123,22 @@
         <define name="STRATIXV" value="0"/>
         <define name="TINIT_CNTR1_VAL" value="32"/>
         <define name="TINIT_CNTR2_VAL" value="32"/>
-        <define name="TINIT_CNTR0_VAL" value="74"/>
+        <define name="TINIT_CNTR0_VAL" value="99"/>
         <define name="TRACKING_ERROR_TEST" value="0"/>
         <define name="TRACKING_WATCH_TEST" value="0"/>
         <define name="TRESET_CNTR1_VAL" value="99"/>
         <define name="TRESET_CNTR2_VAL" value="10"/>
-        <define name="TRESET_CNTR0_VAL" value="74"/>
+        <define name="TRESET_CNTR0_VAL" value="99"/>
         <define name="USE_DQS_TRACKING" value="1"/>
         <define name="USE_SHADOW_REGS" value="0"/>
         <define name="USE_USER_RDIMM_VALUE" value="0"/>
     </sequencer>
     <pll>
-        <define name="PLL_MEM_CLK_MULT" value="23"/>
-        <define name="PLL_MEM_CLK_DIV" value="4"/>
+        <define name="PLL_MEM_CLK_MULT" value="31"/>
+        <define name="PLL_MEM_CLK_DIV" value="0"/>
         <define name="PLL_MEM_CLK_PHASE_DEG" value="0"/>
-        <define name="PLL_WRITE_CLK_MULT" value="23"/>
-        <define name="PLL_WRITE_CLK_DIV" value="4"/>
+        <define name="PLL_WRITE_CLK_MULT" value="31"/>
+        <define name="PLL_WRITE_CLK_DIV" value="0"/>
         <define name="PLL_WRITE_CLK_PHASE_DEG" value="4"/>
     </pll>
     <controller>
@@ -153,35 +153,35 @@
         <define name="MEM_BT" value="Sequential"/>
         <define name="MEM_BURST_LENGTH" value="8"/>
         <define name="MEM_CK_WIDTH" value="1"/>
-        <define name="MEM_DQ_WIDTH" value="8"/>
+        <define name="MEM_DQ_WIDTH" value="40"/>
         <define name="MEM_DRV_STR" value="RZQ/6"/>
         <define name="MEM_IF_BANKADDR_WIDTH" value="3"/>
-        <define name="MEM_IF_COL_ADDR_WIDTH" value="8"/>
+        <define name="MEM_IF_COL_ADDR_WIDTH" value="10"/>
         <define name="MEM_IF_DM_PINS_EN" value="true"/>
         <define name="MEM_IF_DQSN_EN" value="true"/>
-        <define name="MEM_IF_DQS_WIDTH" value="1"/>
+        <define name="MEM_IF_DQS_WIDTH" value="5"/>
         <define name="MEM_IF_RD_TO_WR_TURNAROUND_OCT" value="2"/>
-        <define name="MEM_IF_ROW_ADDR_WIDTH" value="12"/>
+        <define name="MEM_IF_ROW_ADDR_WIDTH" value="15"/>
         <define name="MEM_MIRROR_ADDRESSING" value="0"/>
         <define name="MEM_PD" value="DLL off"/>
-        <define name="MEM_RTT_NOM" value="ODT Disabled"/>
+        <define name="MEM_RTT_NOM" value="RZQ/6"/>
         <define name="MEM_RTT_WR" value="Dynamic ODT off"/>
         <define name="MEM_SRT" value="Normal"/>
         <define name="MEM_TCL" value="7"/>
         <define name="MEM_TFAW" value="12"/>
-        <define name="MEM_TMRD_CK" value="3"/>
-        <define name="MEM_TRAS" value="13"/>
-        <define name="MEM_TRC" value="17"/>
-        <define name="MEM_TRCD" value="5"/>
-        <define name="MEM_TREFI" value="2101"/>
-        <define name="MEM_TRFC" value="23"/>
-        <define name="MEM_TRP" value="5"/>
-        <define name="MEM_TRRD" value="3"/>
-        <define name="MEM_TRTP" value="3"/>
-        <define name="MEM_TWR" value="5"/>
-        <define name="MEM_TWTR" value="2"/>
+        <define name="MEM_TMRD_CK" value="4"/>
+        <define name="MEM_TRAS" value="14"/>
+        <define name="MEM_TRC" value="20"/>
+        <define name="MEM_TRCD" value="6"/>
+        <define name="MEM_TREFI" value="3120"/>
+        <define name="MEM_TRFC" value="104"/>
+        <define name="MEM_TRP" value="6"/>
+        <define name="MEM_TRRD" value="4"/>
+        <define name="MEM_TRTP" value="4"/>
+        <define name="MEM_TWR" value="6"/>
+        <define name="MEM_TWTR" value="4"/>
         <define name="MEM_WTCL_INT" value="6"/>
-        <define name="PLL_MEM_CLK_FREQ" value="300.0"/>
+        <define name="PLL_MEM_CLK_FREQ" value="400.0"/>
         <define name="USE_HPS_DQS_TRACKING" value="false"/>
     </controller>
 </emif>
