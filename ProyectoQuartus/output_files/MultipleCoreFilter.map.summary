@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Sep  4 15:00:41 2017
+Analysis & Synthesis Status : Successful - Tue Sep  5 14:49:17 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : MultipleCoreFilter
 Top-level Entity Name : multicore
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2558
+Total registers : 2311
 Total pins : 189
 Total virtual pins : 0
 Total block memory bits : 44,160

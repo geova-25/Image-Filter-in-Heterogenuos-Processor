@@ -81,6 +81,14 @@
          type = "String";
       }
    }
+   element multicore
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element nios
    {
       datum _sortIndex
@@ -336,7 +344,7 @@
   <parameter name="H2F_AXI_CLOCK_FREQ" value="50000000" />
   <parameter name="H2F_CTI_CLOCK_FREQ" value="100" />
   <parameter name="H2F_DEBUG_APB_CLOCK_FREQ" value="100" />
-  <parameter name="H2F_LW_AXI_CLOCK_FREQ" value="50000000" />
+  <parameter name="H2F_LW_AXI_CLOCK_FREQ" value="100" />
   <parameter name="H2F_TPIU_CLOCK_IN_FREQ" value="100" />
   <parameter name="HARD_EMIF" value="true" />
   <parameter name="HCX_COMPAT_MODE" value="false" />
@@ -359,7 +367,7 @@
   <parameter name="LOANIO_Enable">No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No</parameter>
   <parameter name="LOCAL_ID_WIDTH" value="8" />
   <parameter name="LRDIMM_EXTENDED_CONFIG">0x000000000000000000</parameter>
-  <parameter name="LWH2F_Enable" value="true" />
+  <parameter name="LWH2F_Enable" value="false" />
   <parameter name="MARGIN_VARIATION_TEST" value="false" />
   <parameter name="MAX_PENDING_RD_CMD" value="32" />
   <parameter name="MAX_PENDING_WR_CMD" value="16" />
@@ -554,7 +562,7 @@
   <parameter name="S2FINTERRUPT_UART_Enable" value="false" />
   <parameter name="S2FINTERRUPT_USB_Enable" value="false" />
   <parameter name="S2FINTERRUPT_WATCHDOG_Enable" value="false" />
-  <parameter name="S2F_Width" value="2" />
+  <parameter name="S2F_Width" value="1" />
   <parameter name="SDIO_Mode" value="4-bit Data" />
   <parameter name="SDIO_PinMuxing" value="HPS I/O Set 0" />
   <parameter name="SEQUENCER_TYPE" value="NIOS" />
@@ -1034,15 +1042,6 @@
  <connection
    kind="avalon"
    version="16.1"
-   start="hps.h2f_lw_axi_master"
-   end="leds.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="16.1"
    start="nios.instruction_master"
    end="nios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1082,11 +1081,6 @@
    version="16.1"
    start="clocks.sys_clk"
    end="hps.h2f_axi_clock" />
- <connection
-   kind="clock"
-   version="16.1"
-   start="clocks.sys_clk"
-   end="hps.h2f_lw_axi_clock" />
  <connection
    kind="interrupt"
    version="16.1"

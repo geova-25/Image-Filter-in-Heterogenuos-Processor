@@ -47,23 +47,23 @@ module multicore_mm_interconnect_0_router_007_default_decode
      parameter DEFAULT_CHANNEL = 0,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 2 
+               DEFAULT_DESTID = 1 
    )
-  (output [102 - 100 : 0] default_destination_id,
-   output [6-1 : 0] default_wr_channel,
-   output [6-1 : 0] default_rd_channel,
-   output [6-1 : 0] default_src_channel
+  (output [100 - 98 : 0] default_destination_id,
+   output [5-1 : 0] default_wr_channel,
+   output [5-1 : 0] default_rd_channel,
+   output [5-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[102 - 100 : 0];
+    DEFAULT_DESTID[100 - 98 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 6'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 5'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module multicore_mm_interconnect_0_router_007_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 6'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 6'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 5'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 5'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module multicore_mm_interconnect_0_router_007
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [127-1 : 0]    sink_data,
+    input  [125-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module multicore_mm_interconnect_0_router_007
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [127-1    : 0] src_data,
-    output reg [6-1 : 0] src_channel,
+    output reg [125-1    : 0] src_data,
+    output reg [5-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -114,12 +114,12 @@ module multicore_mm_interconnect_0_router_007
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 65;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 102;
-    localparam PKT_DEST_ID_L = 100;
-    localparam PKT_PROTECTION_H = 117;
-    localparam PKT_PROTECTION_L = 115;
-    localparam ST_DATA_W = 127;
-    localparam ST_CHANNEL_W = 6;
+    localparam PKT_DEST_ID_H = 100;
+    localparam PKT_DEST_ID_L = 98;
+    localparam PKT_PROTECTION_H = 115;
+    localparam PKT_PROTECTION_L = 113;
+    localparam ST_DATA_W = 125;
+    localparam ST_CHANNEL_W = 5;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 68;
@@ -158,7 +158,7 @@ module multicore_mm_interconnect_0_router_007
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [6-1 : 0] default_src_channel;
+    wire [5-1 : 0] default_src_channel;
 
 
 
@@ -166,6 +166,8 @@ module multicore_mm_interconnect_0_router_007
     // -------------------------------------------------------
     // Write and read transaction signals
     // -------------------------------------------------------
+    wire write_transaction;
+    assign write_transaction = sink_data[PKT_TRANS_WRITE];
     wire read_transaction;
     assign read_transaction  = sink_data[PKT_TRANS_READ];
 
@@ -189,12 +191,16 @@ module multicore_mm_interconnect_0_router_007
 
 
 
-        if (destid == 2 ) begin
-            src_channel = 6'b01;
+        if (destid == 1 ) begin
+            src_channel = 5'b001;
         end
 
-        if (destid == 3  && read_transaction) begin
-            src_channel = 6'b10;
+        if (destid == 0  && write_transaction) begin
+            src_channel = 5'b010;
+        end
+
+        if (destid == 0  && read_transaction) begin
+            src_channel = 5'b100;
         end
 
 
