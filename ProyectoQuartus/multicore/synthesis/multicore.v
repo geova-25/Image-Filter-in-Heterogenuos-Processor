@@ -96,7 +96,7 @@ module multicore (
 	wire  [31:0] nios_data_master_readdata;                                   // mm_interconnect_0:nios_data_master_readdata -> nios:d_readdata
 	wire         nios_data_master_waitrequest;                                // mm_interconnect_0:nios_data_master_waitrequest -> nios:d_waitrequest
 	wire         nios_data_master_debugaccess;                                // nios:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios_data_master_debugaccess
-	wire  [27:0] nios_data_master_address;                                    // nios:d_address -> mm_interconnect_0:nios_data_master_address
+	wire  [26:0] nios_data_master_address;                                    // nios:d_address -> mm_interconnect_0:nios_data_master_address
 	wire   [3:0] nios_data_master_byteenable;                                 // nios:d_byteenable -> mm_interconnect_0:nios_data_master_byteenable
 	wire         nios_data_master_read;                                       // nios:d_read -> mm_interconnect_0:nios_data_master_read
 	wire         nios_data_master_write;                                      // nios:d_write -> mm_interconnect_0:nios_data_master_write
@@ -139,7 +139,7 @@ module multicore (
 	wire         hps_h2f_axi_master_rvalid;                                   // mm_interconnect_0:hps_h2f_axi_master_rvalid -> hps:h2f_RVALID
 	wire  [31:0] nios_instruction_master_readdata;                            // mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
 	wire         nios_instruction_master_waitrequest;                         // mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
-	wire  [27:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
+	wire  [26:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
 	wire         nios_instruction_master_read;                                // nios:i_read -> mm_interconnect_0:nios_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;    // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
@@ -156,13 +156,6 @@ module multicore (
 	wire   [3:0] mm_interconnect_0_nios_debug_mem_slave_byteenable;           // mm_interconnect_0:nios_debug_mem_slave_byteenable -> nios:debug_mem_slave_byteenable
 	wire         mm_interconnect_0_nios_debug_mem_slave_write;                // mm_interconnect_0:nios_debug_mem_slave_write -> nios:debug_mem_slave_write
 	wire  [31:0] mm_interconnect_0_nios_debug_mem_slave_writedata;            // mm_interconnect_0:nios_debug_mem_slave_writedata -> nios:debug_mem_slave_writedata
-	wire         mm_interconnect_0_onchip_s1_chipselect;                      // mm_interconnect_0:onchip_s1_chipselect -> onchip:chipselect
-	wire  [31:0] mm_interconnect_0_onchip_s1_readdata;                        // onchip:readdata -> mm_interconnect_0:onchip_s1_readdata
-	wire   [9:0] mm_interconnect_0_onchip_s1_address;                         // mm_interconnect_0:onchip_s1_address -> onchip:address
-	wire   [3:0] mm_interconnect_0_onchip_s1_byteenable;                      // mm_interconnect_0:onchip_s1_byteenable -> onchip:byteenable
-	wire         mm_interconnect_0_onchip_s1_write;                           // mm_interconnect_0:onchip_s1_write -> onchip:write
-	wire  [31:0] mm_interconnect_0_onchip_s1_writedata;                       // mm_interconnect_0:onchip_s1_writedata -> onchip:writedata
-	wire         mm_interconnect_0_onchip_s1_clken;                           // mm_interconnect_0:onchip_s1_clken -> onchip:clken
 	wire         mm_interconnect_0_leds_s1_chipselect;                        // mm_interconnect_0:leds_s1_chipselect -> leds:chipselect
 	wire  [31:0] mm_interconnect_0_leds_s1_readdata;                          // leds:readdata -> mm_interconnect_0:leds_s1_readdata
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                           // mm_interconnect_0:leds_s1_address -> leds:address
@@ -177,6 +170,13 @@ module multicore (
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                    // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                            // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                        // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	wire         mm_interconnect_0_onchip_s1_chipselect;                      // mm_interconnect_0:onchip_s1_chipselect -> onchip:chipselect
+	wire  [31:0] mm_interconnect_0_onchip_s1_readdata;                        // onchip:readdata -> mm_interconnect_0:onchip_s1_readdata
+	wire   [9:0] mm_interconnect_0_onchip_s1_address;                         // mm_interconnect_0:onchip_s1_address -> onchip:address
+	wire   [3:0] mm_interconnect_0_onchip_s1_byteenable;                      // mm_interconnect_0:onchip_s1_byteenable -> onchip:byteenable
+	wire         mm_interconnect_0_onchip_s1_write;                           // mm_interconnect_0:onchip_s1_write -> onchip:write
+	wire  [31:0] mm_interconnect_0_onchip_s1_writedata;                       // mm_interconnect_0:onchip_s1_writedata -> onchip:writedata
+	wire         mm_interconnect_0_onchip_s1_clken;                           // mm_interconnect_0:onchip_s1_clken -> onchip:clken
 	wire  [31:0] hps_f2h_irq0_irq;                                            // irq_mapper:sender_irq -> hps:f2h_irq_p0
 	wire  [31:0] hps_f2h_irq1_irq;                                            // irq_mapper_001:sender_irq -> hps:f2h_irq_p1
 	wire         irq_mapper_002_receiver0_irq;                                // jtag_uart_0:av_irq -> irq_mapper_002:receiver0_irq
