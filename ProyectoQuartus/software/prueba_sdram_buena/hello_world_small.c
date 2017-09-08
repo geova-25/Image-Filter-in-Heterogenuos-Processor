@@ -84,8 +84,8 @@
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
- // int* sdram_base =  SDRAM_BASE;
-  int* sdram_base =  0x407FFFF;
+  //void* sdram_base =  SDRAM_BASE;
+  int* sdram_base =  SDRAM_BASE;
   int* led_base = LEDS_BASE;
   *sdram_base = 5;
   /* Event loop never exits. */
@@ -94,6 +94,12 @@ int main()
 	  *sdram_base =*sdram_base + 1;
 	  *led_base = * sdram_base;
 	  usleep(1000);
+	  /*printf("%c\n",*(char*)(sdram_base));
+	  printf("%c\n",*(char*)(sdram_base+1));
+	  printf("%c\n",*(char*)(sdram_base+2));
+	  printf("%c\n",*(char*)(sdram_base+3));
+	  printf("%c\n",*(char*)(sdram_base+4));
+	  */
   }
 
   return 0;

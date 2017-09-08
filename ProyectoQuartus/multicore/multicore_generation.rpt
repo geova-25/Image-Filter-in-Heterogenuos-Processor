@@ -80,20 +80,20 @@ Warning: hps: 1 or more output clock frequencies cannot be achieved precisely, c
 Info: hps: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
 Info: hps: "multicore" instantiated altera_hps "hps"
 Info: jtag_uart_0: Starting RTL generation for module 'multicore_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=multicore_jtag_uart_0 --dir=/tmp/alt7414_198517484341933943.dir/0001_jtag_uart_0_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7414_198517484341933943.dir/0001_jtag_uart_0_gen//multicore_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=multicore_jtag_uart_0 --dir=/tmp/alt7416_8337729131018711806.dir/0001_jtag_uart_0_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7416_8337729131018711806.dir/0001_jtag_uart_0_gen//multicore_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'multicore_jtag_uart_0'
 Info: jtag_uart_0: "multicore" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: leds: Starting RTL generation for module 'multicore_leds'
-Info: leds:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=multicore_leds --dir=/tmp/alt7414_198517484341933943.dir/0002_leds_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7414_198517484341933943.dir/0002_leds_gen//multicore_leds_component_configuration.pl  --do_build_sim=0  ]
+Info: leds:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=multicore_leds --dir=/tmp/alt7416_8337729131018711806.dir/0002_leds_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7416_8337729131018711806.dir/0002_leds_gen//multicore_leds_component_configuration.pl  --do_build_sim=0  ]
 Info: leds: Done RTL generation for module 'multicore_leds'
 Info: leds: "multicore" instantiated altera_avalon_pio "leds"
 Info: nios: "multicore" instantiated altera_nios2_gen2 "nios"
 Info: onchip: Starting RTL generation for module 'multicore_onchip'
-Info: onchip:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=multicore_onchip --dir=/tmp/alt7414_198517484341933943.dir/0003_onchip_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7414_198517484341933943.dir/0003_onchip_gen//multicore_onchip_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=multicore_onchip --dir=/tmp/alt7416_8337729131018711806.dir/0003_onchip_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7416_8337729131018711806.dir/0003_onchip_gen//multicore_onchip_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip: Done RTL generation for module 'multicore_onchip'
 Info: onchip: "multicore" instantiated altera_avalon_onchip_memory2 "onchip"
 Info: sdram: Starting RTL generation for module 'multicore_sdram'
-Info: sdram:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=multicore_sdram --dir=/tmp/alt7414_198517484341933943.dir/0004_sdram_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7414_198517484341933943.dir/0004_sdram_gen//multicore_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=multicore_sdram --dir=/tmp/alt7416_8337729131018711806.dir/0004_sdram_gen/ --quartus_dir=/home/sebastian95/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt7416_8337729131018711806.dir/0004_sdram_gen//multicore_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'multicore_sdram'
 Info: sdram: "multicore" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -110,16 +110,16 @@ Info: reset_from_locked: "clocks" instantiated altera_up_avalon_reset_from_locke
 Info: fpga_interfaces: "hps" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps" instantiated altera_hps_io "hps_io"
 Info: cpu: Starting RTL generation for module 'multicore_nios_cpu'
-Info: cpu:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64//eperlcmd -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64//perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=multicore_nios_cpu --dir=/tmp/alt7414_198517484341933943.dir/0011_cpu_gen/ --quartus_bindir=/home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/ --verilog --config=/tmp/alt7414_198517484341933943.dir/0011_cpu_gen//multicore_nios_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2017.09.05 15:31:30 (*) Starting Nios II generation
-Info: cpu: # 2017.09.05 15:31:30 (*)   Checking for plaintext license.
-Info: cpu: # 2017.09.05 15:31:33 (*)   Plaintext license not found.
-Info: cpu: # 2017.09.05 15:31:33 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2017.09.05 15:31:33 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2017.09.05 15:31:33 (*)   Creating all objects for CPU
-Info: cpu: # 2017.09.05 15:31:34 (*)   Generating RTL from CPU objects
-Info: cpu: # 2017.09.05 15:31:34 (*)   Creating plain-text RTL
-Info: cpu: # 2017.09.05 15:31:35 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64//eperlcmd -I /home/sebastian95/intelFPGA_lite/16.1/quartus/linux64//perl/lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/sebastian95/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=multicore_nios_cpu --dir=/tmp/alt7416_8337729131018711806.dir/0011_cpu_gen/ --quartus_bindir=/home/sebastian95/intelFPGA_lite/16.1/quartus/linux64/ --verilog --config=/tmp/alt7416_8337729131018711806.dir/0011_cpu_gen//multicore_nios_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2017.09.07 12:07:45 (*) Starting Nios II generation
+Info: cpu: # 2017.09.07 12:07:45 (*)   Checking for plaintext license.
+Info: cpu: # 2017.09.07 12:07:47 (*)   Plaintext license not found.
+Info: cpu: # 2017.09.07 12:07:47 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2017.09.07 12:07:47 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.09.07 12:07:47 (*)   Creating all objects for CPU
+Info: cpu: # 2017.09.07 12:07:48 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.09.07 12:07:48 (*)   Creating plain-text RTL
+Info: cpu: # 2017.09.07 12:07:48 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'multicore_nios_cpu'
 Info: cpu: "nios" instantiated altera_nios2_gen2_unit "cpu"
 Info: nios_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios_data_master_translator"
@@ -130,12 +130,11 @@ Info: jtag_uart_0_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated alte
 Info: jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
-Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
 Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
 Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
-Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
 Info: hps_h2f_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_h2f_axi_master_wr_limiter"
 Info: Reusing file /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: leds_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "leds_s1_burst_adapter"
@@ -143,7 +142,7 @@ Info: Reusing file /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenu
 Info: Reusing file /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
-Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file /home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/multicore/synthesis/submodules/altera_merlin_arbitrator.sv
@@ -163,6 +162,6 @@ Info: avalon_st_adapter_003: "mm_interconnect_0" instantiated altera_avalon_st_a
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_003" instantiated error_adapter "error_adapter_0"
-Info: multicore: Done "multicore" with 49 modules, 117 files
+Info: multicore: Done "multicore" with 48 modules, 116 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

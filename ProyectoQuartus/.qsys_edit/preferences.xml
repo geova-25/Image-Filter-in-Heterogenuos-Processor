@@ -8,7 +8,6 @@
    <inputclock preferredWidth="166" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/University Program/Audio &amp; Video,Library/University Program,Library/University Program/Audio &amp; Video/Video,Project,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1881" height="1084" x="39" y="-4" />
 </preferences>

@@ -101,6 +101,10 @@ module multicore (
 	wire         nios_data_master_read;                                       // nios:d_read -> mm_interconnect_0:nios_data_master_read
 	wire         nios_data_master_write;                                      // nios:d_write -> mm_interconnect_0:nios_data_master_write
 	wire  [31:0] nios_data_master_writedata;                                  // nios:d_writedata -> mm_interconnect_0:nios_data_master_writedata
+	wire  [31:0] nios_instruction_master_readdata;                            // mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
+	wire         nios_instruction_master_waitrequest;                         // mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
+	wire  [13:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
+	wire         nios_instruction_master_read;                                // nios:i_read -> mm_interconnect_0:nios_instruction_master_read
 	wire   [1:0] hps_h2f_axi_master_awburst;                                  // hps:h2f_AWBURST -> mm_interconnect_0:hps_h2f_axi_master_awburst
 	wire   [3:0] hps_h2f_axi_master_arlen;                                    // hps:h2f_ARLEN -> mm_interconnect_0:hps_h2f_axi_master_arlen
 	wire   [3:0] hps_h2f_axi_master_wstrb;                                    // hps:h2f_WSTRB -> mm_interconnect_0:hps_h2f_axi_master_wstrb
@@ -137,10 +141,6 @@ module multicore (
 	wire   [2:0] hps_h2f_axi_master_awsize;                                   // hps:h2f_AWSIZE -> mm_interconnect_0:hps_h2f_axi_master_awsize
 	wire         hps_h2f_axi_master_awvalid;                                  // hps:h2f_AWVALID -> mm_interconnect_0:hps_h2f_axi_master_awvalid
 	wire         hps_h2f_axi_master_rvalid;                                   // mm_interconnect_0:hps_h2f_axi_master_rvalid -> hps:h2f_RVALID
-	wire  [31:0] nios_instruction_master_readdata;                            // mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
-	wire         nios_instruction_master_waitrequest;                         // mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
-	wire  [26:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
-	wire         nios_instruction_master_read;                                // nios:i_read -> mm_interconnect_0:nios_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;    // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest; // jtag_uart_0:av_waitrequest -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_waitrequest

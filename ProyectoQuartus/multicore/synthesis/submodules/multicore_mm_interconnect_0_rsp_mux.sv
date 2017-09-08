@@ -39,8 +39,8 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         multicore_mm_interconnect_0_rsp_mux
-//   NUM_INPUTS:          4
-//   ARBITRATION_SHARES:  1 1 1 1
+//   NUM_INPUTS:          5
+//   ARBITRATION_SHARES:  1 1 1 1 1
 //   ARBITRATION_SCHEME   "no-arb"
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      70 (arbitration locking enabled)
@@ -81,6 +81,13 @@ module multicore_mm_interconnect_0_rsp_mux
     input                       sink3_endofpacket,
     output                      sink3_ready,
 
+    input                       sink4_valid,
+    input [125-1   : 0]  sink4_data,
+    input [5-1: 0]  sink4_channel,
+    input                       sink4_startofpacket,
+    input                       sink4_endofpacket,
+    output                      sink4_ready,
+
 
     // ----------------------
     // Source
@@ -99,7 +106,7 @@ module multicore_mm_interconnect_0_rsp_mux
     input reset
 );
     localparam PAYLOAD_W        = 125 + 5 + 2;
-    localparam NUM_INPUTS       = 4;
+    localparam NUM_INPUTS       = 5;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
     localparam ST_DATA_W        = 125;
@@ -123,11 +130,13 @@ module multicore_mm_interconnect_0_rsp_mux
     wire [PAYLOAD_W - 1 : 0] sink1_payload;
     wire [PAYLOAD_W - 1 : 0] sink2_payload;
     wire [PAYLOAD_W - 1 : 0] sink3_payload;
+    wire [PAYLOAD_W - 1 : 0] sink4_payload;
 
     assign valid[0] = sink0_valid;
     assign valid[1] = sink1_valid;
     assign valid[2] = sink2_valid;
     assign valid[3] = sink3_valid;
+    assign valid[4] = sink4_valid;
 
 
     // ------------------------------------------
@@ -141,6 +150,7 @@ module multicore_mm_interconnect_0_rsp_mux
       lock[1] = sink1_data[70];
       lock[2] = sink2_data[70];
       lock[3] = sink3_data[70];
+      lock[4] = sink4_data[70];
     end
 
     assign last_cycle = src_valid & src_ready & src_endofpacket & ~(|(lock & grant));
@@ -175,10 +185,12 @@ module multicore_mm_interconnect_0_rsp_mux
     // 1      |      1       |  0
     // 2      |      1       |  0
     // 3      |      1       |  0
+    // 4      |      1       |  0
      wire [SHARE_COUNTER_W - 1 : 0] share_0 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_1 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_2 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_3 = 1'd0;
+     wire [SHARE_COUNTER_W - 1 : 0] share_4 = 1'd0;
 
     // ------------------------------------------
     // Choose the share value corresponding to the grant.
@@ -189,7 +201,8 @@ module multicore_mm_interconnect_0_rsp_mux
     share_0 & { SHARE_COUNTER_W {next_grant[0]} } |
     share_1 & { SHARE_COUNTER_W {next_grant[1]} } |
     share_2 & { SHARE_COUNTER_W {next_grant[2]} } |
-    share_3 & { SHARE_COUNTER_W {next_grant[3]} };
+    share_3 & { SHARE_COUNTER_W {next_grant[3]} } |
+    share_4 & { SHARE_COUNTER_W {next_grant[4]} };
     end
 
     // ------------------------------------------
@@ -259,11 +272,14 @@ module multicore_mm_interconnect_0_rsp_mux
 
     wire final_packet_3 = 1'b1;
 
+    wire final_packet_4 = 1'b1;
+
 
     // ------------------------------------------
     // Concatenate all final_packet signals (wire or reg) into a handy vector.
     // ------------------------------------------
     wire [NUM_INPUTS - 1 : 0] final_packet = {
+    final_packet_4,
     final_packet_3,
     final_packet_2,
     final_packet_1,
@@ -355,6 +371,7 @@ module multicore_mm_interconnect_0_rsp_mux
     assign sink1_ready = src_ready && grant[1];
     assign sink2_ready = src_ready && grant[2];
     assign sink3_ready = src_ready && grant[3];
+    assign sink4_ready = src_ready && grant[4];
 
     assign src_valid = |(grant & valid);
 
@@ -363,7 +380,8 @@ module multicore_mm_interconnect_0_rsp_mux
       sink0_payload & {PAYLOAD_W {grant[0]} } |
       sink1_payload & {PAYLOAD_W {grant[1]} } |
       sink2_payload & {PAYLOAD_W {grant[2]} } |
-      sink3_payload & {PAYLOAD_W {grant[3]} };
+      sink3_payload & {PAYLOAD_W {grant[3]} } |
+      sink4_payload & {PAYLOAD_W {grant[4]} };
     end
 
     // ------------------------------------------
@@ -378,6 +396,8 @@ module multicore_mm_interconnect_0_rsp_mux
     sink2_startofpacket,sink2_endofpacket};
     assign sink3_payload = {sink3_channel,sink3_data,
     sink3_startofpacket,sink3_endofpacket};
+    assign sink4_payload = {sink4_channel,sink4_data,
+    sink4_startofpacket,sink4_endofpacket};
 
     assign {src_channel,src_data,src_startofpacket,src_endofpacket} = src_payload;
 endmodule

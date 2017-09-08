@@ -30,9 +30,9 @@ Archive member included to satisfy reference by file (symbol)
 Memory Configuration
 
 Name             Origin             Length             Attributes
-reset            0x0000000000002000 0x0000000000000020
-onchip           0x0000000000002020 0x0000000000000fe0
-sdram            0x0000000008000000 0x0000000004000000
+sdram            0x0000000000000000 0x0000000004000000
+reset            0x0000000004001000 0x0000000000000020
+onchip           0x0000000004001020 0x0000000000000fe0
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
@@ -49,18 +49,18 @@ LOAD ../prueba_sdram_buena_bsp//libhal_bsp.a
 LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libm.a
 END GROUP
 LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a
-                0x0000000000002000                __alt_mem_onchip = 0x2000
-                0x0000000008000000                __alt_mem_sdram = 0x8000000
+                0x0000000000000000                __alt_mem_sdram = 0x0
+                0x0000000004001000                __alt_mem_onchip = 0x4001000
 
-.entry          0x0000000000002000       0x20
+.entry          0x0000000004001000       0x20
  *(.entry)
- .entry         0x0000000000002000       0x20 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
-                0x0000000000002000                __reset
-                0x000000000000200c                _exit
+ .entry         0x0000000004001000       0x20 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
+                0x0000000004001000                __reset
+                0x000000000400100c                _exit
 
-.exceptions     0x0000000000002020        0x0 load address 0x0000000008000000
-                0x0000000000002020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
-                0x0000000000002020                . = ALIGN (0x20)
+.exceptions     0x0000000004001020        0x0 load address 0x0000000000000000
+                0x0000000004001020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x0000000004001020                . = ALIGN (0x20)
  *(.irq)
  *(.exceptions.entry.label)
  *(.exceptions.entry.user)
@@ -83,10 +83,10 @@ LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gn
  *(.exceptions.exit.user)
  *(.exceptions.exit)
  *(.exceptions)
-                0x0000000000002020                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
-                0x0000000008000000                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+                0x0000000004001020                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x0000000000000000                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
-.text           0x0000000008000000      0x50c
+.text           0x0000000000000000      0x4c4
                 [!provide]                        PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -131,49 +131,49 @@ LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gn
  *(.init)
  *(.plt)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000000008000000       0x3c ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
-                0x0000000008000000                _start
- .text          0x000000000800003c        0x0 obj/default/hello_world_small.o
- .text.startup  0x000000000800003c       0xa0 obj/default/hello_world_small.o
-                0x000000000800003c                main
- .text          0x00000000080000dc       0xe0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
-                0x00000000080000dc                alt_load
- .text          0x00000000080001bc       0x2c ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
-                0x00000000080001bc                alt_main
- .text          0x00000000080001e8       0x38 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
-                0x00000000080001e8                alt_putstr
- .text          0x0000000008000220        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
-                0x0000000008000220                usleep
- .text          0x0000000008000224       0x24 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x0000000008000224                alt_irq_init
-                0x0000000008000244                alt_sys_init
- .text          0x0000000008000248       0x34 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x0000000008000248                altera_avalon_jtag_uart_write
- .text          0x000000000800027c       0x88 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
-                0x000000000800027c                alt_busy_sleep
- .text          0x0000000008000304        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
-                0x0000000008000304                alt_dcache_flush_all
- .text          0x0000000008000308        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
-                0x0000000008000308                alt_icache_flush_all
- .text          0x000000000800030c        0x8 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
-                0x000000000800030c                altera_nios2_gen2_irq_init
- .text          0x0000000008000314        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
- .text.strlen   0x0000000008000314       0x1c /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
-                0x0000000008000314                strlen
- .text          0x0000000008000330      0x1b4 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
-                0x0000000008000330                __divsi3
-                0x00000000080003b4                __modsi3
-                0x0000000008000428                __udivsi3
-                0x000000000800048c                __umodsi3
- .text          0x00000000080004e4       0x28 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
-                0x00000000080004e4                __mulsi3
+ .text          0x0000000000000000       0x3c ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
+                0x0000000000000000                _start
+ .text          0x000000000000003c        0x0 obj/default/hello_world_small.o
+ .text.startup  0x000000000000003c       0x58 obj/default/hello_world_small.o
+                0x000000000000003c                main
+ .text          0x0000000000000094       0xe0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
+                0x0000000000000094                alt_load
+ .text          0x0000000000000174       0x2c ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000000174                alt_main
+ .text          0x00000000000001a0       0x38 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
+                0x00000000000001a0                alt_putstr
+ .text          0x00000000000001d8        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
+                0x00000000000001d8                usleep
+ .text          0x00000000000001dc       0x24 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x00000000000001dc                alt_irq_init
+                0x00000000000001fc                alt_sys_init
+ .text          0x0000000000000200       0x34 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x0000000000000200                altera_avalon_jtag_uart_write
+ .text          0x0000000000000234       0x88 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                0x0000000000000234                alt_busy_sleep
+ .text          0x00000000000002bc        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000000002bc                alt_dcache_flush_all
+ .text          0x00000000000002c0        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x00000000000002c0                alt_icache_flush_all
+ .text          0x00000000000002c4        0x8 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x00000000000002c4                altera_nios2_gen2_irq_init
+ .text          0x00000000000002cc        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x00000000000002cc       0x1c /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x00000000000002cc                strlen
+ .text          0x00000000000002e8      0x1b4 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+                0x00000000000002e8                __divsi3
+                0x000000000000036c                __modsi3
+                0x00000000000003e0                __udivsi3
+                0x0000000000000444                __umodsi3
+ .text          0x000000000000049c       0x28 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+                0x000000000000049c                __mulsi3
  *(.gnu.warning.*)
  *(.fini)
                 [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x000000000800050c                . = ALIGN (0x4)
+                0x00000000000004c4                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
@@ -195,106 +195,106 @@ LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gn
  *(SORT(.dtors.*))
                 [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x000000000800050c                . = ALIGN (0x4)
+                0x00000000000004c4                . = ALIGN (0x4)
 
-.rodata         0x000000000800050c       0x18
-                0x000000000800050c                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x000000000800050c                . = ALIGN (0x4)
+.rodata         0x00000000000004c4       0x18
+                0x00000000000004c4                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000000000004c4                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x000000000800050c       0x18 obj/default/hello_world_small.o
+                0x00000000000004c4       0x18 obj/default/hello_world_small.o
                                          0x15 (size before relaxing)
  *(.rodata1)
-                0x0000000008000524                . = ALIGN (0x4)
-                0x0000000008000524                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x000000000800050c                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x00000000000004dc                . = ALIGN (0x4)
+                0x00000000000004dc                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000000000004c4                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x0000000008000524        0x4 load address 0x0000000008000528
-                0x0000000008000524                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x0000000008000524                . = ALIGN (0x4)
+.rwdata         0x00000000000004dc        0x4 load address 0x00000000000004e0
+                0x00000000000004dc                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x00000000000004dc                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
- .data          0x0000000008000524        0x0 obj/default/hello_world_small.o
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x0000000008000524        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .data          0x0000000008000524        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
- .data          0x0000000008000524        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
- .data          0x0000000008000524        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
-                0x0000000008008524                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
+ .data          0x00000000000004dc        0x0 obj/default/hello_world_small.o
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x00000000000004dc        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x00000000000004dc        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .data          0x00000000000004dc        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .data          0x00000000000004dc        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+                0x00000000000084dc                _gp = ABSOLUTE ((. + 0x8000))
                 [!provide]                        PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x0000000008000524        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x0000000008000524                jtag_uart_0
+ .sdata         0x00000000000004dc        0x4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x00000000000004dc                jtag_uart_0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x0000000008000528                . = ALIGN (0x4)
-                0x0000000008000528                _edata = ABSOLUTE (.)
+                0x00000000000004e0                . = ALIGN (0x4)
+                0x00000000000004e0                _edata = ABSOLUTE (.)
                 [!provide]                        PROVIDE (edata, ABSOLUTE (.))
-                0x0000000008000528                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x0000000008000528                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x00000000000004e0                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x00000000000004e0                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x000000000800052c        0xc
-                0x000000000800052c                __bss_start = ABSOLUTE (.)
+.bss            0x00000000000004e4        0xc
+                0x00000000000004e4                __bss_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x000000000800052c        0xc ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
-                0x000000000800052c                alt_envp
-                0x0000000008000530                alt_argv
-                0x0000000008000534                alt_argc
+ .sbss          0x00000000000004e4        0xc ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
+                0x00000000000004e4                alt_envp
+                0x00000000000004e8                alt_argv
+                0x00000000000004ec                alt_argc
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
                 [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
- .bss           0x0000000008000538        0x0 obj/default/hello_world_small.o
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x0000000008000538        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .bss           0x0000000008000538        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
- .bss           0x0000000008000538        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
- .bss           0x0000000008000538        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
+ .bss           0x00000000000004f0        0x0 obj/default/hello_world_small.o
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x00000000000004f0        0x0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x00000000000004f0        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .bss           0x00000000000004f0        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .bss           0x00000000000004f0        0x0 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
  *(COMMON)
-                0x0000000008000538                . = ALIGN (0x4)
-                0x0000000008000538                __bss_end = ABSOLUTE (.)
+                0x00000000000004f0                . = ALIGN (0x4)
+                0x00000000000004f0                __bss_end = ABSOLUTE (.)
 
-.onchip         0x0000000000002020        0x0 load address 0x0000000008000538
-                [!provide]                        PROVIDE (_alt_partition_onchip_start, ABSOLUTE (.))
- *(.onchip .onchip. onchip.*)
-                0x0000000000002020                . = ALIGN (0x4)
-                [!provide]                        PROVIDE (_alt_partition_onchip_end, ABSOLUTE (.))
-                [!provide]                        PROVIDE (_alt_partition_onchip_load_addr, LOADADDR (.onchip))
-
-.sdram          0x0000000008000538        0x0
+.sdram          0x00000000000004f0        0x0
                 [!provide]                        PROVIDE (_alt_partition_sdram_start, ABSOLUTE (.))
  *(.sdram .sdram. sdram.*)
-                0x0000000008000538                . = ALIGN (0x4)
+                0x00000000000004f0                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_sdram_end, ABSOLUTE (.))
-                0x0000000008000538                _end = ABSOLUTE (.)
-                0x0000000008000538                end = ABSOLUTE (.)
-                0x0000000008000538                __alt_stack_base = ABSOLUTE (.)
+                0x00000000000004f0                _end = ABSOLUTE (.)
+                0x00000000000004f0                end = ABSOLUTE (.)
+                0x00000000000004f0                __alt_stack_base = ABSOLUTE (.)
                 [!provide]                        PROVIDE (_alt_partition_sdram_load_addr, LOADADDR (.sdram))
+
+.onchip         0x0000000004001020        0x0 load address 0x00000000000004f0
+                [!provide]                        PROVIDE (_alt_partition_onchip_start, ABSOLUTE (.))
+ *(.onchip .onchip. onchip.*)
+                0x0000000004001020                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_onchip_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_alt_partition_onchip_load_addr, LOADADDR (.onchip))
 
 .stab
  *(.stab)
@@ -416,23 +416,23 @@ LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gn
  .debug_abbrev  0x0000000000000789      0x10e /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
  .debug_abbrev  0x0000000000000897       0x6f /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
 
-.debug_line     0x0000000000000000      0xae4
+.debug_line     0x0000000000000000      0xae0
  *(.debug_line)
  .debug_line    0x0000000000000000       0x66 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
- .debug_line    0x0000000000000066      0x113 obj/default/hello_world_small.o
- .debug_line    0x0000000000000179       0xa4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
- .debug_line    0x000000000000021d       0xbd ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
- .debug_line    0x00000000000002da       0xb4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_line    0x000000000000038e       0xe3 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_line    0x0000000000000471      0x101 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x0000000000000572       0xf0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x0000000000000662       0xb5 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_line    0x0000000000000717       0x4e ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x0000000000000765       0x4e ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x00000000000007b3       0x50 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_line    0x0000000000000803      0x15c /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
- .debug_line    0x000000000000095f      0x105 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
- .debug_line    0x0000000000000a64       0x80 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_line    0x0000000000000066      0x10f obj/default/hello_world_small.o
+ .debug_line    0x0000000000000175       0xa4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000000000000219       0xbd ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x00000000000002d6       0xb4 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x000000000000038a       0xe3 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_line    0x000000000000046d      0x101 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x000000000000056e       0xf0 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x000000000000065e       0xb5 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_line    0x0000000000000713       0x4e ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x0000000000000761       0x4e ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x00000000000007af       0x50 ../prueba_sdram_buena_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x00000000000007ff      0x15c /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_line    0x000000000000095b      0x105 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_line    0x0000000000000a60       0x80 /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
 
 .debug_frame    0x0000000000000000      0x254
  *(.debug_frame)
@@ -515,11 +515,11 @@ LOAD /home/sebastian95/intelFPGA_lite/16.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gn
                 0x0000000000000000       0x10 ../prueba_sdram_buena_bsp//obj/HAL/src/crt0.o
  .debug_alt_sim_info
                 0x0000000000000010       0x30 ../prueba_sdram_buena_bsp//libhal_bsp.a(alt_busy_sleep.o)
-                0x000000000c000000                __alt_data_end = 0xc000000
-                0x000000000c000000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                0x0000000004000000                __alt_data_end = 0x4000000
+                0x0000000004000000                PROVIDE (__alt_stack_pointer, __alt_data_end)
                 [!provide]                        PROVIDE (__alt_stack_limit, __alt_stack_base)
                 [!provide]                        PROVIDE (__alt_heap_start, end)
-                [!provide]                        PROVIDE (__alt_heap_limit, 0xc000000)
+                [!provide]                        PROVIDE (__alt_heap_limit, 0x4000000)
 OUTPUT(prueba_sdram_buena.elf elf32-littlenios2)
 
 .debug_ranges   0x0000000000000000       0xe8
