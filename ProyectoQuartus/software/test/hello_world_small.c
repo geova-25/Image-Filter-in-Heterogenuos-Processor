@@ -3,25 +3,26 @@
 #include "unistd.h"
 int main()
 { 
-  //printf("Hello from Nios II!\n");
-	char x = 'x';
-  void* sdram_base =  SDRAM_BASE;
- // int* sdram_base =  SDRAM_BASE;
-  int* led_base = LEDS_BASE;
-  //*sdram_base = 5;
-  /* Event loop never exits. */
- // while (1){
-	//  alt_putstr("Hello from Nios II!\n");
-	//  *sdram_base =*sdram_base + 1;
-	 // *led_base = * sdram_base;
-	  usleep(1000);
-	  printf("-%c\n",*(char*)(sdram_base));
-	  printf("-%c\n",*(char*)(sdram_base+1));
-	  printf("-%c\n",*(char*)(sdram_base+2));
-	  printf("-%c\n",*(char*)(sdram_base+3));
-	  printf("-%c\n",*(char*)(sdram_base+4));
-	  *led_base = 9;
-  //}
+  while(1)
+  {
+	int* INICIO = SDRAM_BASE + 0x03000000;
+	int* FIN    = SDRAM_BASE + 0x03000004;
+	int* LARGO  = SDRAM_BASE + 0x03000008;
+	int* ANCHO  = SDRAM_BASE + 0x0300000C;
+	int* X      = SDRAM_BASE + 0x03000010;
+	int* Y      = SDRAM_BASE + 0x03000014;
+	int* led = LEDS_BASE;
+	*led = 7;
+	int* prueba = SDRAM_BASE + 0x8;
 
+
+	printf("flag inicio: %d\n",*INICIO);
+	printf("flag fin : %d\n",*FIN);
+	printf("largo %d\n",*LARGO);
+	printf("ancho %d\n",*ANCHO);
+	printf("x %d\n",*X);
+	printf("y %d\n",*Y);
+	usleep(1000000);
+  }
   return 0;
 }
