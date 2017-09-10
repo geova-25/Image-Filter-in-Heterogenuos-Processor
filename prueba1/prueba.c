@@ -1,7 +1,18 @@
+
 #include <stdio.h>
 //#include <iostream>
 #include <stdlib.h>
 #include "mapDriver.h"
+#include <sys/time.h>
+
+
+
+unsigned long current_timestamp() {
+    struct timeval te; 
+    gettimeofday(&te, NULL); // get current time
+    unsigned long time_in_micros = 1000000 * te.tv_sec + te.tv_usec;
+    return time_in_micros;
+}
 
 //sing namespace std;
 
@@ -74,7 +85,7 @@ int main(int argc, char** argv)
 		{
 			char * aux = (char *)malloc(sizeof(char));
 			*aux = lista[i][j];
-			writeToSDRAM( aux, i*ancho+j+ 0x1000000);
+			writeToSDRAM( aux, i*ancho+j+ BASE_ORIG_IMG_SDRAM);
 			//printf("el valor es: %d\n", lista[i][j]+128);
 		}
 		
@@ -88,27 +99,17 @@ int main(int argc, char** argv)
 	int * ancho_aux = (int *)malloc(sizeof(int));
 	int * x_NIOS = (int *)malloc(sizeof(int));
 	int * y_NIOS = (int *)malloc(sizeof(int));
-
-
+	 
 	*inicio_NIOS = 0;
 	*fin_NIOS = 0;
 	*alto_aux = alto;
 	*ancho_aux = ancho;
+	 
 
-
-	writeToSDRAM_int(inicio_NIOS, 0x3000000);
-	writeToSDRAM_int(fin_NIOS, 0x3000004);
-	writeToSDRAM_int(alto_aux, 0x3000008);
-	writeToSDRAM_int(ancho_aux, 0x300000C);
-
-
-	//test leds
-	void *leds = malloc(4);
-	*(int*)leds = 0x3;  
-	writeToLeds(leds);
-	
-
-
+	writeToSDRAM_int(inicio_NIOS, INICIO_DIR);
+	writeToSDRAM_int(fin_NIOS, FIN_DIR);
+	writeToSDRAM_int(alto_aux, LARGO_DIR);
+	writeToSDRAM_int(ancho_aux, ANCHO_DIR);
 
 
 	int imgf[alto-2][ancho-2];
@@ -144,8 +145,8 @@ int main(int argc, char** argv)
 	*x_NIOS = maximo_Fil_ARM;
 	*y_NIOS = maximo_Col_ARM;
 
-	writeToSDRAM_int(x_NIOS, 0x3000010);
-	writeToSDRAM_int(y_NIOS, 0x3000014);
+	writeToSDRAM_int(x_NIOS, X_DIR );
+	writeToSDRAM_int(y_NIOS, Y_DIR );
 
 
 	//printf("Maximo fil arm: %s\n",maximo_Fil_ARM);
@@ -160,6 +161,9 @@ int main(int argc, char** argv)
 	//cout << "el y nios: "<< *y_NIOS<<endl;
 
 
+	//Obtiene el valor de tiempo inicial
+	unsigned long tiempo_inicio = current_timestamp();
+
 
 	//aplica el filtro
 	
@@ -168,7 +172,7 @@ int main(int argc, char** argv)
   	int maxw = ancho - 1;
   	int result;
   	*inicio_NIOS = 1;
-  	writeToSDRAM_int(inicio_NIOS, 0x3000000);
+  	writeToSDRAM_int(inicio_NIOS, INICIO_DIR );
   	for (i = 1; i < maxh; i++)
  	{
     	for (j = 1; j < maxw; j++)
@@ -186,6 +190,46 @@ int main(int argc, char** argv)
   	}
 
 
+	//Obtiene el valor de tiempo final
+	unsigned long tiempo_final = current_timestamp();
+	
+	unsigned long duracion = tiempo_final - tiempo_inicio;
+	
+	printf("El tiempo que duró el procesador ARM es %lu milisegundos\n", duracion);
+	
+	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
+	while(*fin_NIOS != 1)
+	{	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
+		//printf("wating nios: %d \n", *fin_NIOS);
+		//printf("ancho %d\n",*getIntFromSDRAM( ANCHO_DIR));
+	
+	} //Espera aque el NIOS termine
+	unsigned long duracion_nios = *getIntFromSDRAM(DURACION_DIR);
+	printf("El tiempo que duró el procesador NIOS es %lu milisegundos\n", duracion_nios);
+	*fin_NIOS = 0;
+	writeToSDRAM_int(fin_NIOS,FIN_DIR);
+	
+
+	// Se une la imagen del NIOS con la del ARM
+	int* bufer = getImageFromSDRAM(0x1000000);
+	for (i = alto-2; i >= maxh; i--)
+ 	{
+	    	for (j = ancho-2; j >= 1; j--)
+	    	{
+	    		if ((j+i*ancho) >= final)
+			{   			
+	      			int dir = (j-1 + (i-1) * ancho);
+					
+	      			imgf[i-1][j-1] = bufer[dir];
+	      		}
+	      		else{
+	      			break;
+	      		}
+	    	}
+  	}
+	
+	
+	
   	// se mapea la imagen 
   	
   	int h = alto-2;

@@ -3,6 +3,8 @@
 #include "sys/alt_stdio.h"
 #include "../Image_Filter_bsp/system.h"
 #include "unistd.h"
+#include <sys/time.h>
+
 int main()
 { 
 	int* INICIO = SDRAM_BASE + 0x03000000;
@@ -41,20 +43,29 @@ int index(int x, int y)
   return (ancho*x) + y;
 }
 
-char pix(int x, int y)
+unsigned char pix(int x, int y)
 {
-	char *dir = 0x1000000 + index(x,y);
-	return dir;
+	unsigned char *dir = 0x1000000 + index(x,y);
+	return *dir;
+}
+
+unsigned long current_timestamp() {
+    struct timeval te;
+    gettimeofday(&te, NULL); // get current time
+    unsigned long time_in_micros = 1000000 * te.tv_sec + te.tv_usec;
+    return time_in_micros;
 }
 int doFilter()
 {
-	int* INICIO = SDRAM_BASE + 0x03000000;
-	int* FIN    = SDRAM_BASE + 0x03000004;
-	int* LARGO  = SDRAM_BASE + 0x03000008;
-	int* ANCHO  = SDRAM_BASE + 0x0300000C;
-	int* X      = SDRAM_BASE + 0x03000010;
-	int* Y      = SDRAM_BASE + 0x03000014;
-	void* RESULT_BASE = 0x2000000;
+	int* INICIO 		= SDRAM_BASE + 0x03000000;
+	int* FIN    		= SDRAM_BASE + 0x03000004;
+	int* LARGO  		= SDRAM_BASE + 0x03000008;
+	int* ANCHO  		= SDRAM_BASE + 0x0300000C;
+	int* X      		= SDRAM_BASE + 0x03000010;
+	int* Y      		= SDRAM_BASE + 0x03000014;
+	int* DURACION       = SDRAM_BASE + 0x03000018;
+
+	void* RESULT_BASE 	= SDRAM_BASE + 0x2000000;
 
 
   	while (*INICIO != 1)
@@ -76,6 +87,9 @@ int doFilter()
   	int final = y_max + x_max * ancho;
   	int i;
   	int j;
+  	//Obtiene el valor de tiempo inicial
+  	unsigned long tiempo_inicio = current_timestamp();
+
   	for (i = alto-2; i >= maxh; i--)
  	{
     	for (j = ancho-2; j >= 1; j--)
@@ -94,6 +108,10 @@ int doFilter()
     	}
   	}
 
+  	//Obtiene el valor de tiempo final
+  	unsigned long tiempo_final = current_timestamp();
+  	*DURACION = tiempo_final - tiempo_inicio;
+  	printf("tiempo %lu \n", tiempo_final);
   	*FIN = 1;
   	*INICIO = 0; //reinicia
 	return 0;
