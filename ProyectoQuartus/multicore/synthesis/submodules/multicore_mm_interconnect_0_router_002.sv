@@ -134,7 +134,7 @@ module multicore_mm_interconnect_0_router_002
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h1010 - 64'h1000); 
+    localparam PAD0 = log2ceil(64'h2000010 - 64'h2000000); 
     localparam PAD1 = log2ceil(64'h8000000 - 64'h4000000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
@@ -189,8 +189,8 @@ module multicore_mm_interconnect_0_router_002
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x1000 .. 0x1010 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 27'h1000   ) begin
+    // ( 0x2000000 .. 0x2000010 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 27'h2000000   ) begin
             src_channel = 5'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end

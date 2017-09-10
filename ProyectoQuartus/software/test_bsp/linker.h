@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'multicore'
  * SOPC Builder design path: ../../multicore.sopcinfo
  *
- * Generated: Thu Sep 07 13:13:43 CST 2017
+ * Generated: Sat Sep 09 17:45:55 CST 2017
  */
 
 /*
@@ -66,7 +66,7 @@
  */
 
 #define ONCHIP_REGION_BASE 0x20
-#define ONCHIP_REGION_SPAN 4064
+#define ONCHIP_REGION_SPAN 16352
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 #define SDRAM_REGION_BASE 0x4000000

@@ -134,14 +134,14 @@ module multicore_mm_interconnect_0_router_001
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h1000 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h2800 - 64'h2000); 
+    localparam PAD0 = log2ceil(64'h4000 - 64'h0); 
+    localparam PAD1 = log2ceil(64'h5000 - 64'h4800); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h2800;
+    localparam ADDR_RANGE = 64'h5000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -189,14 +189,14 @@ module multicore_mm_interconnect_0_router_001
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x0 .. 0x1000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 14'h0   ) begin
+    // ( 0x0 .. 0x4000 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 15'h0   ) begin
             src_channel = 5'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
-    // ( 0x2000 .. 0x2800 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 14'h2000   ) begin
+    // ( 0x4800 .. 0x5000 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 15'h4800   ) begin
             src_channel = 5'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end

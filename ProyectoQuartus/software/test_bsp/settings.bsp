@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 8, 2017 8:29:24 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1504924164712</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 9, 2017 10:55:13 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1505019313054</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/sebastian95/Documents/GitHub/Image-Filter-in-Heterogenuos-Processor/ProyectoQuartus/software/test_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../multicore.sopcinfo</SopcDesignFile>
@@ -900,21 +900,21 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>onchip</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00000FFF</addressRange>
-                <addressSpan>4096</addressSpan>
+                <addressRange>0x00000000 - 0x00003FFF</addressRange>
+                <addressSpan>16384</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>leds</slaveDescriptor>
-                <addressRange>0x00001000 - 0x0000100F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00001010 - 0x00001017</addressRange>
+                <addressRange>0x00005000 - 0x00005007</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>leds</slaveDescriptor>
+                <addressRange>0x02000000 - 0x0200000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>

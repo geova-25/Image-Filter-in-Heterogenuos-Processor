@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'multicore'
  * SOPC Builder design path: ../../multicore.sopcinfo
  *
- * Generated: Thu Sep 07 13:13:43 CST 2017
+ * Generated: Sat Sep 09 17:45:55 CST 2017
  */
 
 /*
@@ -51,7 +51,7 @@
 MEMORY
 {
     reset : ORIGIN = 0x0, LENGTH = 32
-    onchip : ORIGIN = 0x20, LENGTH = 4064
+    onchip : ORIGIN = 0x20, LENGTH = 16352
     sdram : ORIGIN = 0x4000000, LENGTH = 67108864
 }
 

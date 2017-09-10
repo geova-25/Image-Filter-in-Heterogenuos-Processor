@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Sep  7 13:06:17 2017
+Fitter Status : Successful - Sat Sep  9 22:36:10 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : MultipleCoreFilter
 Top-level Entity Name : multicore
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1,629 / 32,070 ( 5 % )
-Total registers : 2402
+Logic utilization (in ALMs) : 1,628 / 32,070 ( 5 % )
+Total registers : 2400
 Total pins : 189 / 457 ( 41 % )
 Total virtual pins : 0
-Total block memory bits : 44,160 / 4,065,280 ( 1 % )
-Total RAM Blocks : 10 / 397 ( 3 % )
+Total block memory bits : 142,464 / 4,065,280 ( 4 % )
+Total RAM Blocks : 22 / 397 ( 6 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

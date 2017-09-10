@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="f5a8c04c6a362d92544f"/>
+    <hash md5_digest_80b="3a979ef5402117190b6e"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="MultipleCoreFilter.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="" name="">
       <assignment_values>
-        <assignment_value text="QSYS_NAME multicore HAS_SOPCINFO 1 GENERATION_ID 1504807617"/>
+        <assignment_value text="QSYS_NAME multicore HAS_SOPCINFO 1 GENERATION_ID 1505017273"/>
       </assignment_values>
       <parameters/>
     </sld_info>

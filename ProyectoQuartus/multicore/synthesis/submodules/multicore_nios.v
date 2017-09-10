@@ -18,7 +18,7 @@ module multicore_nios (
 		output wire        d_write,                             //                          .write
 		output wire [31:0] d_writedata,                         //                          .writedata
 		output wire        debug_mem_slave_debugaccess_to_roms, //                          .debugaccess
-		output wire [13:0] i_address,                           //        instruction_master.address
+		output wire [14:0] i_address,                           //        instruction_master.address
 		output wire        i_read,                              //                          .read
 		input  wire [31:0] i_readdata,                          //                          .readdata
 		input  wire        i_waitrequest,                       //                          .waitrequest

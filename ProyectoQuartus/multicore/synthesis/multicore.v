@@ -103,7 +103,7 @@ module multicore (
 	wire  [31:0] nios_data_master_writedata;                                  // nios:d_writedata -> mm_interconnect_0:nios_data_master_writedata
 	wire  [31:0] nios_instruction_master_readdata;                            // mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
 	wire         nios_instruction_master_waitrequest;                         // mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
-	wire  [13:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
+	wire  [14:0] nios_instruction_master_address;                             // nios:i_address -> mm_interconnect_0:nios_instruction_master_address
 	wire         nios_instruction_master_read;                                // nios:i_read -> mm_interconnect_0:nios_instruction_master_read
 	wire   [1:0] hps_h2f_axi_master_awburst;                                  // hps:h2f_AWBURST -> mm_interconnect_0:hps_h2f_axi_master_awburst
 	wire   [3:0] hps_h2f_axi_master_arlen;                                    // hps:h2f_ARLEN -> mm_interconnect_0:hps_h2f_axi_master_arlen
@@ -172,7 +172,7 @@ module multicore (
 	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                        // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
 	wire         mm_interconnect_0_onchip_s1_chipselect;                      // mm_interconnect_0:onchip_s1_chipselect -> onchip:chipselect
 	wire  [31:0] mm_interconnect_0_onchip_s1_readdata;                        // onchip:readdata -> mm_interconnect_0:onchip_s1_readdata
-	wire   [9:0] mm_interconnect_0_onchip_s1_address;                         // mm_interconnect_0:onchip_s1_address -> onchip:address
+	wire  [11:0] mm_interconnect_0_onchip_s1_address;                         // mm_interconnect_0:onchip_s1_address -> onchip:address
 	wire   [3:0] mm_interconnect_0_onchip_s1_byteenable;                      // mm_interconnect_0:onchip_s1_byteenable -> onchip:byteenable
 	wire         mm_interconnect_0_onchip_s1_write;                           // mm_interconnect_0:onchip_s1_write -> onchip:write
 	wire  [31:0] mm_interconnect_0_onchip_s1_writedata;                       // mm_interconnect_0:onchip_s1_writedata -> onchip:writedata

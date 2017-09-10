@@ -54,7 +54,7 @@ module multicore_mm_interconnect_0 (
 		input  wire        nios_data_master_write,                                         //                                                         .write
 		input  wire [31:0] nios_data_master_writedata,                                     //                                                         .writedata
 		input  wire        nios_data_master_debugaccess,                                   //                                                         .debugaccess
-		input  wire [13:0] nios_instruction_master_address,                                //                                  nios_instruction_master.address
+		input  wire [14:0] nios_instruction_master_address,                                //                                  nios_instruction_master.address
 		output wire        nios_instruction_master_waitrequest,                            //                                                         .waitrequest
 		input  wire        nios_instruction_master_read,                                   //                                                         .read
 		output wire [31:0] nios_instruction_master_readdata,                               //                                                         .readdata
@@ -78,7 +78,7 @@ module multicore_mm_interconnect_0 (
 		output wire [3:0]  nios_debug_mem_slave_byteenable,                                //                                                         .byteenable
 		input  wire        nios_debug_mem_slave_waitrequest,                               //                                                         .waitrequest
 		output wire        nios_debug_mem_slave_debugaccess,                               //                                                         .debugaccess
-		output wire [9:0]  onchip_s1_address,                                              //                                                onchip_s1.address
+		output wire [11:0] onchip_s1_address,                                              //                                                onchip_s1.address
 		output wire        onchip_s1_write,                                                //                                                         .write
 		input  wire [31:0] onchip_s1_readdata,                                             //                                                         .readdata
 		output wire [31:0] onchip_s1_writedata,                                            //                                                         .writedata
@@ -668,7 +668,7 @@ module multicore_mm_interconnect_0 (
 	);
 
 	altera_merlin_master_translator #(
-		.AV_ADDRESS_W                (14),
+		.AV_ADDRESS_W                (15),
 		.AV_DATA_W                   (32),
 		.AV_BURSTCOUNT_W             (1),
 		.AV_BYTEENABLE_W             (4),
@@ -984,7 +984,7 @@ module multicore_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (10),
+		.AV_ADDRESS_W                   (12),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
