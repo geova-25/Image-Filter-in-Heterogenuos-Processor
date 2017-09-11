@@ -102,7 +102,7 @@ int main(int argc, char** argv)
 {
 	//int ancho = 256, alto = 256;
 
-	char[10] nombre;
+	char nombre [10];
 	printf("Inserte el nombre de la imagen a cargar con la extencion: ");
 	scanf("%s",&nombre);
 
