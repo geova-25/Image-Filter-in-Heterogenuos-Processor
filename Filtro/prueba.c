@@ -186,47 +186,51 @@ int main(int argc, char** argv)
 
 	//Se inicia el filtro de la imagen 
 	int final = ((alto*ancho) *valor_Arm)/100;
+	printf("valor final: %d :\n ", final);
 	int maxh = maximo_Fil_ARM;
   	int maxw = ancho - 1;
   	int result;
   	*inicio_NIOS = 1;
   	writeToSDRAM_int(inicio_NIOS, INICIO_DIR );
-
+	
 	//Obtiene el valor de tiempo inicial
 	unsigned long tiempo_inicio = current_timestamp();
-
+	unsigned long tiempo_final_nios=0;
   	for (i = 1; i < maxh; i++)
  	{
-    	for (j = 1; j < maxw; j++)
-    	{
-    		if ((j+i*ancho) <= final){
-      			result = lista[i-1][j-1] + 2 * lista[i-1][j] + lista[i-1][j+1] - lista[i+1][j-1] - 2 * lista[i+1][j] - lista[i+1][j+1];
-      			imgf[i-1][j-1] = result;
+	    	for (j = 1; j < maxw; j++)
+	    	{
+		
+	    		if ((j+i*ancho) <= final){
+	      			result = lista[i-1][j-1] + 2 * lista[i-1][j] + lista[i-1][j+1] - lista[i+1][j-1] - 2 * lista[i+1][j] - lista[i+1][j+1];
+	      			imgf[i-1][j-1] = result;
 
-      		}
-      		else{
-      			break;
-      		}
-    	}
+	      		}
+	      		else{
+	      			break;
+	      		}
+	    	}
   	}
 
 
 	//Obtiene el valor de tiempo final
 	unsigned long tiempo_final = current_timestamp();
 	
+	
+
+	//Espera aque el NIOS termine
+	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
+	while(*fin_NIOS != 1)
+	{	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
+		
+	
+	} 
+	tiempo_final_nios = current_timestamp();
+	unsigned long duracion_nios = tiempo_final_nios- tiempo_inicio;
 	// Obtiene la duración de la ejecución
 	unsigned long duracion = tiempo_final - tiempo_inicio;
 	
 	printf("El tiempo que duró el procesador ARM es %lu microsegundos\n", duracion);
-	
-	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
-	while(*fin_NIOS != 1)
-	{	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
-		//printf("wating nios: %d \n", *fin_NIOS);
-		//printf("ancho %d\n",*getIntFromSDRAM( ANCHO_DIR));
-	
-	} //Espera aque el NIOS termine
-	unsigned long duracion_nios = *getULongFromSDRAM(DURACION_DIR);
 	printf("El tiempo que duró el procesador NIOS es %lu microsegundos\n", duracion_nios);
 	*fin_NIOS = 0;
 	writeToSDRAM_int(fin_NIOS,FIN_DIR);

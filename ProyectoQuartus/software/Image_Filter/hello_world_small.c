@@ -81,7 +81,8 @@ int doFilter()
 	int maxh = y_max;
   	int maxw = x_max;
   	int result;
-  	int final = y_max + x_max * ancho;
+  	int final = y_max + x_max * ancho ;
+  	printf("final %d \n", final);
   	int i;
   	int j;
   	//Obtiene el valor de tiempo inicial
