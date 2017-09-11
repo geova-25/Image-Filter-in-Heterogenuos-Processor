@@ -1,6 +1,20 @@
+// ----------------------------------------	//
+//											//
+//        Código del hard processor       	//
+//											//
+//    Instituto Tecnológico de Costa Rica	//
+//       Fecha: 11 de septiembre, 2017		//
+//				 Versión 1.0				//	
+//											//
+// Incluye las funciones para coordinar a  	//
+// los procesadores, además del filtro que	//
+// aplica el procesador ARM y el mapeo a la //
+// imagen final.							// 
+//											//
+// ----------------------------------------	//
 
+// Importar las bibliotecas necesarias para el código
 #include <stdio.h>
-//#include <iostream>
 #include <stdlib.h>
 #include "mapDriver.h"
 #include <sys/time.h>
@@ -14,32 +28,47 @@ unsigned long current_timestamp() {
     return time_in_micros;
 }
 
-//sing namespace std;
-
-/*int index(int x, int y, int h)
-{
-  return (h*x) + y;
-}*/
-
-
-
-/*cv::Mat carga_convierte_imagen (){
-	cv::Mat imagen;
-	imagen=cv::imread("p3.jpg");
-	cv::Mat gris;
-	cvtColor(imagen, gris, cv::COLOR_BGR2GRAY);
-	return gris;
-}*/
-
+/**
+ * Obtiene el porcentaje de la imagen que se le va asignar al procesador del NIOS
+ * @return valor
+ */
 int get_porcen_Nios(){
 	int valor;
 	printf("Inserte el porcentaje que debe realiza el procesador del NIOS: ");
-	//cout << "Inserte el porcentaje que debe realiza el procesador del NIOS: "<< endl;
 	scanf("%d",&valor);
-
 	return valor;
 }
 
+/**
+ * Obtiene el ancho de la imagen que se va a cargar
+ * @return valor
+ */
+int get_anchoImage(){
+	int valor;
+	printf("Inserte el ancho de la imagen que cargo: ");
+	scanf("%d",&valor);
+	return valor;
+}
+
+/**
+ * Obtiene el alto de la imagen que se va a cargar
+ * @return valor
+ */
+int get_altoImage(){
+	int valor;
+	printf("Inserte el alto de la imagen que cargo: ");
+	scanf("%d",&valor);
+	return valor;
+}
+
+/**
+ * Funcion en la cual se encarga de obtener la fila donde tiene que finalizar
+ * el procesador del NIOS
+ * @param  valor_Arm El porcentaje del procesador ARM 
+ * @param  filas     Las filas de la imagen
+ * @param  columnas  Las columnas de la imagen 
+ * @return           retorna el valor de la fila
+ */
 int get_Fila(int valor_Arm, int filas, int columnas){
 	
 	int pixeles = filas * columnas;
@@ -47,6 +76,15 @@ int get_Fila(int valor_Arm, int filas, int columnas){
 	return final/columnas;
 }
 
+/**
+ * Funcion en la cual se encarga de obtener la columna donde tiene que finalizar
+ * el procesador del NIOS
+ * @param  valor_Arm    El porcentaje del procesador ARM 
+ * @param  filas        Las filas de la imagen
+ * @param  columnas     columnas  Las columnas de la imagen 
+ * @param  filas_nuevas La fila donde termina el procesador NIOS
+ * @return              retorna la columna
+ */
 int get_Columna(int valor_Arm, int filas, int columnas, int filas_nuevas){
 
 	int pixeles = filas * columnas;
@@ -54,29 +92,38 @@ int get_Columna(int valor_Arm, int filas, int columnas, int filas_nuevas){
 	return (final- (filas_nuevas*columnas)); 
 }
 
+/*
+ * Función que abre la imagen original, distribuye el procesamiento que
+ * se va a realizar, envía las variables al procesador NIOS, ejecuta el 
+ * filtro y calcula el tiempo de ejecución. Después vuelve a armar la 
+ * imagen y la mapea a valores de 0-255
+ */
 int main(int argc, char** argv)
 {
-	int ancho = 256, alto = 256;
+	//int ancho = 256, alto = 256;
 
+	char[10] nombre;
+	printf("Inserte el nombre de la imagen a cargar con la extencion: ");
+	scanf("%s",&nombre);
 
 	FILE * imagen_con;
-	imagen_con = fopen("original.data","r+"); //Se abre el archivo original
+	imagen_con = fopen(nombre,"r+"); //Se abre el archivo original
 	if(imagen_con == NULL) 
   	{
     	printf("Error abriendo archivo");
     	return 1;
   	}
 
+  	//Se solicita las dimenciones de la imagen 
+  	int ancho = get_anchoImage();
+  	int alto = get_altoImage();
   	
-  	char lista[alto][ancho];
 
-
-	fread(lista, sizeof(lista), 1, imagen_con);
-	//fscanf(imagen_con, "%c" ,lista);
+  	char lista[alto][ancho];                      //Crea la imagen como una matriz
+	fread(lista, sizeof(lista), 1, imagen_con);   //lee la imagen y se lo asigna a la matriz
+	fclose(imagen_con);							  //cierra el archivo de la imagen
 	
-
-
-	fclose(imagen_con);
+	//pasa la imagen por medio del driver a la memoria de la fpga
 	int i = 0;
 	int j = 0;
 	for (i = 0; i < alto; i++)
@@ -92,7 +139,7 @@ int main(int argc, char** argv)
 	}
 
 
-	//envio de valores constantes
+	//envio de valores constantes a la memoria 
 	int * inicio_NIOS = (int *)malloc(sizeof(int));
 	int * fin_NIOS = (int *)malloc(sizeof(int));
 	int * alto_aux = (int *)malloc(sizeof(int));
@@ -112,8 +159,9 @@ int main(int argc, char** argv)
 	writeToSDRAM_int(ancho_aux, ANCHO_DIR);
 
 
-	int imgf[alto-2][ancho-2];
 
+	int imgf[alto-2][ancho-2];			// se crea una matriz para la imagen nueva
+	// se asegura que contenga los valores en 0
 	for(i=0;i<alto-2;i++){
 		for (j = 0; j < ancho-2; j++)
 		{
@@ -121,24 +169,11 @@ int main(int argc, char** argv)
 		}
 	}
 
-
-	
-	
-	//aplica el porcentaje del nios
-	//printf("filas: %s\n",alto);
-	//printf("columnas: %s\n",ancho);
-	//cout << "filas: "<< alto<<endl;
-	//cout << "columnas: "<< ancho<<endl;
-
+	// Obtiene el porcentaje para el NIOS y para el ARM
 	int valor_Nios = get_porcen_Nios();
 	int valor_Arm   = 100 - valor_Nios;
 
-	//printf("valor nios: %s\n",valor_Nios);
-	//printf("valor arm: %s\n",valor_Arm);
-
-	//cout << "valor nios: "<< valor_Nios<<endl;
-	//cout << "valor arm: "<< valor_Arm<<endl;
-
+	// Obtiene la posición del último pixel que filtra el ARM
 	int maximo_Fil_ARM = get_Fila(valor_Arm, alto, ancho);
 	int maximo_Col_ARM = get_Columna(valor_Arm, alto, ancho, maximo_Fil_ARM);
 
@@ -149,22 +184,7 @@ int main(int argc, char** argv)
 	writeToSDRAM_int(y_NIOS, Y_DIR );
 
 
-	//printf("Maximo fil arm: %s\n",maximo_Fil_ARM);
-	//printf("Maximo col arm: %s\n",maximo_Col_ARM);
-
-	//cout << "Maximo fil arm: "<< maximo_Fil_ARM<<endl;
-	//cout << "Maximo col arm: "<< maximo_Col_ARM<<endl;
-
-	//printf("el x nios: %s\n",*x_NIOS);
-	//printf("el y nios: %s\n",*y_NIOS);
-	//cout << "el x nios: "<< *x_NIOS<<endl;
-	//cout << "el y nios: "<< *y_NIOS<<endl;
-
-
-	
-
-	//aplica el filtro
-	
+	//Se inicia el filtro de la imagen 
 	int final = ((alto*ancho) *valor_Arm)/100;
 	int maxh = maximo_Fil_ARM;
   	int maxw = ancho - 1;
@@ -187,7 +207,6 @@ int main(int argc, char** argv)
       		else{
       			break;
       		}
-      		//cout << "los resutados son: "<<imgf[i-1][j-1]<< endl;
     	}
   	}
 
@@ -195,6 +214,7 @@ int main(int argc, char** argv)
 	//Obtiene el valor de tiempo final
 	unsigned long tiempo_final = current_timestamp();
 	
+	// Obtiene la duración de la ejecución
 	unsigned long duracion = tiempo_final - tiempo_inicio;
 	
 	printf("El tiempo que duró el procesador ARM es %lu milisegundos\n", duracion);
@@ -232,7 +252,7 @@ int main(int argc, char** argv)
 	
 	
 	
-  	// se mapea la imagen 
+  	//Se mapea la imagen 
   	
   	int h = alto-2;
 	int w = ancho-2;
@@ -257,17 +277,7 @@ int main(int argc, char** argv)
     	}
   	}
   	
-
-
-  	/*for (i = 0; i < alto-2; ++i)
-	{
-		for (j = 0; j < ancho-2; j++)
-  		{
-  			printf("el valor del pixel es: %d\n", imgf[i][j]+128);
-  		}
-		
-	}*/
-
+  	// Convierte la imagen de int a char para reducir el tamaño
 	char numf[alto-2][ancho-2];
   
 	  for (i = 0; i < alto-2; i++)
@@ -279,6 +289,7 @@ int main(int argc, char** argv)
 	  }
 
 
+	// Almacena la imagen final
   	FILE * imagen_Final;
   	imagen_Final = fopen("final.data", "w+");
 
