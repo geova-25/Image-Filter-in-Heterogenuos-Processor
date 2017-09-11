@@ -217,7 +217,7 @@ int main(int argc, char** argv)
 	// Obtiene la duración de la ejecución
 	unsigned long duracion = tiempo_final - tiempo_inicio;
 	
-	printf("El tiempo que duró el procesador ARM es %lu milisegundos\n", duracion);
+	printf("El tiempo que duró el procesador ARM es %lu microsegundos\n", duracion);
 	
 	*fin_NIOS = *getIntFromSDRAM(FIN_DIR);
 	while(*fin_NIOS != 1)
@@ -226,8 +226,8 @@ int main(int argc, char** argv)
 		//printf("ancho %d\n",*getIntFromSDRAM( ANCHO_DIR));
 	
 	} //Espera aque el NIOS termine
-	unsigned long duracion_nios = *getIntFromSDRAM(DURACION_DIR);
-	printf("El tiempo que duró el procesador NIOS es %lu milisegundos\n", duracion_nios);
+	unsigned long duracion_nios = *getULongFromSDRAM(DURACION_DIR);
+	printf("El tiempo que duró el procesador NIOS es %lu microsegundos\n", duracion_nios);
 	*fin_NIOS = 0;
 	writeToSDRAM_int(fin_NIOS,FIN_DIR);
 	

@@ -66,6 +66,16 @@ int* getIntFromSDRAM(int position)
 	return (int*)(sdram_addr+ position);
 }
 
+unsigned long* getULongFromSDRAM(int position)
+{
+	
+	void * sdram_addr =  getVirtualBase() + SDRAM_BASE;
+	
+
+	return (unsigned long*)(sdram_addr+ position);
+}
+
+
 void *writeToLeds( void* character)
 {
 	void* led_addr;

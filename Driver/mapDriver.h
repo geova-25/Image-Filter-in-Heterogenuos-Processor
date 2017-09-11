@@ -19,3 +19,4 @@ int* getImageFromSDRAM(int);
 void writeToSDRAM_int(int* , int);
 void *writeToLeds(void*); 
 int* getIntFromSDRAM(int);
+unsigned long* getULongFromSDRAM(int);

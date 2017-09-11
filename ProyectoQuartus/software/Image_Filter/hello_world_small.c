@@ -13,25 +13,22 @@ int main()
 	int* ANCHO  = SDRAM_BASE + 0x0300000C;
 	int* X      = SDRAM_BASE + 0x03000010;
 	int* Y      = SDRAM_BASE + 0x03000014;
-	/*int* led = LEDS_BASE;
-	*led = 7;
-	int* prueba = SDRAM_BASE + 0x8;*/
-	printf("before filter \n flag inicio: %d\n",*INICIO);
-	printf("flag fin : %d\n",*FIN);
-	printf("largo %d\n",*LARGO);
-	printf("ancho %d\n",*ANCHO);
-	printf("x %d\n",*X);
-	printf("y %d\n",*Y);
 
-	doFilter();
+		printf("before filter \n flag inicio: %d\n",*INICIO);
+		printf("flag fin : %d\n",*FIN);
+		printf("largo %d\n",*LARGO);
+		printf("ancho %d\n",*ANCHO);
+		printf("x %d\n",*X);
+		printf("y %d\n",*Y);
 
-	printf("AfterFilter \n flag inicio: %d\n",*INICIO);
-	printf("flag fin : %d\n",*FIN);
-	printf("largo %d\n",*LARGO);
-	printf("ancho %d\n",*ANCHO);
-	printf("x %d\n",*X);
-	printf("y %d\n",*Y);
-	usleep(1000000);
+		doFilter();
+
+		printf("AfterFilter \n flag inicio: %d\n",*INICIO);
+		printf("flag fin : %d\n",*FIN);
+		printf("largo %d\n",*LARGO);
+		printf("ancho %d\n",*ANCHO);
+		printf("x %d\n",*X);
+		printf("y %d\n",*Y);
 
   return 0;
 }
@@ -63,16 +60,16 @@ int doFilter()
 	int* ANCHO  		= SDRAM_BASE + 0x0300000C;
 	int* X      		= SDRAM_BASE + 0x03000010;
 	int* Y      		= SDRAM_BASE + 0x03000014;
-	int* DURACION       = SDRAM_BASE + 0x03000018;
+	long long* DURACION       = SDRAM_BASE + 0x03000018;
 
 	void* RESULT_BASE 	= SDRAM_BASE + 0x2000000;
 
-
+	*INICIO = 0; //reinicia
   	while (*INICIO != 1)
   	{
   		//printf("wating, inicio = %d \n", *INICIO);
-  		usleep(10000);
-  	};
+  		usleep(10);
+  	}
   	//int *dir = 0x3000008;
 	int alto = *LARGO;
 	ancho = *ANCHO;
@@ -88,7 +85,7 @@ int doFilter()
   	int i;
   	int j;
   	//Obtiene el valor de tiempo inicial
-  	unsigned long tiempo_inicio = current_timestamp();
+  	long long tiempo_inicio = current_timestamp();
 
   	for (i = alto-2; i >= maxh; i--)
  	{
@@ -109,9 +106,9 @@ int doFilter()
   	}
 
   	//Obtiene el valor de tiempo final
-  	unsigned long tiempo_final = current_timestamp();
+  	long long tiempo_final = current_timestamp();
   	*DURACION = tiempo_final - tiempo_inicio;
-  	printf("tiempo %lu \n", tiempo_final);
+  	printf("tiempo %llu \n", *DURACION);
   	*FIN = 1;
   	*INICIO = 0; //reinicia
 	return 0;
