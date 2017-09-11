@@ -28,30 +28,42 @@ void writeToSDRAM(char* character , int index)
 {
 	char* sdram_addr;
 	sdram_addr = getVirtualBase() + SDRAM_BASE+ index;
-	printf("character: %c , index: %d   \n",*character,index);
-	printf("pointer: %p\n", sdram_addr);
+	//printf("character: %c , index: %d   \n",*character,index);
+	//printf("pointer: %p\n", sdram_addr);
 	*(sdram_addr) = *character;
 }
 
-
-char* getImageFromSDRAM(int image_size)
+void writeToSDRAM_int(int* character , int index)
 {
-	void* sdram_addr = getVirtualBase() + SDRAM_BASE;
-	char* buffer = (char*) calloc(image_size,sizeof(char));
+	void* sdram_addr;
+	sdram_addr = getVirtualBase() + SDRAM_BASE+ index;
+	//printf("character: %c , index: %d   \n",*character,index);
+	//printf("pointer: %p\n", sdram_addr);
+	*(int*)(sdram_addr) = *character;
+}
+
+
+
+int* getImageFromSDRAM(int image_size)
+{
+	void* sdram_addr = getVirtualBase() + SDRAM_BASE + BASE_COPY_IMG_SDRAM;
+	int* buffer = (int*) malloc(image_size);
 	int j =0;
-	int i = 0;
 	while(j < image_size){
-	//if(*(char*)(sdram_addr + j) == '\0' )
-	//	{
-	//	break;
-	//	}
-		printf("j: %d\n",j);
-		printf("char : %c\n",*(char*)(sdram_addr + j));
-		buffer[j] = *(char*)(sdram_addr + j);
+		buffer[j] = *(int*)(sdram_addr + j*4);
 		j++;
 	}
 
 	return buffer;
+}
+
+int* getIntFromSDRAM(int position)
+{
+	
+	void * sdram_addr =  getVirtualBase() + SDRAM_BASE;
+	
+
+	return (int*)(sdram_addr+ position);
 }
 
 void *writeToLeds( void* character)
@@ -61,31 +73,3 @@ void *writeToLeds( void* character)
 	*(char*)led_addr = *(char*)character;
 }
 
-int main ()
-{
-	getVirtualBase();
-	void* ptr_char0 = malloc(1);
-	void* ptr_char1 = malloc(1);
-	void* ptr_char2 = malloc(1);
-	void* ptr_char3 = malloc(1);
-	void* ptr_char4 = malloc(1);
-	*(char*)ptr_char0 = 'a';
-	*(char*)ptr_char1 = 'b';
-	*(char*)ptr_char2 = 'c';
-	*(char*)ptr_char3 = 'd';
-	*(char*)ptr_char4 = 'e';
-	writeToSDRAM(ptr_char0,8);
-	writeToSDRAM(ptr_char1,9);
-	writeToSDRAM(ptr_char2,10);
-        writeToSDRAM(ptr_char3,11);
-	writeToSDRAM(ptr_char4,12);
-	char* result = getImageFromSDRAM(13);
-	//printf("%c,",  result[0]);
-	//printf("%c,",  result[1]);
-	//printf("%c,",  result[2]);
-	void* num = malloc(1) ;
-	*(char*)num = 0xAA;
-	writeToLeds(num);
-	return 0;
-
-}
