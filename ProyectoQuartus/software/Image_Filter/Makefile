@@ -142,7 +142,7 @@ ACDS_VERSION := 16.1
 ELF := Image_Filter.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world_small.c
+C_SRCS := slaveProcessorFilter.c
 CXX_SRCS :=
 ASM_SRCS :=
 
