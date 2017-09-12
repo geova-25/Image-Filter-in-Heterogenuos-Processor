@@ -118,7 +118,6 @@ int main(int argc, char** argv)
   	int ancho = get_anchoImage();
   	int alto = get_altoImage();
   	
-
   	char lista[alto][ancho];                      //Crea la imagen como una matriz
 	fread(lista, sizeof(lista), 1, imagen_con);   //lee la imagen y se lo asigna a la matriz
 	fclose(imagen_con);							  //cierra el archivo de la imagen
@@ -133,12 +132,8 @@ int main(int argc, char** argv)
 			char * aux = (char *)malloc(sizeof(char));
 			*aux = lista[i][j];
 			writeToSDRAM( aux, i*ancho+j+ BASE_ORIG_IMG_SDRAM);
-			//printf("el valor es: %d\n", lista[i][j]+128);
 		}
-		
 	}
-
-
 	//envio de valores constantes a la memoria 
 	int * inicio_NIOS = (int *)malloc(sizeof(int));
 	int * fin_NIOS = (int *)malloc(sizeof(int));
@@ -151,14 +146,11 @@ int main(int argc, char** argv)
 	*fin_NIOS = 0;
 	*alto_aux = alto;
 	*ancho_aux = ancho;
-	 
-
+	
 	writeToSDRAM_int(inicio_NIOS, INICIO_DIR);
 	writeToSDRAM_int(fin_NIOS, FIN_DIR);
 	writeToSDRAM_int(alto_aux, LARGO_DIR);
 	writeToSDRAM_int(ancho_aux, ANCHO_DIR);
-
-
 
 	int imgf[alto-2][ancho-2];			// se crea una matriz para la imagen nueva
 	// se asegura que contenga los valores en 0
@@ -186,7 +178,6 @@ int main(int argc, char** argv)
 
 	//Se inicia el filtro de la imagen 
 	int final = ((alto*ancho) *valor_Arm)/100;
-	printf("valor final: %d :\n ", final);
 	int maxh = maximo_Fil_ARM;
   	int maxw = ancho - 1;
   	int result;
@@ -253,9 +244,6 @@ int main(int argc, char** argv)
 	      		}
 	    	}
   	}
-	
-	
-	
   	//Se mapea la imagen 
   	
   	int h = alto-2;
@@ -264,21 +252,21 @@ int main(int argc, char** argv)
   	int min = max;
   	for (i = 0; i < h; i++)
   	{
-    	for (j = 0; j < w; j++)
-    	{
-      		int num = imgf[i][j];
-      		max = (num > max)? num:max;
-      		min = (num < min)? num:min;
-    	}
+	    	for (j = 0; j < w; j++)
+	    	{
+	      		int num = imgf[i][j];
+	      		max = (num > max)? num:max;
+	      		min = (num < min)? num:min;
+	    	}
   	}
   	printf("max = %d, min = %d \n", max, min);
   	for (i = 0; i < h; i++)
   	{
-    	for (j = 0; j < w; j++)
-    	{
-      		int num = imgf[i][j];
-      		imgf[i][j] = ((num - min) * 255) / (max - min);
-    	}
+	    	for (j = 0; j < w; j++)
+	    	{
+	      		int num = imgf[i][j];
+	      		imgf[i][j] = ((num - min) * 255) / (max - min);
+	    	}
   	}
   	
   	// Convierte la imagen de int a char para reducir el tamaño
@@ -299,8 +287,6 @@ int main(int argc, char** argv)
 
   	fwrite(numf,sizeof(numf),1, imagen_Final );
   	fclose(imagen_Final);
-
-
 
  return 0;
 }
